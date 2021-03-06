@@ -58,3 +58,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "better_errors", "~> 2.9", :group => :development
+gem "binding_of_caller", "~> 1.0", :group => :development
+gem "annotate", "~> 3.1", :group => :development
+gem "pry-rails", "~> 0.3.9", :group => :development
+
+gem "bcrypt", "~> 3.1"
+gem "jquery-rails", "~> 4.4"
