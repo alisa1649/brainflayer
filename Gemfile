@@ -15,6 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+gem "jquery-rails", "~> 4.4"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -65,4 +66,3 @@ gem "annotate", "~> 3.1", :group => :development
 gem "pry-rails", "~> 0.3.9", :group => :development
 
 gem "bcrypt", "~> 3.1"
-gem "jquery-rails", "~> 4.4"
