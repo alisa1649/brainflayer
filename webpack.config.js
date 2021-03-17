@@ -22,6 +22,9 @@ module.exports = {
         ]
     },
     devtool: 'source-map',
+    devServer: {
+        contentBase: './',
+    },
     resolve: {
         extensions: [".js", ".jsx", "*"]
     }

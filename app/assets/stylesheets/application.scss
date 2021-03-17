@@ -1,0 +1,152 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "colors";
+
+body, html {
+    background-color: rgb(63, 62, 165);
+    font-family: "Open Sans", sans-serif;
+}
+#navbar {
+    background-color: #fff;
+    display: block;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .logo {
+        background-image: url(https://www.brainscape.com/assets/cms/marketing/shared/logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 143px;
+        height: 36px;
+    }
+    .logo-container {
+        height: 80px;
+        width: 143px;
+        display: flex;
+        align-items: center;
+        padding-left: 45px;
+    }
+
+    .actions {
+        display: flex;
+        height: 100%;
+        justify-content: flex-end;
+        position: relative;
+        margin: 0;
+        padding: 0;
+
+        .login {
+            background-color: #fdf8f7;
+            width: 125px;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+}
+
+.modal-overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1500;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.login-form-container {
+    background: #fff;
+    border-radius: 10px;
+    width: 340px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    a {
+        color: #3faee0;
+    }
+    .links {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        right: 0;
+    }
+
+    h2 {
+        color: #197096;
+        font-size: 36px;
+        text-align: center;
+        text-transform: capitalize;
+        font-family: "Proxima Nova",sans-serif;
+        font-weight: 600;
+        margin-bottom: 60px;
+    }
+
+    .login-input {
+        border-bottom: 4px solid #eee;
+        color: #197096;
+        font-size: 16px;
+        padding: 0;
+        width: 100%;
+        height: 36px;
+        margin-bottom: 18px;
+        font-weight: 600;
+
+        &::placeholder {
+            vertical-align: bottom;
+            color: #aaa;
+            font-weight: 600;
+        }
+    }
+}
+.form-submit {
+    font-size: 14px;
+    font-weight: 700;
+    height: 48px;
+    border-radius: 33px;
+    display: block;
+    width: 100%;
+    max-width: 185px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #fff;
+    background-color: #ff8a47;
+    &:hover {
+        background-color: #ffaa7a;
+    }
+
+    &.disabled {
+        background-color: #cecece;
+        cursor: not-allowed;
+        
+    }
+
+
+}
