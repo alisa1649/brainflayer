@@ -1,14 +1,12 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { login, setLoginModalVisibility } from '../../actions/session_actions';
+import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = (state) => {
-    // console.log("SSSSSS: " + JSON.stringify(state, null, 2))
+const mapStateToProps = ({ errors }) => {
     return {
-        active: state.session,
-        errors: state.errors.session,
+        errors: errors.session,
         formType: 'Log In',
         navLink: <Link to="/signup">Create an account?</Link>,
     };
@@ -17,7 +15,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
-        closeModal: () => dispatch(setLoginModalVisibility(false))
     };
 };
 
