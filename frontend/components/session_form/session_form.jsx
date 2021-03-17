@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from '../interactions/modal';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -37,8 +36,8 @@ class SessionForm extends React.Component {
 
     render() {
         const contents = (
-            <Modal >
-                <div className="login-form-container">
+            <div className="modal-overlay" onClick={this.props.closeModal}>
+                <div className="login-form-container" onClick={e => e.stopPropagation()}>
                     <form onSubmit={this.handleSubmit} className="login-form-box">
                         <h2>{this.props.formType}</h2>
                         <div>{this.renderErrors()}</div>
@@ -62,7 +61,7 @@ class SessionForm extends React.Component {
                         </div>
                     </form>
                 </div>
-            </Modal>
+            </div>
         );
         return this.props.active ? contents : null;
     }

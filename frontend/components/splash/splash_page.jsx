@@ -1,13 +1,12 @@
 import React from 'react';
 import Navbar from '../navbar/navbar';
-import Modal from '../interactions/modal';
 import LoginForm from '../session_form/login_form_container';
 
 class SplashPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showLoginModal: true
+            showLoginModal: false
         }
     }
     render() {
@@ -19,8 +18,8 @@ class SplashPage extends React.Component {
                         this.setState({ showLoginModal: true })
                     }} />
                 <LoginForm
-                    active={true}
-                    onClose={() => this.setState({ showLoginModal: false })}
+                    active={this.state.showLoginModal}
+                    closeModal={() => this.setState({ showLoginModal: false })}
                 />
             </div>
         )
