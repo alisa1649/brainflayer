@@ -4,9 +4,11 @@ import Modal from '../interactions/modal';
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
+        console.log("UUUUUU " + JSON.stringify(props.active, null, 2));
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            active: props.active.isLoginModalVisible
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -36,6 +38,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        console.log(this.state.active);
         const contents = (
             <Modal >
                 <div className="login-form-container">
@@ -64,7 +67,7 @@ class SessionForm extends React.Component {
                 </div>
             </Modal>
         );
-        return this.props.active ? contents : null;
+        return this.state.active ? contents : null;
     }
 }
 

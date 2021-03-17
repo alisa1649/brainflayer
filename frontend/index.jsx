@@ -7,14 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let store;
     if (window.currentUser) {
         const preloadedState = {
-            session: { id: window.currentUser.id },
+            session: {
+                id: window.currentUser.id,
+            },
             users: { [window.currentUser.id]: window.currentUser }
         };
         store = configureStore(preloadedState);
         delete window.currentUser;
-    } else {
-        store = configureStore();
     }
+    else {
+        const preloadedState = {
+            session: {
+                id: null,
+            }
+        };
+        store = configureStore(preloadedState);
+    }
+
     ReactDOM.render(<Root store={store} />, document.getElementById("root"))
 
 
