@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
 
                         <div className="errors">{this.renderErrors()}</div>
                         <div className="links">
-                            {this.props.navLink}
+                            <a href="#" onClick={this.props.onClickNav}>{this.props.navText}</a>
                         </div>
                     </form>
                 </div>
