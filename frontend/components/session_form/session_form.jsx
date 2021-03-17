@@ -40,7 +40,6 @@ class SessionForm extends React.Component {
                 <div className="login-form-container" onClick={e => e.stopPropagation()}>
                     <form onSubmit={this.handleSubmit} className="login-form-box">
                         <h2>{this.props.formType}</h2>
-                        <div>{this.renderErrors()}</div>
                         <input
                             type="text"
                             placeholder="E-mail"
@@ -56,6 +55,8 @@ class SessionForm extends React.Component {
                             className="login-input"
                         />
                         <input className={`form-submit ${this.state.password.length < 1 || this.state.email.length < 1 ? "disabled" : ""}`} type="submit" value={this.props.formType} />
+
+                        <div className="errors">{this.renderErrors()}</div>
                         <div className="links">
                             {this.props.navLink}
                         </div>

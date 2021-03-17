@@ -91,7 +91,7 @@ body, html {
     .links {
         position: absolute;
         bottom: 0;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
         width: 100%;
         text-align: center;
         left: 0;
@@ -123,6 +123,13 @@ body, html {
             color: #aaa;
             font-weight: 600;
         }
+    }
+    .errors {
+        color: #f00;
+        font-style: italic;
+        margin-top: 40px;
+        text-align: center;
+        width: 100%;
     }
 }
 .form-submit {
