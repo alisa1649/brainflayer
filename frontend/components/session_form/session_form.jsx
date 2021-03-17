@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from '../interactions/modal';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -35,36 +36,35 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to BrainFlayer!
-          <br />
-          Please {this.props.formType} or {this.props.navLink}
-                    {this.renderErrors()}
-                    <div className="login-form">
-                        <br />
-                        <label>Email:
-              <input type="text"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                                className="login-input"
-                            />
-                        </label>
-                        <br />
-                        <label>Password:
-              <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        </label>
-                        <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
-                    </div>
-                </form>
-            </div>
+        const contents = (
+            <Modal >
+                <div className="login-form-container">
+                    <form onSubmit={this.handleSubmit} className="login-form-box">
+                        <h2>{this.props.formType}</h2>
+                        <div>{this.renderErrors()}</div>
+                        <input
+                            type="text"
+                            placeholder="E-mail"
+                            value={this.state.email}
+                            onChange={this.update('email')}
+                            className="login-input"
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            className="login-input"
+                        />
+                        <input className={`form-submit ${this.state.password.length < 1 || this.state.email.length < 1 ? "disabled" : ""}`} type="submit" value={this.props.formType} />
+                        <div className="links">
+                            {this.props.navLink}
+                        </div>
+                    </form>
+                </div>
+            </Modal>
         );
+        return this.props.active ? contents : null;
     }
 }
 
