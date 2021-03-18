@@ -66,13 +66,14 @@ class LoginForm extends React.Component {
                 </div>
             </div>
         );
-        return this.props.active ? contents : null;
+        return this.props.visible ? contents : null;
     }
 }
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = (state) => {
     return {
-        errors: errors.session,
+        visible: state.ui.loginVisibility,
+        errors: state.errors.session,
         formType: 'Log In',
         navText: "Create an account?"
     };

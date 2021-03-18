@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -22,5 +23,4 @@ class NavBar extends React.Component {
         )
     }
 }
-
 export default NavBar;
