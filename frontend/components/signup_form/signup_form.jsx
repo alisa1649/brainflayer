@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 import { changeSignupVisibility, changeLoginVisibility } from '../../actions/ui_actions';
 import Modal from '../modal/modal';
+import RoundCheckbox from 'rn-round-checkbox';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -42,23 +43,27 @@ class SignupForm extends React.Component {
         const contents = (
             <Modal closeModal={this.props.closeModal}>
                 <form onSubmit={this.handleSubmit} className="modal-form-box">
-                    <h2>Sign Up</h2>
+                    <h2>Get Started</h2>
                     <input
-                        type="text"
                         placeholder="E-mail"
-                        value={this.state.email}
                         onChange={this.update('email')}
                         className="modal-input"
                     />
                     <input
                         type="password"
                         placeholder="Password"
-                        value={this.state.password}
                         onChange={this.update('password')}
                         className="modal-input"
                     />
-                    <input className={`form-submit ${this.state.password.length < 1 || this.state.email.length < 1 ? "disabled" : ""}`} type="submit" />
+                    <input
+                        type="password"
+                        placeholder="Confirm Password"
+                        onChange={this.update('password')}
+                        className="modal-input"
+                    />
 
+                    <input className={`form-submit ${this.state.password.length < 6 || this.state.email.length < 6 ? "disabled" : ""}`} type="submit" />
+                    <input className="checkbox-value" />
                     <div className="errors">{this.renderErrors()}</div>
                     <div className="links">
                         <a href="#" onClick={this.props.switchModal}>Already have an account?</a>

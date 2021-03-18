@@ -62,6 +62,7 @@ class LoginForm extends React.Component {
                     <div className="errors">{this.renderErrors()}</div>
                     <div className="links">
                         <a href="#" onClick={this.props.switchModal}>Create an account?</a>
+                        <a href="#" className="pseudo-link">Forgot Password?</a>
                     </div>
                 </form>
             </Modal>

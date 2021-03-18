@@ -109,14 +109,46 @@ body, html {
     a {
         color: #3faee0;
     }
+    .modal-x {
+        position: absolute;
+        top: 18px;
+        right: 18px;  
+        color: #777;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {   
+            cursor: pointer;
+            border-radius: 50%;
+            color: #3faee0;
+            background-color: rgba(0,0,0,.1);
+            box-sizing: border-box;
+        }
+        &:before {
+            content: "\F404";
+            font-family: Ionicons;
+            content: "\F404";
+            font-size: 42px;.
+            -webkit-font-smoothing: antialiased;
+        }
+    }
     .links {
         position: absolute;
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 14px;
         bottom: 0;
         margin-bottom: 30px;
         width: 100%;
         text-align: center;
         left: 0;
         right: 0;
+        a:hover {
+            border-bottom: 1px solid #3faee0;
+        }
     }
 
     h2 {
@@ -138,6 +170,9 @@ body, html {
         height: 36px;
         margin-bottom: 18px;
         font-weight: 600;
+        &:focus {
+            border-bottom: 3px solid #3faee0;
+        }
 
         &::placeholder {
             vertical-align: bottom;
