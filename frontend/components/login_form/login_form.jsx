@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
-import { changeLoginVisibility } from '../../actions/ui_actions';
+import { changeLoginVisibility, changeSignupVisibility } from '../../actions/ui_actions';
+import Modal from '../modal/modal';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -39,33 +40,31 @@ class LoginForm extends React.Component {
 
     render() {
         const contents = (
-            <div className="modal-overlay" onClick={this.props.closeModal}>
-                <div className="login-form-container" onClick={e => e.stopPropagation()}>
-                    <form onSubmit={this.handleSubmit} className="login-form-box">
-                        <h2>{this.props.formType}</h2>
-                        <input
-                            type="text"
-                            placeholder="E-mail"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            className="login-input"
-                        />
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            className="login-input"
-                        />
-                        <input className={`form-submit ${this.state.password.length < 1 || this.state.email.length < 1 ? "disabled" : ""}`} type="submit" value={this.props.formType} />
+            <Modal closeModal={this.props.closeModal}>
+                <form onSubmit={this.handleSubmit} className="modal-form-box">
+                    <h2>Log In</h2>
+                    <input
+                        type="text"
+                        placeholder="E-mail"
+                        value={this.state.email}
+                        onChange={this.update('email')}
+                        className="modal-input"
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={this.state.password}
+                        onChange={this.update('password')}
+                        className="modal-input"
+                    />
+                    <input className={`form-submit ${this.state.password.length < 1 || this.state.email.length < 1 ? "disabled" : ""}`} type="submit" />
 
-                        <div className="errors">{this.renderErrors()}</div>
-                        <div className="links">
-                            <a href="#" onClick={this.props.onClickNav}>{this.props.navText}</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
+                    <div className="errors">{this.renderErrors()}</div>
+                    <div className="links">
+                        <a href="#" onClick={this.props.switchModal}>Create an account?</a>
+                    </div>
+                </form>
+            </Modal>
         );
         return this.props.visible ? contents : null;
     }
@@ -74,16 +73,18 @@ class LoginForm extends React.Component {
 const mapStateToProps = (state) => {
     return {
         visible: state.ui.loginVisibility,
-        errors: state.errors.session,
-        formType: 'Log In',
-        navText: "Create an account?"
+        errors: state.errors.session
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
-        closeModal: () => dispatch(changeLoginVisibility(false))
+        closeModal: () => dispatch(changeLoginVisibility(false)),
+        switchModal: () => {
+            dispatch(changeLoginVisibility(false));
+            dispatch(changeSignupVisibility(true));
+        }
     };
 };
 
