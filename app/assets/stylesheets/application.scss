@@ -20,6 +20,7 @@
 body, html {
     font-family: "Open Sans", sans-serif;
 }
+
 #navbar {
     background-color: #fff;
     display: block;
@@ -131,7 +132,7 @@ body, html {
             content: "\F404";
             font-family: Ionicons;
             content: "\F404";
-            font-size: 42px;.
+            font-size: 42px;
             -webkit-font-smoothing: antialiased;
         }
     }
@@ -188,6 +189,7 @@ body, html {
         width: 100%;
     }
 }
+
 .form-submit {
     font-size: 14px;
     font-weight: 700;
@@ -235,3 +237,29 @@ body, html {
         }
     }
 }
+
+.checkbox-container {
+    display: flex;
+    * {
+        box-sizing: border-box;
+    }
+    .checkbox {
+        background-size: contain; 
+        background-image: url(https://www.brainscape.com/assets/icons/checkbox-unchecked.png);
+        width: 20px;
+        height: 20px;
+        &.checked {
+            background-image: url(https://www.brainscape.com/assets/icons/checkbox-checked.png);
+        }
+    }
+    .checkbox-text {
+        margin-left: 8px;
+        text-decoration: underline;
+        color: #3faee0;
+        cursor: pointer;
+        font-size: 14px;
+    }
+}
+
+
+
