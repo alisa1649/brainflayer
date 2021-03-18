@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { login } from '../../actions/session_actions';
 
-class SignupForm extends React.Component {
+class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -68,4 +70,19 @@ class SignupForm extends React.Component {
     }
 }
 
-export default SignupForm;
+const mapStateToProps = ({ errors }) => {
+    return {
+        errors: errors.session,
+        formType: 'Log In',
+        navText: "Create an account?"
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        processForm: (user) => dispatch(login(user)),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+

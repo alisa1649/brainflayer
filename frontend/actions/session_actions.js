@@ -40,6 +40,4 @@ export const logout = () => dispatch => (
     ))
 );
 
-export const closeLoginModal = () => dispatch => (
-    dispatch()
-);
+
