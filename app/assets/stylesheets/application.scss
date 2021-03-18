@@ -17,7 +17,6 @@
 @import "colors";
 
 body, html {
-    background-color: rgb(63, 62, 165);
     font-family: "Open Sans", sans-serif;
 }
 #navbar {
@@ -50,14 +49,25 @@ body, html {
         position: relative;
         margin: 0;
         padding: 0;
+        font-size: 13.25px;
+        font-weight: 600;
 
         .login {
+            color: #393030;
             background-color: #fdf8f7;
-            width: 125px;
-            font-family: sans-serif;
+            width: 123px;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        .upgrade {
+            background-color: #ff8a47; 
+            color: #fff;
+            width: 123px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
         }
     }
 

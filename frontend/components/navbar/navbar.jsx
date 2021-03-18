@@ -13,6 +13,9 @@ class NavBar extends React.Component {
                     <div className="action login" onClick={this.props.openLoginModal}>
                         Log In
                     </div>
+                    <div className="action upgrade" onClick={this.props.openSignupModal}>
+                        Get Started
+                    </div>
                 </div>
             </div>
         )
