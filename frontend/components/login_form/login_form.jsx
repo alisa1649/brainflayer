@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
+import { changeLoginVisibility } from '../../actions/ui_actions';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -82,6 +83,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
+        closeModal: () => dispatch(changeLoginVisibility(false))
     };
 };
 
