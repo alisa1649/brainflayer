@@ -1,8 +1,12 @@
-import * as APIUtil from '../util/session_api_util';
-
 export const CHANGE_LOGIN_VISIBILITY = 'CHANGE_LOGIN_VISIBILITY';
+export const CHANGE_SIGNUP_VISIBILITY = 'CHANGE_SIGNUP_VISIBILITY';
 
-export const changeLoginVisibility = (visibilty) => ({
+export const changeLoginVisibility = (visibility) => ({
     type: CHANGE_LOGIN_VISIBILITY,
-    visibilty
+    visibility: visibility
+});
+
+export const changeSignupVisibility = (visibility) => ({
+    type: CHANGE_SIGNUP_VISIBILITY,
+    visibility: visibility
 });

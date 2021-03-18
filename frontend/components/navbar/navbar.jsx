@@ -1,13 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { changeLoginVisibility, changeSignupVisibility } from '../../actions/ui_actions';
 
 class NavBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showLoginModal: props.showLoginModal
-        };
-    }
     render() {
         return (
             <div id="navbar">
@@ -15,7 +10,7 @@ class NavBar extends React.Component {
                     <div className="logo"></div>
                 </div>
                 <div className="actions">
-                    <div className="action login" onClick={this.props.onClickLogin}>
+                    <div className="action login" onClick={this.props.openLoginModal}>
                         Log In
                     </div>
                 </div>
@@ -23,4 +18,17 @@ class NavBar extends React.Component {
         )
     }
 }
-export default NavBar;
+const mapStateToProps = (state) => {
+    return {
+        // TODO: add current user login status here 
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        openLoginModal: () => dispatch(changeLoginVisibility(true)),
+        openSignupModal: () => dispatch(changeSignupVisibility(true)),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
