@@ -50,8 +50,15 @@ body, html {
         position: relative;
         margin: 0;
         padding: 0;
-        font-size: 13.25px;
         font-weight: 600;
+
+        .action {
+            cursor: pointer;
+            font-size: 13.25px;
+            &:hover {
+                font-size: 13.74px;
+            }
+        }
 
         .login {
             color: #393030;
@@ -60,6 +67,9 @@ body, html {
             display: flex;
             align-items: center;
             justify-content: center;
+            &:hover {
+                background-color: #faf6f6;
+            }
         }
         .upgrade {
             background-color: #ff8a47; 
