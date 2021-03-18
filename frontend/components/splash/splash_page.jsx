@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar/navbar';
-import LoginForm from '../session_form/login_form_container';
-import SignupForm from '../session_form/signup_form_container';
+import LoginForm from '../login_form/login_form';
+import SignupForm from '../signup_form/signup_form';
 
 class SplashPage extends React.Component {
     constructor(props) {
