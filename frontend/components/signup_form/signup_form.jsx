@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 import { changeSignupVisibility, changeLoginVisibility } from '../../actions/ui_actions';
 import Modal from '../modal/modal';
-import RoundCheckbox from 'rn-round-checkbox';
+import Checkbox from "../controls/checkbox";
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -64,6 +64,7 @@ class SignupForm extends React.Component {
 
                     <input className={`form-submit ${this.state.password.length < 6 || this.state.email.length < 6 ? "disabled" : ""}`} type="submit" />
                     <input className="checkbox-value" />
+                    <Checkbox />
                     <div className="errors">{this.renderErrors()}</div>
                     <div className="links">
                         <a href="#" onClick={this.props.switchModal}>Already have an account?</a>
