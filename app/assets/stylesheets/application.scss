@@ -154,6 +154,28 @@ body, html {
         cursor: not-allowed;
         
     }
+}
 
-
+.carousel {
+    .carousel-slide {
+        .overlay {
+            background-color: #19202a;
+            height: 100%;
+            left: 0;
+            opacity: .259;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        &.background-1 {
+            background-image: url(https://www.brainscape.com/assets/cms/marketing/pages/landing/band-1/image-4.jpg);
+            background-position: 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            position: relative;
+            width: 100%;
+            min-width: 100%;
+        }
+    }
 }
