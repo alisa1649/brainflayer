@@ -40,12 +40,12 @@ class NavBar extends React.Component {
                     {
                         this.props.loggedIn
                             ? <div className="actions">
-                                <div className="action account dropdown" onClick={(e) => {
+                                <div className={"action account dropdown" + (this.state.isDropdownVisible ? " highlight" : "")} onClick={(e) => {
                                     e.stopPropagation();
-                                    return this.setState({ isDropdownVisible: true });
+                                    return this.setState({ isDropdownVisible: !this.state.isDropdownVisible });
                                 }} >
-                                    <img class="user-account-image" src="https://brainscape-prod.s3.amazonaws.com/images/avatar_generic_square.png"></img>
-                                    {this.props.email}
+                                    <img className="user-account-image" src="https://brainscape-prod.s3.amazonaws.com/images/avatar_generic_square.png"></img>
+                                    <span className={"account-name-link" + (this.state.isDropdownVisible ? " highlight" : "")}>{this.props.email}</span>
                                     <ul className={this.state.isDropdownVisible ? "dropdown-items" : "dropdown-items hidden"}>
                                         <li className="dropdown-item">
                                             <a href="#">My Account</a>
