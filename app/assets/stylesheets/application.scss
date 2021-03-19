@@ -41,7 +41,7 @@ body, html {
         font-size: 14px;
         margin-right: 4px;
     }
-    
+
     .items {
         display: flex;
         justify-content: flex-end;
@@ -233,11 +233,63 @@ body, html {
         height: 400px;
     }
 
-    .signup-modal-container {
+    &.signup-modal-container {
+        background-image: url(https://www.brainscape.com/assets/auth/registration-modal-bg-3.png);
+        background-position: 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
         color: #333;
-        width: 800px;
-        height: 468px;
+        width: 740px;
+        height: 500px;
+        padding: 30px;
         font-weight: 400;
+        h2 {
+            text-align: left;
+        }
+        .signup-marketing {
+            color: #fff;
+            width: 240px;
+            display: block;
+            position: relative;
+            font-weight: 600;
+            .logo {
+                background-image: url(https://www.brainscape.com/assets/auth/logo-white.png);
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 36px;
+                width: 36px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .bottom {
+                width: 240px;
+                position: absolute;
+                bottom: 0;
+                font-size: 15px;
+                h3 {
+                    font-size: 20px;
+                }
+                ul {
+                    margin-left: 15px;
+                }
+                li {
+                    list-style-type: disc;
+                    margin-bottom: 7px;
+                }
+            }
+        }
+        .modal-signup-form {
+            padding-left: 140px;
+            position: relative;
+        }
+        .registration-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
     .modal-x {
         position: absolute;
@@ -276,6 +328,9 @@ body, html {
         text-align: center;
         left: 0;
         right: 0;
+        a {
+            border-bottom: 1px solid transparent;
+        }
         a:hover {
             border-bottom: 1px solid #3faee0;
         }
