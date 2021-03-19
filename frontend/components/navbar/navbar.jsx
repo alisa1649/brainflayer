@@ -7,7 +7,7 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isDropdownVisible: true
+            isDropdownVisible: false
         }
     }
     componentDidMount() {
@@ -44,6 +44,7 @@ class NavBar extends React.Component {
                                     e.stopPropagation();
                                     return this.setState({ isDropdownVisible: true });
                                 }} >
+                                    <img class="user-account-image" src="https://brainscape-prod.s3.amazonaws.com/images/avatar_generic_square.png"></img>
                                     {this.props.email}
                                     <ul className={this.state.isDropdownVisible ? "dropdown-items" : "dropdown-items hidden"}>
                                         <li className="dropdown-item">
