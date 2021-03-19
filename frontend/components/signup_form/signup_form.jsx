@@ -41,8 +41,8 @@ class SignupForm extends React.Component {
 
     render() {
         const contents = (
-            <Modal closeModal={this.props.closeModal}>
-                <form onSubmit={this.handleSubmit} className="modal-form-box">
+            <Modal className="signup-modal-container" closeModal={this.props.closeModal}>
+                <form onSubmit={this.handleSubmit} className="new-modal-box">
                     <h2>Get Started</h2>
                     <input
                         placeholder="E-mail"

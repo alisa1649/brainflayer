@@ -28,7 +28,11 @@ body, html {
     display: flex;
     justify-content: space-between;
     width: 100%;
-
+    .items {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
     .logo {
         background-image: url(https://www.brainscape.com/assets/cms/marketing/shared/logo.png);
         background-size: contain;
@@ -43,7 +47,27 @@ body, html {
         align-items: center;
         padding-left: 45px;
     }
-
+    .options {
+        display: flex;
+        height: 100%;
+        width: 50%;
+        justify-content: space-evenly;
+        position: relative;
+        margin: 0;
+        font-weight: 600;
+        .option {
+            color: black;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #fff;
+            font-size: 12.44px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin-right: 8px;
+        }
+    }
     .actions {
         display: flex;
         height: 100%;
@@ -60,7 +84,6 @@ body, html {
                 font-size: 13.74px;
             }
         }
-
         .login {
             color: #393030;
             background-color: #fdf8f7;
@@ -79,8 +102,7 @@ body, html {
             display: flex;
             align-items: center;
             justify-content: center;
-
-        }
+        };
     }
 
 }
@@ -97,18 +119,26 @@ body, html {
     z-index: 1500;
     background-color: rgba(0, 0, 0, 0.6);
 }
-
 .modal-form-container {
     background: #fff;
     border-radius: 24px;
-    width: 340px;
-    height: 400px;
     margin: 0 auto;
     padding: 30px;
     position: relative;
     display: flex;
     a {
         color: #3faee0;
+    }
+    &.login-modal-container {
+        width: 340px;
+        height: 400px;
+    }
+
+    .signup-modal-container {
+        color: #333;
+        width: 800px;
+        height: 468px;
+        font-weight: 400;
     }
     .modal-x {
         position: absolute;
