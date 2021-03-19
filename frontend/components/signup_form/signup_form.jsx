@@ -42,7 +42,20 @@ class SignupForm extends React.Component {
     render() {
         const contents = (
             <Modal className="signup-modal-container" closeModal={this.props.closeModal}>
-                <form onSubmit={this.handleSubmit} className="new-modal-box">
+                <div className="signup-marketing">
+                    <div className="logo"></div>
+                    <div className="bottom">
+                        <h3>Start Learning Faster:</h3>
+                        <ul>
+                            <li>Learn anything in half the time, using cognitive science</li>
+                            <li>Add your own digital flashcards</li>
+                            <li>Find millions of other public cards</li>
+                            <li>Sync with mobile app</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <form onSubmit={this.handleSubmit} className="modal-signup-form">
                     <h2>Get Started</h2>
                     <input
                         placeholder="E-mail"
@@ -61,10 +74,10 @@ class SignupForm extends React.Component {
                         onChange={this.update('password')}
                         className="modal-input"
                     />
-
-                    <input className={`form-submit ${this.state.password.length < 6 || this.state.email.length < 6 ? "disabled" : ""}`} type="submit" />
-                    <input className="checkbox-value" />
-                    <Checkbox />
+                    <div className="registration-controls">
+                        <Checkbox text="Accept Terms" />
+                        <input className={`form-submit ${this.state.password.length < 6 || this.state.email.length < 6 ? "disabled" : ""}`} type="submit" value="Register" />
+                    </div>
                     <div className="errors">{this.renderErrors()}</div>
                     <div className="links">
                         <a href="#" onClick={this.props.switchModal}>Already have an account?</a>
