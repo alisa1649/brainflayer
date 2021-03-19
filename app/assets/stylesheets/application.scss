@@ -114,6 +114,17 @@ body, html {
                 background-color: #faf6f6;
             }
         }
+        .account {
+            color: #393030;
+            background-color: #fdf8f7;
+            width: 204px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                background-color: #faf6f6;
+            }
+        }
         .upgrade {
             background-color: #ff8a47; 
             color: #fff;
@@ -122,6 +133,32 @@ body, html {
             align-items: center;
             justify-content: center;
         };
+    }
+    .dropdown {
+        position: relative;
+
+        .dropdown-items {
+            z-index: 7;
+            display: flex;
+            color: #393030;    
+            background-color: hsla(0,0%,100%,.95);
+            // display: none;
+            flex-direction: column;
+            left: 0;
+            position: absolute;
+            top: 80px;
+            width: 100%;
+            animation: dropdownMenuSlide .2s ease-out forwards;
+            a {
+                color: inherit;
+                display: block;
+                font-size: 12px;
+                height: 100%;
+                padding: 12px 18px;
+                text-decoration: none;
+                width: 100%;
+            }
+        }
     }
 
 }
