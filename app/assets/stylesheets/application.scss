@@ -124,8 +124,18 @@ body, html {
             display: flex;
             align-items: center;
             justify-content: center;
+            .user-account-image {
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                margin-right: 12px;
+                border: 2px;
+            }
             &:hover {
                 background-color: #faf6f6;
+                .user-account-image {
+                   border: 2px solid #3faee0;
+                }
             }
         }
         .upgrade {
