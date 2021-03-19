@@ -24,6 +24,7 @@ body, html {
     display: none !important; 
 }
 
+
 #navbar {
     background-color: #fff;
     display: block;
@@ -31,6 +32,16 @@ body, html {
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    .with-search-icon::before {
+        content: "\F4A4";
+        font-family: Ionicons;
+        font-size: 24px;
+        font-style: normal;
+        font-size: 14px;
+        margin-right: 4px;
+    }
+    
     .items {
         display: flex;
         justify-content: flex-end;
@@ -131,15 +142,6 @@ body, html {
                 &:hover, &.highlight {
                     color: #3faee0;
                 }
-                &::after {
-                    content: "\F35F";
-                    font-family: Ionicons;
-                    font-size: 24px;
-                    font-style: normal;
-                    line-height: inherit;
-                    font-size: 15px;
-                    margin-left: 6px;
-                }
             }
             .user-account-image {
                 width: 42px;
@@ -164,8 +166,19 @@ body, html {
             justify-content: center;
         };
     }
+
     .dropdown {
         position: relative;
+        
+        &::after {
+            content: "\F35F";
+            font-family: Ionicons;
+            font-size: 24px;
+            font-style: normal;
+            line-height: inherit;
+            font-size: 15px;
+            margin-left: 6px;
+        }
 
         .dropdown-items {
             z-index: 7;

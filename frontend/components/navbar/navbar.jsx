@@ -23,9 +23,9 @@ class NavBar extends React.Component {
 
                 <span className="items">
                     <div className="options">
-                        <div className="option find-flashcards">
-                            Find Flashcards
-                    </div>
+                        <div className="option dropdown find-flashcards">
+                            <span class="with-search-icon">Find Flashcards</span>
+                        </div>
                         <div className="option make-flashcards">
                             Make Flashcards
                     </div>
@@ -58,7 +58,7 @@ class NavBar extends React.Component {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="action upgrade" onClick={this.props.openSignupModal}>
+                                <div className="action upgrade">
                                     Upgrade To Pro
                             </div>
                             </div>
