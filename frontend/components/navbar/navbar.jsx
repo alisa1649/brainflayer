@@ -4,6 +4,16 @@ import { changeLoginVisibility, changeSignupVisibility } from '../../actions/ui_
 import { logout } from '../../actions/session_actions';
 
 class NavBar extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            isDropdownVisible: true
+        }
+    }
+    componentDidMount() {
+        document.addEventListener("click", () => { this.setState({ isDropdownVisible: false }) });
+    }
+
     render() {
         return (
             <div id="navbar">
@@ -30,9 +40,12 @@ class NavBar extends React.Component {
                     {
                         this.props.loggedIn
                             ? <div className="actions">
-                                <div className="action account dropdown" onClick={this.props.openLoginModal}>
+                                <div className="action account dropdown" onClick={(e) => {
+                                    e.stopPropagation();
+                                    return this.setState({ isDropdownVisible: true });
+                                }} >
                                     {this.props.email}
-                                    <ul className="dropdown-items">
+                                    <ul className={this.state.isDropdownVisible ? "dropdown-items" : "dropdown-items hidden"}>
                                         <li className="dropdown-item">
                                             <a href="#">My Account</a>
                                         </li>
