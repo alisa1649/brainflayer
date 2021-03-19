@@ -40,7 +40,7 @@ class LoginForm extends React.Component {
 
     render() {
         const contents = (
-            <Modal className="login-modal" closeModal={this.props.closeModal}>
+            <Modal className="login-modal-container" closeModal={this.props.closeModal}>
                 <form onSubmit={this.handleSubmit} className="modal-form-box">
                     <h2>Log In</h2>
                     <input

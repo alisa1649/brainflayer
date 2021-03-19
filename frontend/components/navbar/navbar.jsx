@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changeLoginVisibility, changeSignupVisibility } from '../../actions/ui_actions';
+import { logout } from '../../actions/session_actions';
 
 class NavBar extends React.Component {
     render() {
@@ -23,14 +24,25 @@ class NavBar extends React.Component {
                     </div>
                         <div className="option learn-more">
                             More...
-                    </div>
+                        </div>
                     </div>
 
                     {
                         this.props.loggedIn
                             ? <div className="actions">
-                                <div className="action login" onClick={this.props.openLoginModal}>
+                                <div className="action account dropdown" onClick={this.props.openLoginModal}>
                                     {this.props.email}
+                                    <ul className="dropdown-items">
+                                        <li className="dropdown-item">
+                                            <a href="#">My Account</a>
+                                        </li>
+                                        <li className="dropdown-item">
+                                            <a href="#" onClick={(e) => {
+                                                e.stopPropagation();
+                                                this.props.logout();
+                                            }}>Log Out</a>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div className="action upgrade" onClick={this.props.openSignupModal}>
                                     Upgrade To Pro
@@ -53,7 +65,9 @@ class NavBar extends React.Component {
 const mapStateToProps = (state) => {
     return {
         loggedIn: Boolean(state.session.id),
-        email: state.users[state.session.id].email
+        email: state.users[state.session.id]
+            ? state.users[state.session.id].email
+            : ""
     }
 };
 
@@ -61,6 +75,9 @@ const mapDispatchToProps = dispatch => {
     return {
         openLoginModal: () => dispatch(changeLoginVisibility(true)),
         openSignupModal: () => dispatch(changeSignupVisibility(true)),
+        logout: () => {
+            return dispatch(logout())
+        }
     };
 };
 
