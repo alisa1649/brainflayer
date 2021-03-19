@@ -102,7 +102,7 @@ body, html {
         .action {
             cursor: pointer;
             font-size: 13.25px;
-            &:hover {
+            &:not(.account):hover {
                 font-size: 13.74px;
             }
         }
@@ -119,20 +119,37 @@ body, html {
         }
         .account {
             color: #393030;
-            background-color: #fdf8f7;
+            background-color: #fff;
             width: 204px;
+            margin-left: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #fff;
+            .account-name-link {
+                font-weight: 400;
+                &:hover, &.highlight {
+                    color: #3faee0;
+                }
+                &::after {
+                    content: "\F35F";
+                    font-family: Ionicons;
+                    font-size: 24px;
+                    font-style: normal;
+                    line-height: inherit;
+                    font-size: 15px;
+                    margin-left: 6px;
+                }
+            }
             .user-account-image {
                 width: 42px;
                 height: 42px;
                 border-radius: 50%;
                 margin-right: 12px;
-                border: 2px;
+                border: 2px solid transparent;
             }
-            &:hover {
-                background-color: #faf6f6;
+            &:hover, &.highlight {
+                background-color: rgba(0,0,0,.05);
                 .user-account-image {
                    border: 2px solid #3faee0;
                 }
