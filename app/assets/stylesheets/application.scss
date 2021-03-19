@@ -24,6 +24,61 @@ body, html {
     display: none !important; 
 }
 
+.bold {
+    font-weight: 700;
+}
+.button-row {
+    display: flex;
+    align-items: center;
+    .square-button { 
+        font-size: 13.7px;
+        display: flex;  
+        align-items: center;
+        cursor: pointer;
+        background-color: #fff;
+        color: #000;
+        display: inline-flex;
+        font-weight: 600;
+        justify-content: center;
+        line-height: 1.125rem;
+        text-transform: capitalize;
+        transition: background-color .3s ease;
+        margin-right: 40px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        &.blue {
+            background-color: #3faee0;
+            color: #fff;
+        }
+    }
+    .watch-button {
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+        font-size: 13px;
+    }
+    .watch-button:before {
+        content: "\F362";
+        font-family: Ionicons;
+        font-size: 24px;
+        font-style: normal;
+        line-height: inherit;
+        color: #fff;
+        font-size: 66px;
+        margin-right: 16px;
+        transition: color .3s ease
+    } 
+}
+.square-button {
+    width: 250px;
+    height: 80px;
+    background-color: #fff;
+    color: #000;
+    &.blue {
+        background-color: #3faee0;
+        color: #fff;
+    }
+}
 
 #navbar {
     background-color: #fff;
@@ -399,6 +454,27 @@ body, html {
 }
 
 .carousel {
+    position: relative;
+    .marketing {
+        position: absolute;
+        z-index: 10;
+        bottom: 14%;
+        margin-right: 4%;
+        margin-left: 4%;
+        color: #fff;
+        .hero {
+            font-size: 117.3px;
+            font-weight: 500;
+            font-family: "Mont Bold", sans-serif;
+            line-height: 117px;
+        }
+        .hero-sub {
+            font-size: 25px;
+            line-height: 31.75px;;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+    }
     .carousel-slide {
         .overlay {
             background-color: #19202a;
