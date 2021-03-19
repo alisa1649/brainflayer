@@ -80,7 +80,7 @@ class SignupForm extends React.Component {
                     </div>
                     <div className="errors">{this.renderErrors()}</div>
                     <div className="links">
-                        <a href="#" onClick={this.props.switchModal}>Already have an account?</a>
+                        <span className="signup-link"><a href="#" onClick={this.props.switchModal}>Already have an account?</a></span>
                     </div>
                 </form>
             </Modal>

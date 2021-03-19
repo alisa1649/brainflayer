@@ -343,7 +343,11 @@ body, html {
         .registration-controls {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
+        }
+        .signup-link {
+            justify-content: left;
+            margin-right: 120px;
         }
     }
     .modal-x {
@@ -356,6 +360,7 @@ body, html {
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 10;
 
         &:hover {   
             cursor: pointer;
@@ -485,8 +490,7 @@ body, html {
             top: 0;
             width: 100%;
         }
-        &.background-1 {
-            background-image: url(https://www.brainscape.com/assets/cms/marketing/pages/landing/band-1/image-4.jpg);
+        &.carousel-slide {
             background-position: 50%;
             background-size: cover;
             background-repeat: no-repeat;
@@ -494,6 +498,29 @@ body, html {
             position: relative;
             width: 100%;
             min-width: 100%;
+            display: none;
+            transition: left 1.5s ease;
+            &.active {
+                display: block;
+            }
+            &.background-0 {
+                background-image: url(https://www.brainscape.com/assets/cms/marketing/pages/landing/band-1/image-1.jpg);
+            }
+            &.background-1 {
+                background-image: url(https://www.brainscape.com/assets/cms/marketing/pages/landing/band-1/image-2.jpg);
+            }
+            &.background-2 {
+                background-image: url(https://www.brainscape.com/assets/cms/marketing/pages/landing/band-1/image-3.jpg);
+            }
+            &.background-3 {
+                background-image: url(https://www.brainscape.com/assets/cms/marketing/pages/landing/band-1/image-4.jpg);
+            }
+            &.background-4 {
+                background-image: url(https://www.brainscape.com/assets/cms/marketing/pages/landing/band-1/image-5.jpg);
+            }
+            &.background-5 {
+                background-image: url(https://www.brainscape.com/assets/cms/marketing/pages/landing/band-1/image-6.jpg);
+            }
         }
     }
 }

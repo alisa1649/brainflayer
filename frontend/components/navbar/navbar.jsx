@@ -45,7 +45,7 @@ class NavBar extends React.Component {
                                     return this.setState({ isDropdownVisible: !this.state.isDropdownVisible });
                                 }} >
                                     <img className="user-account-image" src="https://brainscape-prod.s3.amazonaws.com/images/avatar_generic_square.png"></img>
-                                    <span className={"account-name-link" + (this.state.isDropdownVisible ? " highlight" : "")}>{this.props.email}</span>
+                                    <span className={"account-name-link" + (this.state.isDropdownVisible ? " highlight" : "")}>{this.props.email.slice(0, this.props.email.indexOf("@"))}</span>
                                     <ul className={this.state.isDropdownVisible ? "dropdown-items" : "dropdown-items hidden"}>
                                         <li className="dropdown-item">
                                             <a href="#">My Account</a>
