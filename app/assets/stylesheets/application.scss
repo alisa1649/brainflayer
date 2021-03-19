@@ -55,6 +55,7 @@ body, html {
         position: relative;
         margin: 0;
         font-weight: 600;
+        cursor: pointer;
         .option {
             color: black;
             padding-left: 10px;
@@ -62,10 +63,28 @@ body, html {
             background-color: #fff;
             font-size: 12.44px;
             display: flex;
+            position: relative;
             text-align: center;
             justify-content: center;
             align-items: center;
             margin-right: 8px;
+            &:before {
+                content: " ";
+                opacity: 0;
+            }
+            &:hover:before {
+                background-color: #8e8e8e;
+                opacity: 100%;
+                transition:opacity 1s;
+                height: 5px;
+                max-width: inherit;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                text-decoration: none;
+                -webkit-animation: fadeIn 1s forwards;
+                animation: fadeIn 1s forwards;
+            }
         }
     }
     .actions {
