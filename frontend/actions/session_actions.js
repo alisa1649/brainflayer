@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/session_api_util';
-import { changeLoginVisibility } from '../actions/ui_actions';
+import { changeLoginVisibility, changeSignupVisibility } from '../actions/ui_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -20,9 +20,10 @@ export const receiveErrors = errors => ({
 });
 
 export const signup = user => dispatch => (
-    APIUtil.signup(user).then(user => (
+    APIUtil.signup(user).then(user => {
         dispatch(receiveCurrentUser(user))
-    ), err => (
+        dispatch(changeSignupVisibility(false))
+    }, err => (
         dispatch(receiveErrors(err.responseJSON))
     ))
 );
