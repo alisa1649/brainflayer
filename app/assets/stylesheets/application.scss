@@ -273,6 +273,10 @@ body, html {
     z-index: 1500;
     background-color: rgba(0, 0, 0, 0.6);
 }
+@keyframes fadeIn {
+    0% {opacity:0; margin-bottom: 150px;}
+    100% {opacity:1; margin-bottom: 0;}
+}
 .modal-form-container {
     background: #fff;
     border-radius: 24px;
@@ -280,6 +284,7 @@ body, html {
     padding: 30px;
     position: relative;
     display: flex;
+    animation: fadeIn ease .5s;
     a {
         color: #3faee0;
     }
