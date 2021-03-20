@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      #TODO: add login(@user) here
+      login(@user)
       render :show, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
