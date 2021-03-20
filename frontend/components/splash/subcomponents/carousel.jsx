@@ -8,6 +8,10 @@ class Carousel extends React.Component {
         }, 3000)
     }
     render() {
+        const slides = [];
+        for (let i = 0; i < 6; i++) {
+            slides.push(i);
+        }
         return (
             <div className="carousel">
                 <div className="marketing">
@@ -19,24 +23,13 @@ class Carousel extends React.Component {
                         <div className="watch-button">Watch Video</div>
                     </div>
                 </div>
-                <div className={"carousel-slide background-0" + (this.state.activePhoto == 0 ? " active" : "")}>
-                    <div className="overlay"></div>
-                </div>
-                <div className={"carousel-slide background-1" + (this.state.activePhoto == 1 ? " active" : "")}>
-                    <div className="overlay"></div>
-                </div>
-                <div className={"carousel-slide background-2" + (this.state.activePhoto == 2 ? " active" : "")}>
-                    <div className="overlay"></div>
-                </div>
-                <div className={"carousel-slide background-3" + (this.state.activePhoto == 3 ? " active" : "")}>
-                    <div className="overlay"></div>
-                </div>
-                <div className={"carousel-slide background-4" + (this.state.activePhoto == 4 ? " active" : "")}>
-                    <div className="overlay"></div>
-                </div>
-                <div className={"carousel-slide background-5" + (this.state.activePhoto == 5 ? " active" : "")}>
-                    <div className="overlay"></div>
-                </div>
+                {
+                    slides.map((i) => (
+                        <div className={`carousel-slide background-${i}` + (this.state.activePhoto == i ? " active" : "") + (this.state.activePhoto == (i + 1) % 6 ? " previous" : "")}>
+                            <div className="overlay"></div>
+                        </div>
+                    ))
+                }
             </div>
         )
     }
