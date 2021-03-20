@@ -103,7 +103,7 @@ body, html {
         width: 100%;
     }
     .logo {
-        background-image: url(https://i.imgur.com/wQE7vOC.png);
+        background-image: url(https://i.imgur.com/Blghx3B.png);
         background-size: contain;
         background-repeat: no-repeat;
         width: 143px;
@@ -460,6 +460,10 @@ body, html {
 
 .carousel {
     position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    min-width: 100%;
     .marketing {
         position: absolute;
         z-index: 10;
@@ -491,17 +495,23 @@ body, html {
             width: 100%;
         }
         &.carousel-slide {
+            left: 100%;
             background-position: 50%;
             background-size: cover;
             background-repeat: no-repeat;
-            height: 100vh;
-            position: relative;
+            height: 100%;
+            position: absolute;
             width: 100%;
             min-width: 100%;
-            display: none;
-            transition: left 1.5s ease;
+            // display: none;
+            &.previous {
+                left: -100%;
+                transition: left 1.5s ease;
+            }
             &.active {
-                display: block;
+            //     display: block;
+                left: 0;
+                transition: left 1.5s ease;
             }
             &.background-0 {
                 background-image: url(https://www.brainscape.com/assets/cms/marketing/pages/landing/band-1/image-1.jpg);
