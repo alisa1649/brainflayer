@@ -1,6 +1,9 @@
 class User < ApplicationRecord
 
   attr_reader :password
+  
+  has_many :decks,
+    foreign_key: :author_id
 
   validates :email, :password_digest, :session_token, presence: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP } 
