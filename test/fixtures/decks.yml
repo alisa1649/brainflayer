@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  objective: MyString
+  title: MyString
+  authorId: MyString
+  integer: MyString
+  icon_url: MyString
+  string: MyString
+
+two:
+  objective: MyString
+  title: MyString
+  authorId: MyString
+  integer: MyString
+  icon_url: MyString
+  string: MyString
