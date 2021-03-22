@@ -18,17 +18,29 @@ class DeckNav extends React.Component {
     render() {
         const content = (
             <div className="deck-nav">
-                <ul>
+                {/* <a href="#" onClick={(e) => {
+                    e.stopPropagation();
+                    this.props.logout();
+                }}>Log Out</a> */}
+
+                <div className="deck-nav-header">
+                    <div className="dashboard-logo"></div>
+                    <div className="profile-container">
+                        <img className="user-account-image" src="https://brainscape-prod.s3.amazonaws.com/images/avatar_generic_square.png"></img>
+                        <div className="user-email">{this.props.email}</div>
+                        <div className="user-stats">0 Total Cards Submitted * 2 Decks Created</div>
+                    </div>
+                    <div className="settings-button">
+                        <i className="fas fa-cog"></i>
+                    </div>
+                </div>
+                {/* <ul>
                     {
                         this.props.decks.map((deck, i) => {
                             return <li key={i}>{deck.title}</li>
                         })
                     }
-                </ul>
-                <a href="#" onClick={(e) => {
-                    e.stopPropagation();
-                    this.props.logout();
-                }}>Log Out</a>
+                </ul> */}
             </div>
         )
 
@@ -45,7 +57,8 @@ class DeckNav extends React.Component {
 const mapStateToProps = (state) => {
     return {
         loggedIn: Boolean(state.session.id),
-        decks: state.decks ? Object.values(state.decks) : []
+        decks: state.decks ? Object.values(state.decks) : [],
+        email: Object.values(state.users)[0].email
     }
 };
 
