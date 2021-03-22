@@ -27,7 +27,7 @@ class NavBar extends React.Component {
                 <span className="items">
                     <div className="options">
                         <div className="option dropdown find-flashcards">
-                            <span class="with-search-icon">Find Flashcards</span>
+                            <span className="with-search-icon">Find Flashcards</span>
                         </div>
                         {
                             this.props.loggedIn
