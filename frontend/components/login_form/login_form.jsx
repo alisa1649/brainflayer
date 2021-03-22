@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import { changeLoginVisibility, changeSignupVisibility } from '../../actions/ui_actions';
 import Modal from '../modal/modal';
@@ -67,12 +68,20 @@ class LoginForm extends React.Component {
                 </form>
             </Modal>
         );
-        return this.props.visible ? contents : null;
+
+        if (this.props.loggedIn) {
+            // this.props.closeModal();
+            return <Redirect to="/dashboard" />
+        }
+        else {
+            return this.props.visible ? contents : null;
+        }
     }
 }
 
 const mapStateToProps = (state) => {
     return {
+        loggedIn: Boolean(state.session.id),
         visible: state.ui.loginVisibility,
         errors: state.errors.session
     };

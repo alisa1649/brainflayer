@@ -30,7 +30,6 @@ export const signup = user => dispatch => (
 
 export const login = user => dispatch => (
     APIUtil.login(user).then(user => {
-        dispatch(changeLoginVisibility(false));
         return dispatch(receiveCurrentUser(user))
     }, err => (
         dispatch(receiveErrors(err.responseJSON))
