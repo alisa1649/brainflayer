@@ -9,6 +9,7 @@ import { render } from 'react-dom';
 class DeckNav extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { activeIdx: 0 }
     }
 
     componentDidMount() {
@@ -38,22 +39,33 @@ class DeckNav extends React.Component {
                     <div className="decks-utils">
                         <div className="classes">MY DECKS({this.props.decks.length})</div>
                         <div className="util-buttons">
-                            <span class="plus-button">
-
-                            </span>
-                            <span class="search-icon">
-                            </span>
+                            <span class="plus-button"></span>
+                            <span class="search-icon"></span>
                         </div>
                     </div>
                     <div className="decks">
                         <ul>
                             {
                                 this.props.decks.map((deck, i) => {
-                                    // TODO: add icons here!
-                                    return <li key={i}>{deck.title}</li>
+                                    return (
+                                        <li className={"deck-bar" + (this.state.activeIdx == i ? " active" : "")} key={i} onClick={() => { this.setState({ activeIdx: i }) }}>
+                                            <div className="deck-icon">
+                                                <img class="pack-icon-image" src="https://s3.amazonaws.com/brainscape-prod/system/pm/017/603/530/active_icons/iphone_3x_retina_161650729620210323-4823-oic2v.png?1616507296" />
+                                            </div>
+                                            <div className="deck-title-container">
+                                                <span className="deck-title">{deck.title}</span>
+                                                <div className="deck-delete"></div>
+                                            </div>
+
+                                        </li>
+                                    )
                                 })
                             }
                         </ul>
+
+
+
+
                         <div className="new">
                             <span class="material-icons">
                                 add
