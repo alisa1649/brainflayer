@@ -171,6 +171,34 @@
                     }
                 }
             }
+            .deck-actions {
+                margin-left: 25px;
+                cursor: pointer;
+                .deck-action:hover {
+                    color: #fff;
+                    opacity: 1;
+                }
+                .deck-action {
+                    opacity: .35;
+                    display: flex;
+                    padding-bottom: 20px;
+                    align-items: center;
+                }
+                .deck-action-text {
+                    margin-left: 30px;
+                    font-size: 12px;
+                    color: rgba(255, 255, 255, 1);
+                }
+                span.add-icon {
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+                span.find-icon {
+                    font-size: 30px;
+                    font-weight:200;
+                    -webkit-font-smoothing: antialiased;
+                }
+            }
         }
     }
 }

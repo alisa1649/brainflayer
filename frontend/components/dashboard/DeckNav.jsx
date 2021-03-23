@@ -62,21 +62,24 @@ class DeckNav extends React.Component {
                                 })
                             }
                         </ul>
+                        <div className="deck-actions">
+                            <div className="deck-action">
+                                <span class="material-icons add-icon">
+                                    add
+                                </span>
+                                <span className="deck-action-text">
+                                    Create New Deck
+                                </span>
+                            </div>
+                            <div className="deck-action">
+                                <span class="material-icons find-icon">
+                                    search
+                                </span>
+                                <span className="deck-action-text">
+                                    Find Flashcards
+                                </span>
 
-
-
-
-                        <div className="new">
-                            <span class="material-icons">
-                                add
-                            </span>
-                            Create New Deck
-                        </div>
-                        <div className="find">
-                            <span class="material-icons">
-                                search
-                            </span>
-                            Find Flashcards
+                            </div>
                         </div>
                     </div>
                 </div>
