@@ -21,27 +21,36 @@ class DeckShow extends React.Component {
             <div className="display-container">
                 <DashboardHeader deck={this.props.deck} />
                 <div className="deck-show">
-                    <div>
-                        <ul>
-                            {
-                                this.props.cards.map((card, i) => (
-                                    <li key={i}>
-                                        <span className="card-title">
-                                            {card.title}
-                                        </span>
-                                        <span className="card-body">
-                                            {card.body}
-                                        </span>
-                                    </li>))
-                            }
-                        </ul>
-
+                    <div className="deck-cards-navbar">
+                        <div className="tab nav-about">
+                            <span id="text">About</span>
+                        </div>
+                        <div className="tab nav-decks active">
+                            <span id="text">Decks ({this.props.cards.length})</span>
+                        </div>
+                        <div className="tab nav-learners">
+                            <span id="text">Learners (1)</span>
+                        </div>
                     </div>
+                    <ul>
+                        {
+                            this.props.cards.map((card, i) => (
+                                <li key={i}>
+                                    <span className="card-title">
+                                        {card.title}
+                                    </span>
+                                    <span className="card-body">
+                                        {card.body}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
             </div>
         )
-    }
-}
+    };
+};
 
 
 const mapStateToProps = (state) => {

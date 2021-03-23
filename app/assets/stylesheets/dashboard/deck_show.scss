@@ -1,0 +1,48 @@
+.deck-show {
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+    .deck-cards-navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: rgba(5, 101, 156, 0.08);
+        border-bottom-color: rgba(46, 64, 86, 0.26);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        .tab {
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            font-size: 14px;
+            width: 100%;
+            font-weight: 400;
+            line-height: 19.6px;
+            text-size-adjust: 100%;
+            color: rgba(70, 80, 94, 0.8);
+            cursor: pointer;
+            border-bottom: 8px solid transparent;
+            &:hover {
+                border-bottom: 8px solid rgba(18,57,108,.18);
+                color: #28a5dc;
+            }
+            &.active {
+                border-bottom: 8px solid rgba(18, 57, 108, 0.36);
+                color: rgb(70, 80, 94);
+                font-weight: 600;
+            }
+
+        }
+    }
+}
+
+
+
+
+
+.deck-cards-navbar {
+    background-color: green;
+    display: flex;
+    height: 42px;
+    width: 100%;
+}
