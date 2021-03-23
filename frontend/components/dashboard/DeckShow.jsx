@@ -19,7 +19,7 @@ class DeckShow extends React.Component {
     render() {
         return (
             <div className="display-container">
-                <DashboardHeader />
+                <DashboardHeader deck={this.props.deck} />
                 <div className="deck-show">
                     <div>
                         <ul>

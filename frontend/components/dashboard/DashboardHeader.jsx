@@ -5,64 +5,35 @@ import { getDecks } from '../../actions/deck_actions';
 import { Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
 import { render } from 'react-dom';
+import DeckNav from './DeckNav';
 
 class DashboardHeader extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.getDecks();
-    }
-
     render() {
         const content = (
             <div className="dash-header">
                 <div className="header-icon-container">
-                    icon here
+                    <img class="pack-icon-image" src="https://s3.amazonaws.com/brainscape-prod/system/pm/017/603/530/active_icons/iphone_3x_retina_161650729620210323-4823-oic2v.png?1616507296" />
+                    <div className="choose-icon-button"></div>
                 </div>
                 <div className="header-text-container">
                     <div className="header-title">
-                        deck title goes here
+                        {this.props.deck ? this.props.deck.title : ""}
                     </div>
                     <div className="creator-name">
-                        author's name goes here
+                        <span className="darker-text">Creator:</span> author's name
                     </div>
                     <div className="header-buttons">
-                        possibly style play/share/elipses buttons here?
                     </div>
                 </div>
             </div>
         )
-        if (this.props.loggedIn) {
-            return content;
-        }
-        else {
-            return <Redirect to="/" />
-        }
+        return content;
     }
 };
 
 
-
-const mapStateToProps = (state) => {
-    return {
-        loggedIn: Boolean(state.session.id),
-        decks: state.decks ? Object.values(state.decks) : [],
-        email: Object.values(state.users)[0].email
-    }
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        getDecks: () => {
-            return dispatch(getDecks())
-        },
-        logout: () => {
-            return dispatch(logout())
-        }
-    };
-};
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(DashboardHeader);
+export default DashboardHeader;
