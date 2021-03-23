@@ -31,17 +31,44 @@ class DeckNav extends React.Component {
                         <div className="user-stats">0 Total Cards Submitted * 2 Decks Created</div>
                     </div>
                     <div className="settings-button">
-                        <i className="fas fa-cog"></i>
+                        <span className="ion-ios-gear"></span>
                     </div>
                 </div>
-                {/* <ul>
-                    {
-                        this.props.decks.map((deck, i) => {
-                            return <li key={i}>{deck.title}</li>
-                        })
-                    }
-                </ul> */}
-            </div>
+                <div className="deck-nav-decks">
+                    <div className="decks-utils">
+                        <div className="classes">MY DECKS({this.props.decks.length})</div>
+                        <div className="util-buttons">
+                            <span class="plus-button">
+
+                            </span>
+                            <span class="search-icon">
+                            </span>
+                        </div>
+                    </div>
+                    <div className="decks">
+                        <ul>
+                            {
+                                this.props.decks.map((deck, i) => {
+                                    // TODO: add icons here!
+                                    return <li key={i}>{deck.title}</li>
+                                })
+                            }
+                        </ul>
+                        <div className="new">
+                            <span class="material-icons">
+                                add
+                            </span>
+                            Create New Deck
+                        </div>
+                        <div className="find">
+                            <span class="material-icons">
+                                search
+                            </span>
+                            Find Flashcards
+                        </div>
+                    </div>
+                </div>
+            </div >
         )
 
         if (this.props.loggedIn) {

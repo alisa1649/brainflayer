@@ -17,7 +17,7 @@
 
 
 .deck-nav {
-    display: flex;
+    display: block;
     background-color: #324054;
     color: hsla(0,0%,100%,.6);
     height: 100vh;
@@ -27,16 +27,21 @@
     min-width: 340px;
     padding: 0;
     position: relative;
-    .fas.fa-cog {
-        font-size: 24px;
+    padding: 30px;
+    box-sizing: border-box;
+    .ion-ios-gear::before {
+        content: "\F43D";
+        font-family: Ionicons;
         cursor: pointer;
+        -webkit-font-smoothing: antialiased;
+        font-size: 30px;
+        color: rgba(255, 255, 255, 0.4);
     }
     .deck-nav-header {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        height: 200px;
-        padding: 30px;
+        margin-bottom: 20px;
         .profile-container {
             text-align: center;
             .user-account-image {
@@ -63,6 +68,49 @@
                 text-align: center;    
                 cursor: pointer;
             }
+        }
+    }
+    .deck-nav-decks {
+        font-family: Proxima Nova, sans-serif;
+        height: 200px; // todo remove
+        width: 100%;
+        color: rgba(255, 255, 255, 0.8);
+        .decks-utils {
+            font-size: 15px;
+            font-weight: 300;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(128, 134, 147, 0.44);
+            align-items: center;
+            padding-bottom: 6px;
+            // padding: 10px;
+            .classes {
+                display: flex;
+            }
+            .util-buttons {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                font-family: Ionicons;
+                -webkit-font-smoothing: antialiased;
+                font-size: 30px;
+                font-style: normal;
+                margin-right: 4px;
+                color: rgba(255, 255, 255, 0.8);
+                .plus-button::before {
+                    margin-right: 8px;
+                    content: "\F489"; 
+                    font-size: 40px;
+                }
+                .search-icon::before {
+                    content: "\F4A5";
+                    margin-left: 15px;
+                }
+            }
+        }
+        .decks {
+            text-transform: capitalize;
+            padding: 8px;
         }
     }
 }
