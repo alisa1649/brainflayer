@@ -18,7 +18,7 @@ class Api::DecksController < ApplicationController
   end
 
   def show
-    @deck = Deck.includes(:cards).find(params[:id])
+    @deck = Deck.includes(:cards, :author).find(params[:id])
     
   end
 

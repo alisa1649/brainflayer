@@ -5,4 +5,10 @@ json.deck do
             json.partial! '/api/cards/card', card: card
         end
     end
+    json.author do
+        json.extract! @deck.author, :email
+        # json.set! @deck.author.id do
+        #     json.extract! @deck.author, :email
+        # end
+    end
 end
