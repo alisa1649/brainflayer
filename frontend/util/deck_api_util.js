@@ -4,3 +4,10 @@ export const fetchDecks = () => (
         url: '/api/decks'
     })
 );
+
+export const fetchDeck = (deckId) => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/decks/${deckId}`
+    })
+};

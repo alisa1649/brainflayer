@@ -1,5 +1,5 @@
 import {
-    RECEIVE_DECKS,
+    RECEIVE_DECKS
 } from '../actions/deck_actions';
 
 const decksReducer = (state = {}, action) => {

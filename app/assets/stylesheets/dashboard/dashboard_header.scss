@@ -1,14 +1,12 @@
-.dashboard {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-}
-.dash-header {
-    box-sizing: border-box;
-    display: block;
-    flex-direction: column;
-    height: 244px;
-    width: 938px;
+.display-container {
+    width: 100%;
+    height: 100%;
+    .dash-header {
+        box-sizing: border-box;
+        display: block;
+        flex-direction: column;
+        height: 244px;
+        width: 100%;
     .header-icon-container {
 
     }
@@ -18,7 +16,9 @@
 
         }
         .creator-name {
-            
+
         }
     }
+
+}
 }
