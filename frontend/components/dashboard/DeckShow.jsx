@@ -9,6 +9,7 @@ import { render } from 'react-dom';
 import DashboardHeader from './DashboardHeader';
 import Modal from '../modal/modal';
 import { changeNewDeckVisibility, changeNewCardVisibility } from '../../actions/ui_actions';
+import CardItem from '../../../app/assets/stylesheets/dashboard/card_item';
 
 
 class DeckShow extends React.Component {
@@ -60,26 +61,7 @@ class DeckShow extends React.Component {
                         </li>
                         {
                             this.props.cards.map((card, i) => (
-                                <li className="deck-item" key={i}>
-                                    <div className="round-icon-container">
-                                        <div className="round-icon">
-                                        </div>
-                                    </div>
-                                    <div className="card-icon material-icons">
-                                        article
-                                    </div>
-                                    <div className="card-details">
-                                        <div className="card-title-container">
-                                            <span className="card-title">
-                                                {card.title}
-                                            </span>
-                                            <p className="deck-item-caption">
-                                                0 of 3 unique cards studied
-                                            </p>
-                                        </div>
-                                        <div className="item-bar"></div>
-                                    </div>
-                                </li>
+                                <CardItem card={card} key={i} />
                             ))
                         }
                         <li className="deck-item deck-item-footer" key={-2} onClick={this.props.openNewCardModal}>

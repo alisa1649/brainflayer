@@ -63,6 +63,9 @@
             background-color: #eef7ff;
             .card-icon {
                 color: rgb(40, 165, 220);
+                &.flipped {
+                    color: #ff8a47;
+                }
             }
             &.deck-item-footer {
                 .card-title { color: rgb(40, 165, 220); }
@@ -170,6 +173,32 @@
         &.deck-item-footer {
             .card-title { color: #ccc; }
             .item-bar { background-color: #eee; }
+        }
+        .card-delete {
+            box-sizing: border-box;
+            display: flex;
+            background-color: rgb(255, 138, 71);
+            height: 30px;
+            width: 90px;
+            cursor: pointer;
+            border-radius: 36px;
+            margin-left: auto;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+            line-height: 1.4;
+            transition: all .3s;
+            &:hover {
+                background-color: #ffaa7a;
+            }
+            .delete-text {
+                font-size: 14px;
+                font-weight: 400;
+                text-align: right;
+                color: rgb(255, 255, 255);
+                font-weight: 400;
+
+            }
         }
     }
     .item-bar {
