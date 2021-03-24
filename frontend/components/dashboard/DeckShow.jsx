@@ -7,6 +7,9 @@ import { Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
 import { render } from 'react-dom';
 import DashboardHeader from './DashboardHeader';
+import Modal from '../modal/modal';
+import { changeNewDeckVisibility, changeNewCardVisibility } from '../../actions/ui_actions';
+
 
 class DeckShow extends React.Component {
     constructor(props) {
@@ -33,7 +36,7 @@ class DeckShow extends React.Component {
                         </div>
                     </div>
                     {/* <div className="cards-title">Cards</div> */}
-                    <ul>
+                    <ul className="deck-list">
                         <li className="deck-item deck-item-header" key={-1}>
                             <div className="round-icon-container">
                                 <div className="round-icon"></div>
@@ -79,10 +82,9 @@ class DeckShow extends React.Component {
                                 </li>
                             ))
                         }
-                        <li className="deck-item deck-item-footer" key={-2}>
+                        <li className="deck-item deck-item-footer" key={-2} onClick={this.props.openNewCardModal}>
                             <div className="round-icon-container">
-                                <div className="round-icon" style={{ visibility: "hidden" }}>
-                                </div>
+                                <div className="round-icon" style={{ visibility: "hidden" }}></div>
                             </div>
                             <div className="card-icon material-icons">
                                 add
@@ -90,7 +92,7 @@ class DeckShow extends React.Component {
                             <div className="card-details">
                                 <div className="card-title-container">
                                     <span className="card-title">
-                                        Create New Deck
+                                        Add Card to Deck
                                     </span>
                                 </div>
                                 <div className="item-bar"></div>
@@ -98,7 +100,7 @@ class DeckShow extends React.Component {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div >
         )
     };
 };
@@ -115,7 +117,9 @@ const mapDispatchToProps = dispatch => {
     return {
         getActiveDeck: (deckId) => {
             return dispatch(getActiveDeck(deckId))
-        }
+        },
+        openNewCardModal: () => dispatch(changeNewCardVisibility(true)),
+        openNewDeckModal: () => dispatch(changeNewDeckVisibility(true))
     };
 };
 

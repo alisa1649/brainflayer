@@ -1,7 +1,7 @@
 .deck-show {
     display: flex;
     flex-direction: column;
-    height: 430px;
+    height: calc(100% - 202px);
     .deck-cards-navbar {
         flex-direction: row;
         justify-content: space-between;
@@ -33,6 +33,10 @@
             }
 
         }
+    }
+    .deck-list {
+        overflow-y: scroll;
+        height: 100%;
     }
     .deck-item {
         cursor: pointer;

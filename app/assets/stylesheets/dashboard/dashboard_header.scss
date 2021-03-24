@@ -1,5 +1,5 @@
 .display-container {
-    width: 100%;
+    width: calc(100% - 340px);
     height: 100%;
     font-family: Proxima Nova,sans-serif;
    
@@ -8,6 +8,8 @@
         display: flex;
         width: 100%;
         padding: 36px;
+        height: 202px;
+        box-sizing: border-box;
         .header-text-container {
             text-align: left;
             color: rgb(40, 165, 220);

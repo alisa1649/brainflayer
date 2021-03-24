@@ -3,7 +3,7 @@ class Api::CardsController < ApplicationController
   
   def create
     @card = Card.new(card_params)
-    # TODO: put deck index here?? Nested
+    @card.deck_id = params[:deck_id] 
     
     if @card.save!
       render :show, status: :created
@@ -20,6 +20,6 @@ class Api::CardsController < ApplicationController
 
 
    def card_params
-    params.require(:card).permit(:title, :body, :deck_id)
+    params.require(:card).permit(:title, :body)
   end
 end

@@ -24,3 +24,9 @@ export const getDeck = (deckId) => dispatch => (
         return dispatch(receiveDeck(deck))
     })
 );
+
+export const createDeck = deck => dispatch => (
+    APIUtil.createDeck(deck).then(deck => (
+        dispatch(receiveDeck(deck))
+    ))
+);
