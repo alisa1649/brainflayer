@@ -34,20 +34,68 @@ class DeckShow extends React.Component {
                     </div>
                     {/* <div className="cards-title">Cards</div> */}
                     <ul>
+                        <li className="deck-item deck-item-header" key={-1}>
+                            <div className="round-icon-container">
+                                <div className="round-icon"></div>
+                                <div>CARDS</div>
+                            </div>
+                            <div className="study-button">
+                                <div className="inner-study-button">
+                                </div>
+                                <div className="study-button-text">
+                                    Study 0 cards
+                                </div>
+                            </div>
+                            <div class="deck-links">
+                                <a href="#">
+                                    <span className="material-icons">
+                                        mode_edit
+                                    </span>
+                                    <span className="deck-link-text">Edit Cards</span>
+                                </a>
+                            </div>
+                        </li>
                         {
                             this.props.cards.map((card, i) => (
                                 <li className="deck-item" key={i}>
-                                    <div className="round-icon">
+                                    <div className="round-icon-container">
+                                        <div className="round-icon">
+                                        </div>
                                     </div>
-                                    <span className="card-title">
-                                        {card.title}
-                                    </span>
-                                    {/* <span className="card-body">
-                                        {card.body}
-                                    </span> */}
+                                    <div className="card-icon material-icons">
+                                        article
+                                    </div>
+                                    <div className="card-details">
+                                        <div className="card-title-container">
+                                            <span className="card-title">
+                                                {card.title}
+                                            </span>
+                                            <p className="deck-item-caption">
+                                                0 of 3 unique cards studied
+                                            </p>
+                                        </div>
+                                        <div className="item-bar"></div>
+                                    </div>
                                 </li>
                             ))
                         }
+                        <li className="deck-item deck-item-footer" key={-2}>
+                            <div className="round-icon-container">
+                                <div className="round-icon" style={{ visibility: "hidden" }}>
+                                </div>
+                            </div>
+                            <div className="card-icon material-icons">
+                                add
+                            </div>
+                            <div className="card-details">
+                                <div className="card-title-container">
+                                    <span className="card-title">
+                                        Create New Deck
+                                    </span>
+                                </div>
+                                <div className="item-bar"></div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

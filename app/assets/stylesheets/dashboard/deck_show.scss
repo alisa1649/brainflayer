@@ -35,31 +35,145 @@
         }
     }
     .deck-item {
+        cursor: pointer;
         text-transform: capitalize;
+        text-size-adjust: 100%;
+        color: #28a5dc;
+        line-height: 19.8px;
+        margin-right: 18px;
+        font-size: 18px;
+        font-weight: 600;
         align-items: center;
         box-sizing: border-box;
         display: flex;
-        height: 85px;
-        padding-bottom: 12px;
+        height: 93px;
+        padding-bottom: 24px;
         padding-left: 42px;
         padding-right: 42px;
-        padding-top: 36px;
+        padding-top: 24px;
         position: relative;
-        color: rgb(51, 51, 51);
         border-bottom-color: rgb(204, 204, 204);
         border-bottom-style: solid;
         border-bottom-width: 1px;
-        .round-icon {
-            cursor: pointer;
-            font-size: 14px;
-            width: 20px;
-            height: 20px;
-            background-image: url(http://www.brainscape.com/assets/icons/checkbox-unchecked.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: 50%;
-            margin-right: 24px;
+        &:hover {
+            background-color: #eef7ff;
+            .card-icon {
+                color: rgb(40, 165, 220);
+            }
+            &.deck-item-footer {
+                .card-title { color: rgb(40, 165, 220); }
+                .item-bar { background-color: rgba(0,175,247,.16); }
+            }
         }
+        &.deck-item-header {
+            cursor:default;
+            font-size: 13px;
+            font-weight: 400;
+            color: #333;
+            padding-top:5px;
+            padding-bottom:5px;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            .study-button {
+                background-color: #cecece;
+                margin-left: 30px;
+                border-radius: 24px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                height: 36px;
+                font-size: 16px;
+                justify-content: space-between;
+                padding: 0 3px 0 36px;
+                width: 32vw;
+                position: relative;
+                .inner-study-button {
+                    align-items: center;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    display: flex;
+                    height: 22px;
+                    justify-content: center;
+                    width: 22px;
+                    left: 10px;
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    &::before {
+                        color: #28a5dc;
+                        content: "\F488";
+                        font-family: Ionicons;
+                        font-size: 18px;
+                        font-style: normal;
+                        margin-left: 3px;
+                        margin-top: 1px;
+                    }
+                }
+                .study-button-text {
+                    color: #fff;
+                    flex: 1;
+                    text-align: center;
+                }
+            }
+            .deck-links {
+                font-size: 14px;
+                a {
+                    display: flex;
+                    align-items: center;
+                }
+                .deck-link-text {
+                }
+            }
+        }
+        .round-icon-container {
+            display: flex;
+            align-items: center;
+            .round-icon {
+                cursor: pointer;
+                font-size: 14px;
+                width: 20px;
+                height: 20px;
+                background-image: url(http://www.brainscape.com/assets/icons/checkbox-unchecked.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50%;
+                margin-right: 24px;
+            }
+        }
+        .card-icon {
+            font-size: 42px;
+            color: #ddd;
+        }
+        .card-details {
+            display: flex;
+            flex-direction: column;
+            margin-left: 30px;
+            .card-title-container {
+                display: flex;
+                flex-direction: row;
+            }
+            .card-title {
+                margin-right: 18px;
+            }
+            .deck-item-caption {
+                text-transform: none;
+                color: rgb(153, 153, 153);
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+        &.deck-item-footer {
+            .card-title { color: #ccc; }
+            .item-bar { background-color: #eee; }
+        }
+    }
+    .item-bar {
+        margin-top: 6px;
+        height: 10px;
+        width: 30vw;
+        // background-color: rgb(41, 165, 220);
+        background-color: rgba(0,175,247,.16);
     }
 }
 
