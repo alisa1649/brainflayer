@@ -26,6 +26,7 @@ class NewCardForm extends React.Component {
         e.preventDefault();
         const card = Object.assign({}, this.state);
         this.props.processForm(this.props.deckId, card);
+        this.props.closeModal();
     }
 
     render() {

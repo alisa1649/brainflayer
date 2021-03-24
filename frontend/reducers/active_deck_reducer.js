@@ -10,7 +10,12 @@ const ActiveDeckReducer = (state = {}, action) => {
         case RECEIVE_ACTIVE_DECK:
             return action.deck;
         case RECEIVE_CARD:
-            return Object.assign({}, state, action.card);
+            const existingCards = state.deck.cards;
+            const newCards = [...existingCards, action.card];
+            const newDeck = Object.assign({}, state.deck, { cards: newCards });
+            const oldActiveDeck = state;
+            const newActiveDeck = Object.assign({}, oldActiveDeck, { deck: newDeck })
+            return newActiveDeck;
         default:
             return state;
     }
