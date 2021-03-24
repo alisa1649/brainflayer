@@ -9,7 +9,7 @@ import { render } from 'react-dom';
 import DashboardHeader from './DashboardHeader';
 import Modal from '../modal/modal';
 import { changeNewDeckVisibility, changeNewCardVisibility } from '../../actions/ui_actions';
-import CardItem from '../../../app/assets/stylesheets/dashboard/card_item';
+import CardItem from './CardItem';
 
 
 class DeckShow extends React.Component {
