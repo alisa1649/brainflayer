@@ -32,16 +32,19 @@ class DeckShow extends React.Component {
                             <span id="text">Learners (1)</span>
                         </div>
                     </div>
+                    {/* <div className="cards-title">Cards</div> */}
                     <ul>
                         {
                             this.props.cards.map((card, i) => (
-                                <li key={i}>
+                                <li className="deck-item" key={i}>
+                                    <div className="round-icon">
+                                    </div>
                                     <span className="card-title">
                                         {card.title}
                                     </span>
-                                    <span className="card-body">
+                                    {/* <span className="card-body">
                                         {card.body}
-                                    </span>
+                                    </span> */}
                                 </li>
                             ))
                         }
