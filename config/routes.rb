@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :decks do 
       resources :cards, only: [:create, :show]
     end
+    resources :cards, only: [:destroy]
     resources :tags, only: [:index]
   end
 end
