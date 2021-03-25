@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { getDecks } from '../../actions/deck_actions';
+import { deleteDeck, getDecks } from '../../actions/deck_actions';
 import { Redirect } from 'react-router-dom';
 import { changeNewDeckVisibility } from '../../actions/ui_actions';
+import { Link } from 'react-router-dom';
 
 class DeckNav extends React.Component {
     constructor(props) {
@@ -19,6 +20,10 @@ class DeckNav extends React.Component {
     componentDidMount() {
         this.props.getDecks();
         document.addEventListener("click", this.hideDropdown);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("click", this.hideDropdown);
     }
 
     toggleDropdown(e) {
@@ -43,7 +48,7 @@ class DeckNav extends React.Component {
                 }}>Log Out</a> */}
 
                 <div className="deck-nav-header">
-                    <div className="dashboard-logo"></div>
+                    <Link to="/landing" className="dashboard-logo"></Link>
                     <div className="profile-container">
                         <img className="user-account-image" src="https://brainscape-prod.s3.amazonaws.com/images/avatar_generic_square.png"></img>
                         <div className="user-email">{this.props.email}</div>
@@ -77,7 +82,7 @@ class DeckNav extends React.Component {
                                             </div>
                                             <div className="deck-title-container">
                                                 <span className="deck-title">{deck.title}</span>
-                                                <div className="deck-delete"></div>
+                                                <div className="deck-delete" onClick={() => { this.props.removeDeck(deck) }}></div>
                                             </div>
 
                                         </li>
@@ -132,11 +137,14 @@ const mapDispatchToProps = dispatch => {
         getDecks: () => {
             return dispatch(getDecks())
         },
+        removeDeck: (deck) => {
+            return dispatch(deleteDeck(deck.id))
+        },
         logout: () => {
             return dispatch(logout())
         },
-        openNewDeckModal: () => dispatch(changeNewDeckVisibility(true)),
-    };
+        openNewDeckModal: () => dispatch(changeNewDeckVisibility(true))
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckNav);

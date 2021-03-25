@@ -69,8 +69,7 @@ class LoginForm extends React.Component {
             </Modal>
         );
 
-        if (this.props.loggedIn) {
-            // this.props.closeModal();
+        if (this.props.loggedIn && this.props.visible) {
             return <Redirect to="/dashboard" />
         }
         else {

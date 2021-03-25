@@ -34,3 +34,10 @@ export const removeCard = cardId => {
         url: `/api/cards/${cardId}`
     })
 };
+
+export const removeDeck = deckId => {
+    return $.ajax({
+        method: 'DELETE',
+        url: `/api/decks/${deckId}`
+    })
+};
