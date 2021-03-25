@@ -27,3 +27,10 @@ export const createDeck = deck => {
         data: { deck }
     })
 };
+
+export const removeCard = cardId => {
+    return $.ajax({
+        method: 'DELETE',
+        url: `/api/cards/${cardId}`
+    })
+};

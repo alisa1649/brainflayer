@@ -174,7 +174,7 @@
             .card-title { color: #ccc; }
             .item-bar { background-color: #eee; }
         }
-        .card-delete {
+        .card-flip {
             box-sizing: border-box;
             display: flex;
             background-color: rgb(255, 138, 71);
@@ -188,10 +188,11 @@
             transition: all .3s;
             line-height: 1.4;
             transition: all .3s;
+            margin-right: 25px;
             &:hover {
                 background-color: #ffaa7a;
             }
-            .delete-text {
+            .flip-text {
                 font-size: 14px;
                 font-weight: 400;
                 text-align: right;
@@ -200,12 +201,22 @@
 
             }
         }
+        .material-icons.card-action-icon {
+            color: rgba(124, 130, 141, 0.5);
+            font-size: 28px;
+            padding: 5px;
+        &:hover {
+            color:rgb(40, 165, 220);
+            background-color: rgba(0,0,0,.08);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        }
     }
     .item-bar {
         margin-top: 6px;
         height: 10px;
         width: 30vw;
-        // background-color: rgb(41, 165, 220);
         background-color: rgba(0,175,247,.16);
     }
 }

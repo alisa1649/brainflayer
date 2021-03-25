@@ -1,1 +1,1 @@
-json.extract! card, :title, :body
+json.extract! card, :id, :title, :body

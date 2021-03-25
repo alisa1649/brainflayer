@@ -1,5 +1,7 @@
 class Api::CardsController < ApplicationController
   before_action :require_logged_in, only: [:create, :destroy]
+
+  # TODO: verify that only card/deck owner can edit/delete decks
   
   def create
     @card = Card.new(card_params)

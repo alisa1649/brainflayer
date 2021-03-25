@@ -27,10 +27,13 @@ class CardItem extends React.Component {
                     </div>
                     <div className={"item-bar" + (this.state.isFlipped ? " hidden" : "")}></div>
                 </div>
-                <div className="card-delete">
-                    <div className="delete-text" onClick={() => this.setState({ isFlipped: !this.state.isFlipped })} >
+                <div className="card-flip">
+                    <div className="flip-text" onClick={() => this.setState({ isFlipped: !this.state.isFlipped })} >
                         Flip Card
                     </div>
+                </div>
+                <div className={"material-icons card-action-icon" + (this.state.isFlipped ? " hidden2" : "")} onClick={() => this.props.deleteCard(card.id)}>
+                    delete
                 </div>
             </li>
         )

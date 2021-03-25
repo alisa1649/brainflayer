@@ -1,13 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
-import { getDecks } from '../../actions/deck_actions';
-import { getActiveDeck } from '../../actions/active_deck_actions';
-import { Redirect } from 'react-router-dom';
-import { useEffect } from 'react';
-import { render } from 'react-dom';
+import { deleteCard, getActiveDeck } from '../../actions/active_deck_actions';
 import DashboardHeader from './DashboardHeader';
-import Modal from '../modal/modal';
 import { changeNewDeckVisibility, changeNewCardVisibility } from '../../actions/ui_actions';
 import CardItem from './CardItem';
 
@@ -61,7 +55,7 @@ class DeckShow extends React.Component {
                         </li>
                         {
                             this.props.cards.map((card, i) => (
-                                <CardItem card={card} key={i} />
+                                <CardItem card={card} key={i} deleteCard={this.props.deleteCard} />
                             ))
                         }
                         <li className="deck-item deck-item-footer" key={-2} onClick={this.props.openNewCardModal}>
@@ -97,11 +91,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getActiveDeck: (deckId) => {
-            return dispatch(getActiveDeck(deckId))
-        },
+        getActiveDeck: (deckId) => dispatch(getActiveDeck(deckId)),
         openNewCardModal: () => dispatch(changeNewCardVisibility(true)),
-        openNewDeckModal: () => dispatch(changeNewDeckVisibility(true))
+        openNewDeckModal: () => dispatch(changeNewDeckVisibility(true)),
+        deleteCard: (cardId) => {
+            console.log('BBBBBB: ' + cardId); dispatch(deleteCard(cardId));
+        }
     };
 };
 
