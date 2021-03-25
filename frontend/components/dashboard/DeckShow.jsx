@@ -11,9 +11,6 @@ class DeckShow extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.getActiveDeck(1);
-    }
     render() {
         return (
             <div className="display-container">
@@ -24,7 +21,7 @@ class DeckShow extends React.Component {
                             <span id="text">About</span>
                         </div>
                         <div className="tab nav-decks active">
-                            <span id="text">Decks ({this.props.cards.length})</span>
+                            <span id="text">Cards ({this.props.cards.length})</span>
                         </div>
                         <div className="tab nav-learners">
                             <span id="text">Learners (1)</span>
