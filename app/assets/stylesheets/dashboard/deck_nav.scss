@@ -23,13 +23,70 @@
     position: relative;
     padding: 30px;
     box-sizing: border-box;
-    .ion-ios-gear::before {
-        content: "\F43D";
-        font-family: Ionicons;
-        cursor: pointer;
-        -webkit-font-smoothing: antialiased;
-        font-size: 30px;
-        color: rgba(255, 255, 255, 0.4);
+    .settings-button {
+        position: relative;
+        .settings-dropdown {
+            position: absolute;
+            display: block;
+            width: 176px;
+            background-color: #f4f6f6;
+            border: 1px solid rgba(0,0,0,.15);
+            border-radius: 4px;
+            z-index:100;
+            top: 50px;
+            left: -12px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            &::before {
+                content: "\F365";
+                font-family: Ionicons;
+                font-size: 44px;
+                position: absolute;
+                line-height: 10px;
+                left: 12px;    
+                color: #f4f6f6;
+                top: -9px;
+                z-index: 100;
+            }
+            li {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                color: #222;
+                font-size: 14px;
+                width:100%;
+                line-height: 32px;
+                padding-left: 10px;
+                padding-right: 10px;
+                &:hover {
+                    background-color: #5aa6d6;
+                    color: #fff;
+                    &::before {
+                        color: #fff;
+                    }
+                }
+                &::before {
+                    content: "\F29F";
+                    font-family: Ionicons;
+                    font-size: 24px;
+                    font-style: normal;
+                    line-height: inherit;
+                    font-size: 20px;
+                    left: 15px;
+                    color: #999;
+                    margin-right: 15px;
+                }
+            }
+        }
+        .ion-ios-gear::before {
+            content: "\F43D";
+            font-family: Ionicons;
+            cursor: pointer;
+            -webkit-font-smoothing: antialiased;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.4);
+        }
     }
     .deck-nav-header {
         display: flex;

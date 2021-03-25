@@ -9,11 +9,30 @@ import { render } from 'react-dom';
 class DeckNav extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { activeIdx: 0 }
+        this.state = {
+            activeIdx: 0,
+            isSettingsVisible: false
+        }
+        this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.hideDropdown = this.hideDropdown.bind(this);
     }
 
     componentDidMount() {
         this.props.getDecks();
+        document.addEventListener("click", this.hideDropdown);
+    }
+
+    toggleDropdown(e) {
+        e.stopPropagation();
+        this.setState({
+            isSettingsVisible: !this.state.isSettingsVisible
+        })
+    }
+
+    hideDropdown() {
+        this.setState({
+            isSettingsVisible: false
+        })
     }
 
     render() {
@@ -31,8 +50,13 @@ class DeckNav extends React.Component {
                         <div className="user-email">{this.props.email}</div>
                         <div className="user-stats">0 Total Cards Submitted * 2 Decks Created</div>
                     </div>
-                    <div className="settings-button">
+                    <div className="settings-button" onClick={this.toggleDropdown}>
                         <span className="ion-ios-gear"></span>
+                        <div className={"settings-dropdown" + (this.state.isSettingsVisible ? "" : " hidden")}>
+                            <ul>
+                                <li class="logout" onClick={this.props.logout}>Log Out</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div className="deck-nav-decks">
