@@ -14,12 +14,12 @@ class Api::DecksController < ApplicationController
 
   def index
     @decks = current_user.decks
-    render json: @decks
+    render :index
   end
 
   def show
-    @deck = Deck.find(params[:id])
-    #TODO: add associated cards here
+    @deck = Deck.includes(:cards, :author).find(params[:id])
+    
   end
 
   def destroy

@@ -1,0 +1,28 @@
+
+// @keyframes fadeIn {
+//     0% {opacity:0; margin-bottom: 150px;}
+//     100% {opacity:1; margin-bottom: 0;}
+// }
+.modal-form-container.new-card-modal-container {
+    width: 540px;
+    height: auto;
+    .modal-input {
+        border: solid 2px rgba(25, 112, 150, 0.3);
+        border-radius: 6px;
+        padding: 12px 12px 18px 18px;
+        box-sizing: border-box;
+        height: auto;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .notes {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16.8px;
+        text-align: center;
+        color: rgb(119, 119, 119);
+        margin-bottom: 30px;
+    }
+}
+
+

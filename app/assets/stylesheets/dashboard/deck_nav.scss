@@ -1,0 +1,264 @@
+.dashboard-logo {
+    display: flex;
+    background-image: url(https://i.imgur.com/i1U3e2r.png);
+    height: 30px;
+    width: 30px;
+    // align-self: flex-start;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+.deck-nav {
+    display: block;
+    background-color: #324054;
+    color: hsla(0,0%,100%,.6);
+    height: 100vh;
+    // justify-content: space-between;
+    max-height: 100vh;
+    min-height: 100vh;
+    width: 340px;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    .settings-button {
+        position: relative;
+        .settings-dropdown {
+            position: absolute;
+            display: block;
+            width: 176px;
+            background-color: #f4f6f6;
+            border: 1px solid rgba(0,0,0,.15);
+            border-radius: 4px;
+            z-index:100;
+            top: 50px;
+            left: -12px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            &::before {
+                content: "\F365";
+                font-family: Ionicons;
+                font-size: 44px;
+                position: absolute;
+                line-height: 10px;
+                left: 12px;    
+                color: #f4f6f6;
+                top: -9px;
+                z-index: 100;
+            }
+            li {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                color: #222;
+                font-size: 14px;
+                width:100%;
+                line-height: 32px;
+                padding-left: 10px;
+                padding-right: 10px;
+                &:hover {
+                    background-color: #5aa6d6;
+                    color: #fff;
+                    &::before {
+                        color: #fff;
+                    }
+                }
+                &::before {
+                    content: "\F29F";
+                    font-family: Ionicons;
+                    font-size: 24px;
+                    font-style: normal;
+                    line-height: inherit;
+                    font-size: 20px;
+                    left: 15px;
+                    color: #999;
+                    margin-right: 15px;
+                }
+            }
+        }
+        .ion-ios-gear::before {
+            content: "\F43D";
+            font-family: Ionicons;
+            cursor: pointer;
+            -webkit-font-smoothing: antialiased;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+    }
+    .deck-nav-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        height: 86px;
+        .profile-container {
+            text-align: center;
+            .user-account-image {
+                text-align: center;
+                margin: 0 auto;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 2px solid transparent;    
+                cursor: pointer;
+            }
+            .user-email {
+                color: hsla(0,0%,100%,.9);
+                font-size: 16px;
+                font-weight: 400;
+                text-align: center;
+                text-transform: capitalize;    
+                cursor: pointer;
+            }
+            .user-stats {
+                color: hsla(0,0%,100%,.5);
+                font-size: 10px;
+                font-weight: 300;
+                text-align: center;    
+                cursor: pointer;
+            }
+        }
+    }
+    .deck-nav-decks {
+        font-family: Proxima Nova, sans-serif;
+        width: 100%;
+        color: rgba(255, 255, 255, 0.8);
+        overflow-y: auto;
+        height: calc(100% - 86px);
+        padding-left: 30px;
+        padding-right: 30px;
+        .decks-utils {
+            font-size: 15px;
+            font-weight: 300;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(128, 134, 147, 0.44);
+            align-items: center;
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+            // padding: 10px;
+            .classes {
+                display: flex;
+            }
+            .util-buttons {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                font-family: Ionicons;
+                -webkit-font-smoothing: antialiased;
+                font-size: 30px;
+                font-style: normal;
+                margin-right: 4px;
+                color: rgba(255, 255, 255, 0.8);
+                .plus-button::before {
+                    margin-right: 8px;
+                    content: "\F489"; 
+                    font-size: 40px;
+                }
+                .search-icon::before {
+                    content: "\F4A5";
+                    margin-left: 15px;
+                }
+            }
+        }
+        .decks {
+            text-transform: capitalize;
+            .deck-bar {
+                cursor: pointer;
+                display: flex;
+                margin-bottom: 36px;
+                &:hover {
+                    .deck-title-container {
+                        color: hsla(0,0%,100%,.9);
+                    }
+                    .deck-icon {
+                        border-left: 8px solid hsla(0,0%,100%,.7);
+                    }
+                    .deck-delete {
+                        visibility: visible;
+                    // &.delete-deck-flag {
+                        
+                    // }
+                    }
+                }
+                &.active {
+                    .deck-title-container {
+                        border-bottom: 8px solid rgba(255, 255, 255, 0.18);
+                        color: #fff;
+                    }
+                    .deck-icon {
+                        border-left: 8px solid #fff;
+                    }
+                }
+                .deck-icon {
+                    margin-right: 18px;
+                    border-left: 8px solid transparent;
+                    padding-left: 10px;
+                    img {
+                        width: 40px;
+                        height: 40px;
+
+                    }
+                }
+                .deck-title-container {
+                    border-bottom: 8px solid rgba(0, 0, 0, 0.15);
+                    width: 100%;
+                    height: 90%;
+                    padding-bottom: 6px;
+                    color: rgba(255, 255, 255, 0.55);
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .deck-title {
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+                .deck-delete {
+                    margin-top: -6px;
+                    visibility: hidden;
+                    &::before {
+                        content: "\F404";
+                        cursor: pointer;
+                        font-family: Ionicons;
+                        -webkit-font-smoothing: antialiased;
+                        font-size: 24px;
+                        font-style: normal;
+                    }
+                }
+            }
+            .deck-actions {
+                margin-left: 25px;
+                cursor: pointer;
+                .deck-action:hover {
+                    color: #fff;
+                    opacity: 1;
+                }
+                .deck-action {
+                    opacity: .35;
+                    display: flex;
+                    padding-bottom: 20px;
+                    align-items: center;
+                }
+                .deck-action-text {
+                    margin-left: 30px;
+                    font-size: 12px;
+                    color: rgba(255, 255, 255, 1);
+                }
+                span.add-icon {
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+                span.find-icon {
+                    font-size: 30px;
+                    font-weight:200;
+                    -webkit-font-smoothing: antialiased;
+                }
+            }
+        }
+    }
+}

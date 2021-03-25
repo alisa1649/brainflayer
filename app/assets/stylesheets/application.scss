@@ -20,8 +20,25 @@
 body, html {
     font-family: "Open Sans", sans-serif;
 }
+a {
+    color: #28a5dc;
+}
 .hidden {
     display: none !important; 
+}
+.hidden2, .invisible {
+    visibility: hidden;
+}
+.transparent {
+    opacity: 0;
+}
+.dashboard {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.disabled {
+    pointer-events: none;
 }
 
 .bold {

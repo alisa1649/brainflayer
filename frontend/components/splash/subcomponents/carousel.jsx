@@ -25,7 +25,7 @@ class Carousel extends React.Component {
                 </div>
                 {
                     slides.map((i) => (
-                        <div className={`carousel-slide background-${i}` + (this.state.activePhoto == i ? " active" : "") + (this.state.activePhoto == (i + 1) % 6 ? " previous" : "")}>
+                        <div key={i} className={`carousel-slide background-${i}` + (this.state.activePhoto == i ? " active" : "") + (this.state.activePhoto == (i + 1) % 6 ? " previous" : "")}>
                             <div className="overlay"></div>
                         </div>
                     ))
