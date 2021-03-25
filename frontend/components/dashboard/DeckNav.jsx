@@ -82,7 +82,10 @@ class DeckNav extends React.Component {
                                             </div>
                                             <div className="deck-title-container">
                                                 <span className="deck-title">{deck.title}</span>
-                                                <div className="deck-delete" onClick={() => { this.props.removeDeck(deck) }}></div>
+                                                <div className="deck-delete" onClick={() => { this.props.removeDeck(deck) }}>
+                                                    <div className="delete-deck-flag"></div>
+                                                </div>
+
                                             </div>
 
                                         </li>
