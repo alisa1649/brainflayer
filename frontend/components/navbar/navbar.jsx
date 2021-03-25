@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { changeLoginVisibility, changeSignupVisibility } from '../../actions/ui_actions';
 import { logout } from '../../actions/session_actions';
+import { Link } from "react-router-dom";
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -18,7 +19,9 @@ class NavBar extends React.Component {
         return (
             <div id="navbar">
                 <div className="logo-container">
-                    <div className="logo"></div>
+                    <Link to="/">
+                        <div className="logo"></div>
+                    </Link>
                 </div>
 
                 <span className="items">
@@ -26,9 +29,15 @@ class NavBar extends React.Component {
                         <div className="option dropdown find-flashcards">
                             <span class="with-search-icon">Find Flashcards</span>
                         </div>
-                        <div className="option make-flashcards">
-                            Make Flashcards
-                    </div>
+                        {
+                            this.props.loggedIn
+                                ? <Link to="/dashboard" className="option make-flashcards">
+                                    Make Flashcards
+                                  </Link>
+                                : <div className="option make-flashcards" onClick={() => { this.props.openSignupModal() }}>
+                                    Make Flashcards
+                                  </div>
+                        }
                         <div className="option why-works">
                             Why It Works
                     </div>
