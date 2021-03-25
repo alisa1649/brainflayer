@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { getDecks } from '../../actions/deck_actions';
 import { Redirect } from 'react-router-dom';
-import { useEffect } from 'react';
-import { render } from 'react-dom';
+import { changeNewDeckVisibility } from '../../actions/ui_actions';
 
 class DeckNav extends React.Component {
     constructor(props) {
@@ -91,7 +90,7 @@ class DeckNav extends React.Component {
                                 <span class="material-icons add-icon">
                                     add
                                 </span>
-                                <span className="deck-action-text">
+                                <span className="deck-action-text" onClick={this.props.openNewDeckModal}>
                                     Create New Deck
                                 </span>
                             </div>
@@ -135,7 +134,8 @@ const mapDispatchToProps = dispatch => {
         },
         logout: () => {
             return dispatch(logout())
-        }
+        },
+        openNewDeckModal: () => dispatch(changeNewDeckVisibility(true)),
     };
 };
 

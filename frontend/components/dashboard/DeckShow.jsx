@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { deleteCard, getActiveDeck } from '../../actions/active_deck_actions';
 import DashboardHeader from './DashboardHeader';
-import { changeNewDeckVisibility, changeNewCardVisibility } from '../../actions/ui_actions';
+import { changeNewCardVisibility } from '../../actions/ui_actions';
 import CardItem from './CardItem';
 
 
@@ -93,7 +93,6 @@ const mapDispatchToProps = dispatch => {
     return {
         getActiveDeck: (deckId) => dispatch(getActiveDeck(deckId)),
         openNewCardModal: () => dispatch(changeNewCardVisibility(true)),
-        openNewDeckModal: () => dispatch(changeNewDeckVisibility(true)),
         deleteCard: (cardId) => {
             console.log('BBBBBB: ' + cardId); dispatch(deleteCard(cardId));
         }

@@ -10,7 +10,7 @@ export const receiveDecks = (decks) => ({
 
 export const receiveDeck = (deck) => ({
     type: RECEIVE_DECK,
-    deck
+    deck: deck
 });
 
 export const getDecks = () => dispatch => (
@@ -27,6 +27,6 @@ export const getDeck = (deckId) => dispatch => (
 
 export const createDeck = deck => dispatch => (
     APIUtil.createDeck(deck).then(deck => (
-        dispatch(receiveDeck(deck))
+        dispatch(receiveDeck(deck.deck))
     ))
 );
