@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { deleteDeck, getDecks } from '../../actions/deck_actions';
+import { getActiveDeck } from '../../actions/active_deck_actions';
 import { Redirect } from 'react-router-dom';
 import { changeNewDeckVisibility } from '../../actions/ui_actions';
 import { Link } from 'react-router-dom';
@@ -10,11 +11,11 @@ class DeckNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeIdx: 0,
             isSettingsVisible: false
         }
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.hideDropdown = this.hideDropdown.bind(this);
+        this.deckClickHandler = this.deckClickHandler.bind(this);
     }
 
     componentDidMount() {
@@ -37,6 +38,11 @@ class DeckNav extends React.Component {
         this.setState({
             isSettingsVisible: false
         })
+    }
+
+    deckClickHandler(event) {
+        const key = event.currentTarget.getAttribute("deck-id");
+        this.props.getDeck(key)
     }
 
     render() {
@@ -67,7 +73,7 @@ class DeckNav extends React.Component {
                     <div className="decks-utils">
                         <div className="classes">MY DECKS({this.props.decks.length})</div>
                         <div className="util-buttons">
-                            <span class="plus-button"></span>
+                            <span class="plus-button" onClick={this.props.openNewDeckModal}></span>
                             <span class="search-icon"></span>
                         </div>
                     </div>
@@ -76,7 +82,7 @@ class DeckNav extends React.Component {
                             {
                                 this.props.decks.map((deck, i) => {
                                     return (
-                                        <li className={"deck-bar" + (this.state.activeIdx == i ? " active" : "")} key={i} onClick={() => { this.setState({ activeIdx: i }) }}>
+                                        <li className={"deck-bar" + (this.props.deck && this.props.deck.id == deck.id ? " active" : "")} key={i} deck-id={deck.id} onClick={this.deckClickHandler}>
                                             <div className="deck-icon">
                                                 <img class="pack-icon-image" src="https://s3.amazonaws.com/brainscape-prod/system/pm/017/603/530/active_icons/iphone_3x_retina_161650729620210323-4823-oic2v.png?1616507296" />
                                             </div>
@@ -94,11 +100,11 @@ class DeckNav extends React.Component {
                             }
                         </ul>
                         <div className="deck-actions">
-                            <div className="deck-action">
+                            <div className="deck-action" onClick={this.props.openNewDeckModal}>
                                 <span class="material-icons add-icon">
                                     add
                                 </span>
-                                <span className="deck-action-text" onClick={this.props.openNewDeckModal}>
+                                <span className="deck-action-text">
                                     Create New Deck
                                 </span>
                             </div>
@@ -128,7 +134,9 @@ class DeckNav extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log("SSSSSS: " + state.activeDeck ? state.activeDeck.deck : {});
     return {
+        deck: state.activeDeck ? state.activeDeck.deck : {},
         loggedIn: Boolean(state.session.id),
         decks: state.decks ? Object.values(state.decks) : [],
         email: Object.values(state.users)[0].email
@@ -137,6 +145,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        getDeck: (deckId) => {
+            return dispatch(getActiveDeck(deckId))
+        },
         getDecks: () => {
             return dispatch(getDecks())
         },
