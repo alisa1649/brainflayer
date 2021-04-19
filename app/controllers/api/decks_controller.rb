@@ -1,4 +1,4 @@
-class Api::DecksController < ApplicationController
+`class Api::DecksController < ApplicationController
   before_action :require_logged_in, only: [:create, :study, :delete, :index] # TODO: add constraints here
 
   def create

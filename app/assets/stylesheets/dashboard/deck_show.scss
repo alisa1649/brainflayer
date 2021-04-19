@@ -59,6 +59,11 @@
         border-bottom-color: rgb(204, 204, 204);
         border-bottom-style: solid;
         border-bottom-width: 1px;
+        &.flipped .card-title {
+            color: #666;
+            font-weight: 400;
+            font-size: 18px;
+        }
         &:hover {
             background-color: #eef7ff;
             .card-icon {

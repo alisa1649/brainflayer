@@ -82,7 +82,13 @@ class DeckShow extends React.Component {
 const mapStateToProps = (state) => {
     return {
         deck: state.activeDeck ? state.activeDeck.deck : {},
-        cards: state.activeDeck.deck ? state.activeDeck.deck.cards.map(e => Object.values(e)[0]) : []
+        cards: state.activeDeck.deck
+            ? state.activeDeck.deck.cards.map(
+                card => {
+                    console.log("CARD::::" + JSON.stringify(card));
+                    return Object.values(card)[0];
+                })
+            : []
     }
 };
 

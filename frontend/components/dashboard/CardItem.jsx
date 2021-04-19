@@ -8,7 +8,7 @@ class CardItem extends React.Component {
     render() {
         const card = this.props.card;
         return (
-            <li className="deck-item" >
+            <li className={"deck-item" + (this.state.isFlipped ? " flipped" : "")} >
                 <div className="round-icon-container">
                     <div className="round-icon">
                     </div>
