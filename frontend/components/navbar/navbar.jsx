@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { changeLoginVisibility, changeSignupVisibility } from '../../actions/ui_actions';
 import { logout } from '../../actions/session_actions';
 import { Link } from "react-router-dom";
-import Searchbar from "../controls/searchbar";
+import SearchbarDropdown from "../controls/searchbar_dropdown";
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -29,6 +29,7 @@ class NavBar extends React.Component {
                     <div className="options">
                         <div className="option dropdown find-flashcards">
                             <span className="with-search-icon">Find Flashcards</span>
+                            <SearchbarDropdown />
                         </div>
                         {
                             this.props.loggedIn
@@ -45,7 +46,6 @@ class NavBar extends React.Component {
                         <div className="option learn-more">
                             More...
                         </div>
-                        <Searchbar />
                     </div>
 
                     {

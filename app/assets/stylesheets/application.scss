@@ -138,7 +138,6 @@ a {
         height: 100%;
         width: 50%;
         justify-content: space-evenly;
-        position: relative;
         margin: 0;
         font-weight: 600;
         cursor: pointer;
@@ -149,27 +148,41 @@ a {
             background-color: #fff;
             font-size: 12.44px;
             display: flex;
-            position: relative;
             text-align: center;
             justify-content: center;
             align-items: center;
             margin-right: 8px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
             &:before {
                 content: " ";
                 opacity: 0;
             }
-            &:hover:before {
-                background-color: #8e8e8e;
+            &:hover{
+                border-top: 5px solid #8e8e8e;
                 opacity: 100%;
-                transition:opacity 1s;
-                height: 5px;
-                max-width: inherit;
+                transition: border-top 1s;
+                //-webkit-animation: fadeIn 1s forwards;
+                //animation: fadeIn 1s forwards;
+            }
+            .searchbar-container {
                 position: absolute;
-                top: 0;
+                display: none;
+                background-color: #fff;
+                top: 80px;
+                height: 180px;
                 width: 100%;
-                text-decoration: none;
-                -webkit-animation: fadeIn 1s forwards;
-                animation: fadeIn 1s forwards;
+                left: 0;
+                z-index: 11;
+                .searchbar-dropdown {
+                    display: block;
+                    background-color: #28a5dc;
+                }
+            }
+            &.dropdown:hover {
+                & .searchbar-container {
+                    display: block;
+                }
             }
         }
     }
@@ -201,6 +214,7 @@ a {
             }
         }
         .account {
+            position: relative;
             color: #393030;
             background-color: #fff;
             width: 204px;
@@ -240,8 +254,6 @@ a {
     }
 
     .dropdown {
-        position: relative;
-        
         &::after {
             content: "\F35F";
             font-family: Ionicons;

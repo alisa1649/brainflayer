@@ -1,5 +1,5 @@
 import React from 'react';
-class Searchbar extends React.Component {
+class SearchbarDropdown extends React.Component {
     constructor(props) {
         super(props)
         // this.state = {
@@ -9,7 +9,7 @@ class Searchbar extends React.Component {
     render() {
         return (
             <div className="searchbar-container">
-                <div className="searchbar">
+                <div className="searchbar-dropdown">
 
                 </div>
             </div>
@@ -17,4 +17,4 @@ class Searchbar extends React.Component {
     }
 }
 
-export default Searchbar;
+export default SearchbarDropdown;
