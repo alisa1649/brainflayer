@@ -1,5 +1,5 @@
 class Api::DecksController < ApplicationController
-  before_action :require_logged_in, only: [:create, :study, :delete, :index] # TODO: add constraints here
+  # before_action :require_logged_in, only: [:create, :study, :delete, :index] # TODO: add constraints here
 
   def create
     @deck = Deck.new(deck_params)
@@ -19,7 +19,12 @@ class Api::DecksController < ApplicationController
 
   def show
     @deck = Deck.includes(:cards, :author).find(params[:id])
-    
+  end
+
+  def search
+    query = params[:query]
+    @decks = Deck.where("UPPER(title) LIKE UPPER('%#{query}%')")
+    render :index
   end
 
   def destroy
