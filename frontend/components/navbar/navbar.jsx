@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { changeLoginVisibility, changeSignupVisibility } from '../../actions/ui_actions';
 import { logout } from '../../actions/session_actions';
 import { Link } from "react-router-dom";
+import Searchbar from "../controls/searchbar";
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -44,6 +45,7 @@ class NavBar extends React.Component {
                         <div className="option learn-more">
                             More...
                         </div>
+                        <Searchbar />
                     </div>
 
                     {
