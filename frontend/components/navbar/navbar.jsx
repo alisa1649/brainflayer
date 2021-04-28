@@ -12,6 +12,7 @@ class NavBar extends React.Component {
             isDropdownVisible: false
         }
     }
+
     componentDidMount() {
         document.addEventListener("click", () => { this.setState({ isDropdownVisible: false }) });
     }
@@ -27,10 +28,10 @@ class NavBar extends React.Component {
 
                 <span className="items">
                     <div className="options">
-                        <div className="option dropdown find-flashcards">
+                        <Link to="/subjects" className="option dropdown find-flashcards" >
                             <span className="with-search-icon">Find Flashcards</span>
                             <SearchbarDropdown />
-                        </div>
+                        </Link>
                         {
                             this.props.loggedIn
                                 ? <Link to="/dashboard" className="option make-flashcards">

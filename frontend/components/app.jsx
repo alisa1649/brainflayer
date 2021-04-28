@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import SplashPage from "./splash/splash_page"
 import Dashboard from "./dashboard/Dashboard"
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Subjects from "./search/Subjects";
 
 // import containers here
 
@@ -17,6 +18,7 @@ const App = ({ children, loggedIn }) => (
         }
         <Route exact path="/landing" component={SplashPage} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/subjects" component={Subjects} />
     </Switch>
 );
 
