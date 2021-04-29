@@ -144,7 +144,7 @@ class Subjects extends React.Component {
                                     <li className="footer-item">Law Education</li>
                                     <li className="footer-item">Foreign Languages</li>
                                     <li className="footer-item">All Subjects A-Z</li>
-                                    <li className="footer-item">All Certified Classes</li>
+                                    <li className="footer-item icon">All Certified Classes</li>
                                 </ul>
                             </li>
                             <li className="column">
@@ -171,7 +171,11 @@ class Subjects extends React.Component {
                             </li>
                         </ul>
                     </div>
-                    <div className="footer-info-text"></div>
+                    <div className="footer-info-text">
+                        Brainscape is a web and mobile study platform that helps you learn things faster. Our mission
+                        is to create a smarter world by simplifying and accelerating the learning process.
+                        © 2021 Bold Learning Solutions.
+                    </div>
                 </div>
             </div>
 

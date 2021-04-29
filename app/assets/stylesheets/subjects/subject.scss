@@ -177,6 +177,7 @@
     background-color: #19202a;
     margin: auto;
     width: 100%;
+    flex-direction: column;
       .footer-main {
         flex-direction: column;
         color: #fff;
@@ -214,10 +215,29 @@
                       font-weight: 100;
                       line-height: 2.5;
                       font-font: Open Sans, sans-serif;
+                      &.icon {
+                        font-size: 14px;
+                        background-image: url(https://www.brainscape.com/assets/green-circle-check-bullet.png);
+                        background-position-x: 0;
+                        background-position-y: 10px;
+                        padding-left: 22px;
+                        background-repeat: no-repeat;
+                      }
                     }
                 }
               }
           }
       }
+    .footer-info-text {
+      color: #fff;
+      font-size: 11px;
+      line-height: 1.552;
+      text-align: center;
+      width: 700px;
+      padding-bottom: 54px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 35px;
+    }
   }
 }
