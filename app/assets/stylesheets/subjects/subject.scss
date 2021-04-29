@@ -11,6 +11,9 @@
     font-size: 14px;
     color: #333;
     padding-left: 45px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
       .searchbar {
         display: flex;
         position: relative;
@@ -29,7 +32,7 @@
           display: inline-block;
           font-weight: 100;
           line-height: 60px;
-          width: calc(100vw - 255px);
+          width: calc(100vw - 250px);
           border-top: 1px solid #f4f4f4;
           font-size: 21px;
           font-family: Proxima Nova,sans-serif;
@@ -181,6 +184,7 @@
         margin: 0 auto;
         width: 100%;
           .footer-columns {
+            box-sizing: border-box;
             flex-wrap: wrap;
             margin-block-start: 1em;
             margin-block-end: 1em;
