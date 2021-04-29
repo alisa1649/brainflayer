@@ -20,18 +20,7 @@ class Subjects extends React.Component {
         return (
             <div className="main-page">
                 <NavBar />
-                    <div className="searchbar-container">
-                        <div className="searchbar">
-                            <div className="searchbar-icon">
-                            </div>
-                            <input className="search-input" placeholder="e.g. MCAT, pharma, bar exam, Spanish, Series 7" type="text"/>
-                            <button className="search-button">
-                                <span className="search-text">
-                                Search
-                                </span>
-                            </button>
-                        </div>
-                    </div>
+                <SearchBar />
                 <div className="page-content">
                     <div className="header-container">
                         <div className="page-heading">

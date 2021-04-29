@@ -154,6 +154,7 @@ a {
             margin-right: 8px;
             border-top: 5px solid transparent;
             border-bottom: 5px solid transparent;
+            position: relative;
             &:before {
                 content: " ";
                 opacity: 0;
@@ -165,21 +166,19 @@ a {
             }
             .searchbar-container {
                 position: absolute;
-                display: none;
                 background-color: #fff;
                 top: 80px;
                 height: 180px;
                 width: 100%;
                 left: 0;
                 z-index: 11;
-                .searchbar-dropdown {
-                    display: block;
-                    background-color: #28a5dc;
-                }
             }
             &.dropdown:hover {
-                & .searchbar-container {
+                 .dropdown-container {
                     display: block;
+                     height: 200px;
+                     width: 500px;
+                     position: fixed;
                 }
             }
         }

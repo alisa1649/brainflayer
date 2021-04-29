@@ -8,7 +8,7 @@ class SearchbarDropdown extends React.Component {
 
     render() {
         return (
-            <div className="searchbar-container">
+            <div className="dropdown-container">
                 <div className="searchbar-dropdown">
 
                 </div>
