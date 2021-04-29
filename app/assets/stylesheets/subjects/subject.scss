@@ -1,0 +1,223 @@
+.main-page {
+  background-color: #f2f2f2;
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  flex-direction: column;
+
+  .searchbar-container {
+    background-color: #fff;
+    z-index: 10;
+    display: flex;
+    font-size: 14px;
+    color: #333;
+    padding-left: 45px;
+      .searchbar {
+        display: flex;
+        position: relative;
+        align-items: center;
+        .searchbar-icon::before {
+          font-family: Ionicons;
+          content: "\F4A4";
+          display: flex;
+          top: 14px;
+          left: 4%;
+          color: #3faee0;
+          font-size: 36px;
+        }
+        .search-input {
+          padding-left: 20px;
+          display: inline-block;
+          font-weight: 100;
+          line-height: 60px;
+          width: calc(100vw - 255px);
+          border-top: 1px solid #f4f4f4;
+          font-size: 21px;
+          font-family: Proxima Nova,sans-serif;
+          background-color: hsla(0,0%,100%,.95);
+          vertical-align: top;
+          padding-right: 9.9px;
+        }
+          .search-button {
+            height: 60px;
+            align-items: flex-end;
+            text-align: center;
+            width: 165px;
+            background-color: rgb(63, 174, 224);
+            color: #fff;
+            font-weight: bold;
+          }
+      }
+  }
+  .page-content {
+    margin-left: 45px;
+    margin-top: 34px;
+    display: block;
+    .header-container {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      position: relative;
+      display: flex;
+      color: rgb(51, 51, 51);
+      margin-bottom: 24px;
+      .page-heading {
+        margin-bottom: 8px;
+        display: block;
+        font-family: "Open Sans", sans-serif;
+        line-height: 39.6px;
+        text-align: left;
+        .heading-title {
+          color: #444;
+          align-items: center;
+          display: flex;
+          font-family: "Proxima Nova", sans-serif;
+          font-size: 36px;
+          font-weight: 700;
+          line-height: 39.6px;
+          text-align: left;
+          line-height: 1.1;
+            .heading-description {
+              color: rgb(51, 51, 51);
+              font-family: "Helvetica";
+              display: block;
+              margin: 4px 0 0 24px;
+              padding-left: 24px;
+              font-size: 14px;
+              background-image: url(https://www.brainscape.com/assets/green-circle-check-bullet.png);
+              background-position: left 0;
+              background-position-x: left;
+              background-position-y: 0px;
+              background-repeat: no-repeat;
+              font-weight: 500;
+              line-height: 1.1;
+            }
+          .heading-subtitle {
+            display: block;
+            margin-bottom: 30px;
+            color: #555;
+            font-size: 17px;
+            font-family: "Open Sans", sans-serif;
+            line-height: 23.8px;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+    .page-main {
+      display: block;
+        ul {
+          display: block;
+          column-count: 3;
+          column-gap: 40px;
+          list-style: disc;
+            .tag-category {
+              display: block;
+              list-style: outside none none;
+              color: #333;
+              font-size: 16px;
+              font-weight: 700;
+              margin-bottom: 5px;
+              line-height: 150%;
+              margin: 0 0 2px;
+              color: #6a6a6a;
+            }
+          .tag-subject {
+            font-size: 14px;
+            line-height: 150%;
+            margin-bottom: 2px;
+            line-height: 22.5px;
+            margin-left: 18px;
+              a {
+                background-image: url(https://www.brainscape.com/assets/blue-right-arrow-icon.png);
+                background-position: right 5px;
+                background-repeat: no-repeat;
+                padding-right: 11px;
+                color: #3faee0;
+                font-size: 15px;
+              }
+          }
+        }
+      .main-page-subheading {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 14px;
+        padding: 4px 14px;
+        background-color: rgba(31,79,123,.85);
+        font-weight: 100;
+        color: #fff;
+        margin: 36px 24px 24px;
+        border-radius: 3px;
+      }
+      .about-box {
+        padding: 0 24px 36px;
+        display: block;
+        font-family: Helvetica;
+          .about-heading {
+            font-size: 26px;
+            color: #ff8a47;
+            font-weight: 400;
+            line-height: 1.1;
+            margin: 24px 0 12px;
+          }
+        .description-text {
+          margin-block-end: 18px;
+          margin-block-start: 18px;
+          font-size: 18px;
+          color: #555;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+  .footer {
+    z-index: 20;
+    display: flex;
+    background-color: #19202a;
+    margin: auto;
+    padding: 54px 0;
+    width: 100%;
+      .footer-main {
+        flex-direction: column;
+        color: #fff;
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+          .footer-columns {
+            flex-wrap: wrap;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            font-size: 16px;
+            line-height: 1.4;
+            padding-inline-start: 40px;
+              .column {
+                line-height: 1.4;
+                .footer-item-heading {
+                  font-size: 20px;
+                  margin: 0 0 24px;
+                  font-weight: 500;
+                  line-height: 1.1;
+                  display: block;
+                  margin-block-start: 2.33em;
+                  margin-block-end: 2.33em;
+                }
+              }
+            .footer-items-list {
+              font-size: 16px;
+              display: block;
+              line-height: 22.4px;
+              box-sizing: border-box;
+                .footer-item {
+                  display: list-item;
+                  color: hsla(0,0%,100%,.369);
+                  font-size: 16px;
+                  font-weight: 100;
+                  line-height: 22.4px;
+                }
+            }
+          }
+      }
+  }
+}
