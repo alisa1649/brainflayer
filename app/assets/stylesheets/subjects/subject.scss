@@ -4,53 +4,6 @@
   font-family: "Open Sans", sans-serif;
   flex-direction: column;
 
-  .searchbar-container {
-    background-color: #fff;
-    z-index: 10;
-    display: flex;
-    font-size: 14px;
-    color: #333;
-    padding-left: 45px;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-      .searchbar {
-        display: flex;
-        position: relative;
-        align-items: center;
-        .searchbar-icon::before {
-          font-family: Ionicons;
-          content: "\F4A4";
-          display: flex;
-          top: 14px;
-          left: 4%;
-          color: #3faee0;
-          font-size: 36px;
-        }
-        .search-input {
-          padding-left: 20px;
-          display: inline-block;
-          font-weight: 100;
-          line-height: 60px;
-          width: calc(100vw - 250px);
-          border-top: 1px solid #f4f4f4;
-          font-size: 21px;
-          font-family: Proxima Nova,sans-serif;
-          background-color: hsla(0,0%,100%,.95);
-          vertical-align: top;
-          padding-right: 9.9px;
-        }
-          .search-button {
-            height: 60px;
-            align-items: flex-end;
-            text-align: center;
-            width: 165px;
-            background-color: rgb(63, 174, 224);
-            color: #fff;
-            font-weight: bold;
-          }
-      }
-  }
   .page-content {
     margin-left: 45px;
     margin-top: 34px;

@@ -1,17 +1,14 @@
 import React from 'react';
+import SearchBar from "../search/SearchBar";
 class SearchbarDropdown extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = {
-        // };
     }
 
     render() {
         return (
             <div className="dropdown-container">
-                <div className="searchbar-dropdown">
-
-                </div>
+                <SearchBar />
             </div>
         )
     }

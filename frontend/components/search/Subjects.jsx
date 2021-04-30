@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {getActiveDeck} from "../../actions/active_deck_actions";
 import {logout} from "../../actions/session_actions";
 import NavBar from "../navbar/navbar";
+import SearchBar from "./SearchBar";
 
 class Subjects extends React.Component {
     constructor(props) {
