@@ -41,7 +41,7 @@ class DeckShow extends React.Component {
                                     Study 0 cards
                                 </div>
                             </div>
-                            <div class="deck-links">
+                            <div className="deck-links">
                                 <a href="#">
                                     <span className="material-icons">
                                         mode_edit

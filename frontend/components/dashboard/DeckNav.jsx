@@ -64,7 +64,7 @@ class DeckNav extends React.Component {
                         <span className="ion-ios-gear"></span>
                         <div className={"settings-dropdown" + (this.state.isSettingsVisible ? "" : " hidden")}>
                             <ul>
-                                <li class="logout" onClick={this.props.logout}>Log Out</li>
+                                <li className="logout" onClick={this.props.logout}>Log Out</li>
                             </ul>
                         </div>
                     </div>
@@ -73,8 +73,8 @@ class DeckNav extends React.Component {
                     <div className="decks-utils">
                         <div className="classes">MY DECKS({this.props.decks.length})</div>
                         <div className="util-buttons">
-                            <span class="plus-button" onClick={this.props.openNewDeckModal}></span>
-                            <span class="search-icon"></span>
+                            <span className="plus-button" onClick={this.props.openNewDeckModal}></span>
+                            <span className="search-icon"></span>
                         </div>
                     </div>
                     <div className="decks">
@@ -84,7 +84,7 @@ class DeckNav extends React.Component {
                                     return (
                                         <li className={"deck-bar" + (this.props.deck && this.props.deck.id == deck.id ? " active" : "")} key={i} deck-id={deck.id} onClick={this.deckClickHandler}>
                                             <div className="deck-icon">
-                                                <img class="pack-icon-image" src="https://s3.amazonaws.com/brainscape-prod/system/pm/017/603/530/active_icons/iphone_3x_retina_161650729620210323-4823-oic2v.png?1616507296" />
+                                                <img className="pack-icon-image" src="https://s3.amazonaws.com/brainscape-prod/system/pm/017/603/530/active_icons/iphone_3x_retina_161650729620210323-4823-oic2v.png?1616507296" />
                                             </div>
                                             <div className="deck-title-container">
                                                 <span className="deck-title">{deck.title}</span>
@@ -101,7 +101,7 @@ class DeckNav extends React.Component {
                         </ul>
                         <div className="deck-actions">
                             <div className="deck-action" onClick={this.props.openNewDeckModal}>
-                                <span class="material-icons add-icon">
+                                <span className="material-icons add-icon">
                                     add
                                 </span>
                                 <span className="deck-action-text">
@@ -109,7 +109,7 @@ class DeckNav extends React.Component {
                                 </span>
                             </div>
                             <div className="deck-action">
-                                <span class="material-icons find-icon">
+                                <span className="material-icons find-icon">
                                     search
                                 </span>
                                 <span className="deck-action-text">

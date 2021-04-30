@@ -16,7 +16,7 @@ class DashboardHeader extends React.Component {
         const content = (
             <div className="dash-header">
                 <div className="header-icon-container">
-                    <img class="pack-icon-image" src="https://s3.amazonaws.com/brainscape-prod/system/pm/017/603/530/active_icons/iphone_3x_retina_161650729620210323-4823-oic2v.png?1616507296" />
+                    <img className="pack-icon-image" src="https://s3.amazonaws.com/brainscape-prod/system/pm/017/603/530/active_icons/iphone_3x_retina_161650729620210323-4823-oic2v.png?1616507296" />
                     <div className="choose-icon-button"></div>
                 </div>
                 <div className="header-text-container">

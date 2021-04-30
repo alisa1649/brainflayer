@@ -1,5 +1,5 @@
 class Api::DecksController < ApplicationController
-  # before_action :require_logged_in, only: [:create, :study, :delete, :index] # TODO: add constraints here
+  before_action :require_logged_in, only: [:create, :study, :delete, :index]
 
   def create
     @deck = Deck.new(deck_params)
@@ -32,6 +32,7 @@ class Api::DecksController < ApplicationController
   end
 
   def destroy
+    # TODO: add constraints so current user can only modify their own decks + cards
     @deck = Deck.find(params[:id])
     @deck.destroy!
     render json: @deck

@@ -17,6 +17,10 @@
 @import "colors";
 @import "font-faces";
 
+html, body, #root {
+    height: 100%;
+}
+
 body, html {
     font-family: "Open Sans", sans-serif;
 }

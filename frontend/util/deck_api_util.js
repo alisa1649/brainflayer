@@ -1,3 +1,10 @@
+export const searchDecks = (search_term) => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/search?query=${search_term}`
+    })
+);
+
 export const fetchDecks = () => (
     $.ajax({
         method: 'GET',

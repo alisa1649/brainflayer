@@ -20,6 +20,12 @@ export const receiveRemoveDeck = (deckId) => ({
     deckId
 });
 
+export const searchDecks = (search_term) => dispatch => (
+    APIUtil.searchDecks(search_term).then(decks => {
+        return dispatch(receiveDecks(decks))
+    })
+);
+
 export const getDecks = () => dispatch => (
     APIUtil.fetchDecks().then(decks => {
         if (Object.values(decks).length > 0) {
