@@ -19,11 +19,15 @@ class Api::DecksController < ApplicationController
 
   def show
     @deck = Deck.includes(:cards, :author).find(params[:id])
+    render :show
   end
 
   def search
     query = params[:query]
-    @decks = Deck.where("UPPER(title) LIKE UPPER('%#{query}%')")
+    @decks = Deck.where("
+      UPPER(title) LIKE UPPER('%#{query}%')
+      OR UPPER(CONCAT(tags, ',')) LIKE UPPER('%#{query},%')
+    ")
     render :index
   end
 
@@ -34,7 +38,7 @@ class Api::DecksController < ApplicationController
   end
 
   def deck_params
-    params.require(:deck).permit(:title, :objective, :tag_id)
+    params.require(:deck).permit(:title, :objective, :tag_id, :tags)
   end
 
 end

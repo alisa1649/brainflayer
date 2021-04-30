@@ -1,1 +1,1 @@
-json.extract! deck, :id, :title, :objective, :icon_url, :tag_id
+json.extract! deck, :id, :title, :objective, :icon_url, :tags
