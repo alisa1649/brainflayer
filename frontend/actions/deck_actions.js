@@ -31,7 +31,6 @@ export const getDecks = () => dispatch => (
 
 export const createDeck = deck => dispatch => (
     APIUtil.createDeck(deck).then(deck => {
-        console.log("SKLDKLSDJFL: " + JSON.stringify(deck));
         dispatch(getActiveDeck(deck.deck.id));
         return dispatch(receiveDeck(deck.deck))
     })

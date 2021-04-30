@@ -8,7 +8,8 @@ class NewDeckForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: ""
+            title: "",
+            tags: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -33,12 +34,19 @@ class NewDeckForm extends React.Component {
                     <h2>Create New Deck</h2>
                     <input
                         type="text"
-                        placeholder="e.g. Cell Division, Capitals of Asia"
+                        placeholder="Deck Name (e.g. Stonks, Interwebs)"
                         value={this.state.title}
                         onChange={this.update('title')}
                         className="modal-input"
                     />
-                    <div className="notes">Enter title of your new deck above</div>
+                    <input
+                        type="text"
+                        placeholder="Tags (e.g. investing, technology)"
+                        value={this.state.tags}
+                        onChange={this.update('tags')}
+                        className="modal-input"
+                    />
+                    <div className="notes">Use commas to separate multiple tags.</div>
                     <input className={`form-submit ${this.state.title.length < 1 ? "disabled" : ""}`} type="submit" />
                 </form>
             </Modal>

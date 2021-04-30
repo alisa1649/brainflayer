@@ -22,7 +22,6 @@ export const receiveRemoveCard = (cardId) => ({
 
 export const getActiveDeck = (deckId) => dispatch => {
     return APIUtil.fetchDeck(deckId).then(deck => {
-        console.log("TESTING: " + JSON.stringify(deck, null, 2));
         return dispatch(receiveActiveDeck(deck))
     })
 };
