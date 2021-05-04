@@ -8,7 +8,7 @@ const decksReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_DECKS:
-            return Object.assign({}, state, action.decks);
+            return action.decks;
         case RECEIVE_DECK:
             return Object.assign({}, state, { [action.deck.id]: action.deck })
         case RECEIVE_REMOVE_DECK:
