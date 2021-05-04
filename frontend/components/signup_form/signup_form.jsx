@@ -10,7 +10,9 @@ class SignupForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            password2: '',
+            errors: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -24,13 +26,20 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
+        this.state.errors = [];
+        if (this.state.password !== this.state.password2) {
+            this.setState((state) => state.errors.push("Passwords must match"))
+            console.log(JSON.stringify(this.state))
+            return
+        }
         this.props.processForm(user);
     }
 
     renderErrors() {
+        const errors = this.state.errors.concat(this.props.errors);
         return (
             <ul>
-                {this.props.errors.map((error, i) => (
+                {errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
                     </li>
@@ -38,6 +47,18 @@ class SignupForm extends React.Component {
             </ul>
         );
     }
+    // passwordActions = () => {
+    //     let password1 = document.getElementById('password').value
+    //     let password2 = document.getElementById('confirm_password').value
+    //     this.checkPasswordsMatch(password1, password2)
+    //     this.update('password1')
+    // }
+    // checkPasswordsMatch() {
+    //     document.getElementById('password').value ===
+    //         document.getElementById('confirm_password').value
+    //         ? document.getElementById('submit').disabled = false
+    //         : document.getElementById('submit').disabled = true
+    // }
 
     render() {
         const contents = (
@@ -64,14 +85,16 @@ class SignupForm extends React.Component {
                     />
                     <input
                         type="password"
+                        id="password"
                         placeholder="Password"
                         onChange={this.update('password')}
                         className="modal-input"
                     />
                     <input
-                        type="password"
+                        type="password2"
+                        id="confirm_password"
                         placeholder="Confirm Password"
-                        onChange={this.update('password')}
+                        onChange={this.update('password2')}
                         className="modal-input"
                     />
                     <div className="registration-controls">

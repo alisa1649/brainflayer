@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP } 
   validates :password, presence: {on: :create}, length: { minimum: 6, on: :create }
+  # validates :password, confirmation: true
+  # validates_confirmation_of :password
 
   after_initialize :ensure_session_token
 
