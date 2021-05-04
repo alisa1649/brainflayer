@@ -4,6 +4,10 @@
   font-family: "Open Sans", sans-serif;
   flex-direction: column;
 
+  .dropdown-container {
+    display: none !important;
+  }
+
   .page-content {
     margin-left: 45px;
     margin-top: 34px;

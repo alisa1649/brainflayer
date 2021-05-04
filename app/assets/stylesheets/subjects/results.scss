@@ -1,29 +1,74 @@
 .results-page {
   height: 100%;
 
+  .dropdown-container {
+    display: none !important;
+  }
+
   .results-wrapper {
     display: flex;
     flex-direction: row;
     height: 100%;
   }
+
   .tag-panel {
     background-color: #1d415b;
     height: 100vh;
     display: flex;
     width: 246px;
   }
+
   .results-panel {
     background-color: #f2f2f2;
     height: 100%;
     width: 100%;
+    padding: 36px 42px 42px;
+
+    .results-header {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.4;
+
+      .header-text {
+        color: #444;
+        font-family: Proxima Nova, sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+      }
+
+      .header-blurb {
+        margin: 0 0 30px;
+        color: #555;
+        font-size: 17px;
+        font-weight: 300;
+      }
+    }
   }
-  .deck-link {
-    display: block;
-    width: 100%;
-    height: 140px;
-    margin-top: 20px;
-    background: gray;
-    box-shadow: 0 6px 12px #0003;
-    font-size: 34px;
+
+  .deck-item {
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+
+    .deck-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 2px;
+      background-color: rgba(0, 0, 0, 0);
+      box-shadow: 0 2px 4px #004;
+      padding: 18px;
+      margin-bottom: 18px;
+      color: rgb(63, 174, 224);
+
+    }
+  }
+
+  .subject-icon {
+    margin-right: 18px;
+    width: 120px;
   }
 }
+
+

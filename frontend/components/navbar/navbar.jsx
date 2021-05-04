@@ -28,10 +28,10 @@ class NavBar extends React.Component {
 
                 <span className="items">
                     <div className="options">
-                        <Link to="/subjects" className="option dropdown find-flashcards" >
-                            <span className="with-search-icon">Find Flashcards</span>
+                        <div className="option dropdown find-flashcards" >
+                            <Link to="/subjects" className="with-search-icon">Find Flashcards</Link>
                             <SearchbarDropdown />
-                        </Link>
+                        </div>
                         {
                             this.props.loggedIn
                                 ? <Link to="/dashboard" className="option make-flashcards">
