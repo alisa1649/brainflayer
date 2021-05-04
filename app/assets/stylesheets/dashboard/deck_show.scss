@@ -135,6 +135,7 @@
                     align-items: center;
                 }
                 .deck-link-text {
+                    display: none;
                 }
             }
         }
@@ -169,6 +170,7 @@
                 margin-right: 18px;
             }
             .deck-item-caption {
+                display: none;
                 text-transform: none;
                 color: rgb(153, 153, 153);
                 font-size: 12px;

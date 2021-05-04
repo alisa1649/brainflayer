@@ -32,7 +32,8 @@ class DeckShow extends React.Component {
                         <li className="deck-item deck-item-header" key={-1}>
                             <div className="round-icon-container">
                                 <div className="round-icon"></div>
-                                <div>CARDS</div>
+                                <div>CARDS
+                            </div>
                             </div>
                             <div className="study-button">
                                 <div className="inner-study-button">
@@ -43,10 +44,10 @@ class DeckShow extends React.Component {
                             </div>
                             <div className="deck-links">
                                 <a href="#">
-                                    <span className="material-icons">
-                                        mode_edit
-                                    </span>
-                                    <span className="deck-link-text">Edit Cards</span>
+                                    {/*<span className="material-icons">*/}
+                                    {/*    mode_edit*/}
+                                    {/*</span>*/}
+                                    {/*<span className="deck-link-text">Edit Cards</span>*/}
                                 </a>
                             </div>
                         </li>
