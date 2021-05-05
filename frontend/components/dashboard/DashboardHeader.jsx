@@ -39,6 +39,12 @@ class DashboardHeader extends React.Component {
                                         <i className="ellipses-icon"></i>
                                     </div>
                                 </div>
+                                <ul className="menu-open">
+                                    <li className="edit-deck"></li>
+                                    <li className="delete-deck"></li>
+                                    <li className="edit-deck"></li>
+                                    <li className="edit-deck"></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
