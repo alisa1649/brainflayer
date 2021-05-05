@@ -2,7 +2,6 @@
     width: calc(100% - 340px);
     height: 100%;
     font-family: Proxima Nova,sans-serif;
-   
     .dash-header {
         justify-content: flex-start;
         display: flex;
@@ -11,7 +10,6 @@
         height: 202px;
         box-sizing: border-box;
         .header-text-container {
-            text-align: left;
             color: rgb(40, 165, 220);
             align-items: flex-start;
             box-sizing: border-box;
@@ -82,6 +80,7 @@
                 .ellipses-button {
                     height: 36px;
                     width: 36px;
+                    position: relative;
                     .ellipses-open {
                         .ellipses-icon-container {
                             font-size: 36px;
@@ -95,43 +94,88 @@
                                 font-size: 36px;
                                 color: hsla(220, 7%, 52%, .66);
                                 cursor: pointer;
-
                                 &:before {
                                     content: "\F396";
                                     font-family: Ionicons;
                                     box-sizing: border-box;
                                 }
-
                                 &:hover {
                                     color: #28a5dc;
                                 }
                             }
                         }
-                        .menu-open {
-                            background-color: #f4f6f6;
-                            border: 1px solid rgba(0,0,0,.15);
-                            border-radius: 4px;
-                            box-shadow: none;
-                            color: #222;
-                            font-size: 14px;
-                            left: -6px;
-                            line-height: 32px;
-                            list-style: none;
-                            margin-top: 10px;
-                            min-width: 160px;
-                            padding: 10px 0;
+                    }
+                    .menu-open {
+                        display: block;
+                        background-color: #f4f6f6;
+                        border: 1px solid rgba(0,0,0,.15);
+                        border-radius: 4px;
+                        color: #222;
+                        font-size: 14px;
+                        left: -6px;
+                        line-height: 32px;
+                        margin-top: 10px;
+                        min-width: 160px;
+                        padding: 10px 0;
+                        position: absolute;
+                        top: 36px;
+                        z-index: 110;
+                        &:before, &:after {
+                            content: "\F365";
+                            font-family: Ionicons;
+                            font-size: 44px;
                             position: absolute;
-                            text-align: left;
-                            text-indent: 0;
-                            top: 36px;
-                            z-index: 10;
-                            &:before {
-                                color: #f4f6f6;
-                                top: -9px;
-                                z-index: 100;
+                            line-height: 10px;
+                            left: 12px;
+                        }
+                        &:before {
+                            color: #f4f6f6;
+                            top: -9px;
+                            z-index: 100;
+                        }
+                        &:after {
+                            color: rgba(0,0,0,.25);
+                            top: -10px;
+                        }
+                        li {
+                            height: 32px;
+                            font-weight: 400;
+                            background-position: 16px 4px;
+                            background-repeat: no-repeat;
+                            cursor: pointer;
+                            padding: 0 28px 0 45px;
+                            position: relative;
+                            white-space: pre;
+                            font-size: 14px;
+                            &:hover {
+                                background-color: #5aa6d6;
+                                color: #fff;
+                                &.icon:before {
+                                    color: #fff;
+                                }
+                            }
+                            &:hover:before {
+                                background-color: #5aa6d6;
+                                color: #fff;
+                            }
+                            &.icon:before {
+                                font-family: Ionicons;
+                                color: #999;
+                                position: absolute;
+                                top: 0;
+                                line-height: 32px;
+                                font-size: 18px;
+                            }
+                            &.edit-deck:before {
+                                content: "\F2BF";
+                                left: 14px;
+                            }
+                            &.delete-deck:before {
+                                content: "\F4C4";
+                                font-size: 22px;
+                                left: 16px;
                             }
                         }
-
                     }
                 }
             }
@@ -145,6 +189,5 @@
             width: 130px;
         }
     }
-
     }
 }

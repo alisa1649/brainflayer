@@ -40,10 +40,8 @@ class DashboardHeader extends React.Component {
                                     </div>
                                 </div>
                                 <ul className="menu-open">
-                                    <li className="edit-deck"></li>
-                                    <li className="delete-deck"></li>
-                                    <li className="edit-deck"></li>
-                                    <li className="edit-deck"></li>
+                                    <li className="icon edit-deck">Edit Deck Name</li>
+                                    <li className="icon delete-deck">Delete This Deck</li>
                                 </ul>
                             </div>
                         </div>
