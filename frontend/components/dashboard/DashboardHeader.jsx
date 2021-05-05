@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { getDecks } from '../../actions/deck_actions';
+import {deleteDeck} from '../../actions/deck_actions';
 import { Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
 import { render } from 'react-dom';
 import DeckNav from './DeckNav';
+import {changeDeleteDeckVisibility} from "../../actions/ui_actions";
+import DeleteDeckModal from "./DeleteDeckModal";
 
 class DashboardHeader extends React.Component {
     constructor(props) {
@@ -20,7 +22,7 @@ class DashboardHeader extends React.Component {
     }
 
     render() {
-        const content = (
+        const contents = (
             <div className="dash-header">
                 <div className="header-icon-container">
                     <img className="pack-icon-image" src="https://s3.amazonaws.com/brainscape-prod/system/pm/017/603/530/active_icons/iphone_3x_retina_161650729620210323-4823-oic2v.png?1616507296" />
@@ -53,7 +55,7 @@ class DashboardHeader extends React.Component {
                                     <li className="icon edit-deck">
                                         <a href="#" onClick={(e) => {
                                             e.stopPropagation();
-                                            this.props.openEditDeckModal();
+                                            // this.props.openEditDeckModal();
                                         }}>Edit Deck Name</a>
                                     </li>
                                     <li className="icon delete-deck">
@@ -69,9 +71,24 @@ class DashboardHeader extends React.Component {
                 </div>
             </div>
         )
-        return content;
+        return contents;
     }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        visibility: state.ui.deleteDeckVisibility
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        openDeleteDeckModal: () => dispatch(changeDeleteDeckVisibility(true)),
+        removeDeck: (deck) => {
+            return dispatch(deleteDeck(deck.id))
+        },
+
+    };
 };
 
-
-export default DashboardHeader;
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardHeader);

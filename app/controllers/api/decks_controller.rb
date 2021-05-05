@@ -1,5 +1,5 @@
 class Api::DecksController < ApplicationController
-  before_action :require_logged_in, only: [:create, :study, :delete, :index]
+  before_action :require_logged_in, only: [:create, :study, :delete, :index, :edit]
 
   def create
     @deck = Deck.new(deck_params)
@@ -10,6 +10,14 @@ class Api::DecksController < ApplicationController
     else
       render json: @deck.errors.full_messages, status: :unprocessable_entity
     end
+  end
+
+  def edit
+
+  end
+
+  def update
+
   end
 
   def index

@@ -43,6 +43,8 @@ export const createDeck = deck => dispatch => (
 );
 export const deleteDeck = (deckId) => dispatch => (
     APIUtil.removeDeck(deckId).then(deck => {
-        return dispatch(receiveRemoveDeck(deck.id))
+        const result = dispatch(receiveRemoveDeck(deck.id))
+        dispatch(getDecks())
+        return result;
     })
 );
