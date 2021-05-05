@@ -47,18 +47,6 @@ class SignupForm extends React.Component {
             </ul>
         );
     }
-    // passwordActions = () => {
-    //     let password1 = document.getElementById('password').value
-    //     let password2 = document.getElementById('confirm_password').value
-    //     this.checkPasswordsMatch(password1, password2)
-    //     this.update('password1')
-    // }
-    // checkPasswordsMatch() {
-    //     document.getElementById('password').value ===
-    //         document.getElementById('confirm_password').value
-    //         ? document.getElementById('submit').disabled = false
-    //         : document.getElementById('submit').disabled = true
-    // }
 
     render() {
         const contents = (
@@ -91,7 +79,7 @@ class SignupForm extends React.Component {
                         className="modal-input"
                     />
                     <input
-                        type="password2"
+                        type="password"
                         id="confirm_password"
                         placeholder="Confirm Password"
                         onChange={this.update('password2')}

@@ -48,3 +48,10 @@ export const removeDeck = deckId => {
         url: `/api/decks/${deckId}`
     })
 };
+export const editDeck = deck => {
+    return $.ajax({
+        method: 'PATCH',
+        url: `/api/decks/${deckId}`,
+        data: { deck }
+    })
+};
