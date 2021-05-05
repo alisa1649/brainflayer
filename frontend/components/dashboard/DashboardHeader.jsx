@@ -10,6 +10,13 @@ import DeckNav from './DeckNav';
 class DashboardHeader extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            isDropdownVisible: false
+        }
+    }
+
+    componentDidMount() {
+        document.addEventListener("click", () => { this.setState({ isDropdownVisible: false }) });
     }
 
     render() {
@@ -33,15 +40,28 @@ class DashboardHeader extends React.Component {
                                     <i className="study-icon"></i>
                                 </div>
                             </div>
-                            <div className="ellipses-button">
+                            <div className="ellipses-button" onClick={(e) => {
+                                e.stopPropagation();
+                                return this.setState({ isDropdownVisible: !this.state.isDropdownVisible });
+                            }}>
                                 <div className="ellipses-open">
                                     <div className="ellipses-icon-container">
                                         <i className="ellipses-icon"></i>
                                     </div>
                                 </div>
-                                <ul className="menu-open">
-                                    <li className="icon edit-deck">Edit Deck Name</li>
-                                    <li className="icon delete-deck">Delete This Deck</li>
+                                <ul className={this.state.isDropdownVisible ? "menu-open" : "menu-open hidden"}>
+                                    <li className="icon edit-deck">
+                                        <a href="#" onClick={(e) => {
+                                            e.stopPropagation();
+                                            this.props.openEditDeckModal();
+                                        }}>Edit Deck Name</a>
+                                    </li>
+                                    <li className="icon delete-deck">
+                                        <a href="#" onClick={(e) => {
+                                            e.stopPropagation();
+                                            this.props.openDeleteDeckModal();
+                                        }}>Delete This Deck</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
