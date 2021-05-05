@@ -26,7 +26,21 @@ class DashboardHeader extends React.Component {
                     <div className="creator-name">
                         <span className="darker-text">Creator:</span> {this.props.deck ? this.props.deck.author.email.slice(0, this.props.deck.author.email.indexOf('@')) : ""}
                     </div>
-                    <div className="header-buttons">
+                    <div className="header-actions">
+                        <div className="deck-action-buttons">
+                            <div className="study-button">
+                                <div className="study-icon-container">
+                                    <i className="study-icon"></i>
+                                </div>
+                            </div>
+                            <div className="ellipses-button">
+                                <div className="ellipses-open">
+                                    <div className="ellipses-icon-container">
+                                        <i className="ellipses-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
