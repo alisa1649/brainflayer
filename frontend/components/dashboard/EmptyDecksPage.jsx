@@ -1,4 +1,10 @@
 import React from "react";
+import {getActiveDeck} from "../../actions/active_deck_actions";
+import {deleteDeck, getDecks} from "../../actions/deck_actions";
+import {logout} from "../../actions/session_actions";
+import {changeNewDeckVisibility} from "../../actions/ui_actions";
+import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 
 class EmptyDecksPage extends React.Component {
@@ -25,21 +31,41 @@ class EmptyDecksPage extends React.Component {
                                 catalog of flashcard tags covering dozens of subjects.
                             </div>
                             <div className="footer-buttons">
-                                <div className="button create">
-                                    <span className="text">Create a New Class
+                                <div className="button create" onClick={this.props.openNewDeckModal}>
+                                    <span className="text">Create a New Deck
                                     </span>
                                 </div>
-                                <div className="button find">
+                                <Link to="/subjects" className="button find">
                                     <span className="text">Find Flashcards
                                     </span>
-                                </div>
+                                </Link>
                             </div>
                         </div>
-                    </div>c
+                    </div>
                 </div>
         )
        return content;
     }
 }
+const mapStateToProps = (state) => {
+    console.log("SSSSSS: " + state.activeDeck ? state.activeDeck.deck : {});
+    return {
+        deck: state.activeDeck ? state.activeDeck.deck : {},
+        decks: state.decks ? Object.values(state.decks) : []
+    }
+};
 
-export default EmptyDecksPage;
+const mapDispatchToProps = dispatch => {
+    return {
+        getDeck: (deckId) => {
+            return dispatch(getActiveDeck(deckId))
+        },
+        getDecks: () => {
+            return dispatch(getDecks())
+        },
+        openNewDeckModal: () => dispatch(changeNewDeckVisibility(true))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EmptyDecksPage);
+
