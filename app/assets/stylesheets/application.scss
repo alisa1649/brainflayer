@@ -266,11 +266,10 @@ a {
         }
 
         .dropdown-items {
-            z-index: 7;
+            z-index: 999;
             display: flex;
             color: #393030;    
             background-color: hsla(0,0%,100%,.95);
-            // display: none;
             flex-direction: column;
             left: 0;
             position: absolute;
