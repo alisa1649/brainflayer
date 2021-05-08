@@ -21,7 +21,7 @@ class DeckShow extends React.Component {
                             <span id="text">About</span>
                         </div>
                         <div className="tab nav-decks active">
-                            <span id="text">Cards ({this.props.cards.length})</span>
+                            <span id="text">Cards ({Object.keys(this.props.cards).length})</span>
                         </div>
                         <div className="tab nav-learners">
                             <span id="text">Learners (1)</span>
@@ -39,7 +39,7 @@ class DeckShow extends React.Component {
                                 <div className="inner-study-button">
                                 </div>
                                 <div className="study-button-text">
-                                    Study 0 cards
+                                    Study {Object.keys(this.props.cards).length} cards
                                 </div>
                             </div>
                             <div className="deck-links">
