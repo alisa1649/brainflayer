@@ -231,6 +231,13 @@
         width: 30vw;
         background-color: rgba(0,175,247,.16);
     }
+
+    .deck-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin: 40px;
+    }
 }
 
 

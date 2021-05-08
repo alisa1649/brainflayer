@@ -17,7 +17,6 @@
     display: flex;
     width: 246px;
   }
-
   .results-panel {
     background-color: #f2f2f2;
     height: 100%;
@@ -44,7 +43,8 @@
       }
     }
   }
-
+}
+.deck-links {
   .deck-item {
     position: relative;
     align-items: center;
@@ -70,5 +70,3 @@
     width: 120px;
   }
 }
-
-

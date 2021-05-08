@@ -37,7 +37,7 @@ class DashboardHeader extends React.Component {
                     </div>
                     <div className="deck-header-data">
                         <span className="darker-text">Tags:</span> {this.props.deck ? this.props.deck.tags.split(',').map((w) => {
-                            return <Link to={`/subjects/${w.trim()}`}>{w}</Link>
+                            return <Link key={w} to={`/subjects/${w.trim()}`}>{w}</Link>
                     }) : ""}
                     </div>
                     <div className="header-actions">
