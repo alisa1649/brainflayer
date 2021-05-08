@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import {deleteDeck} from '../../actions/deck_actions';
-import { Redirect } from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import { useEffect } from 'react';
 import { render } from 'react-dom';
 import DeckNav from './DeckNav';
@@ -36,7 +36,9 @@ class DashboardHeader extends React.Component {
                         <span className="darker-text">Creator:</span> {this.props.deck ? this.props.deck.author.email.slice(0, this.props.deck.author.email.indexOf('@')) : ""}
                     </div>
                     <div className="deck-header-data">
-                        <span className="darker-text">Tags:</span> {this.props.deck ? this.props.deck.tags : ""}
+                        <span className="darker-text">Tags:</span> {this.props.deck ? this.props.deck.tags.split(',').map((w) => {
+                            return <Link to={`/subjects/${w.trim()}`}>{w}</Link>
+                    }) : ""}
                     </div>
                     <div className="header-actions">
                         <div className="deck-action-buttons">
