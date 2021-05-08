@@ -46,6 +46,7 @@ class DeckNav extends React.Component {
     }
 
     render() {
+        const numDecks = Object.keys(this.props.decks).length
         const content = (
             <div className="deck-nav">
                 {/* <a href="#" onClick={(e) => {
@@ -58,7 +59,7 @@ class DeckNav extends React.Component {
                     <div className="profile-container">
                         <img className="user-account-image" src="https://brainscape-prod.s3.amazonaws.com/images/avatar_generic_square.png"></img>
                         <div className="user-email">{this.props.email}</div>
-                        <div className="user-stats">0 Total Cards Submitted * 2 Decks Created</div>
+                        <div className="user-stats">{`${numDecks} Decks Created`} </div>
                     </div>
                     <div className="settings-button" onClick={this.toggleDropdown}>
                         <span className="ion-ios-gear"></span>
