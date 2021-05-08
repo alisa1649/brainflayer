@@ -5,6 +5,7 @@ import DashboardHeader from './DashboardHeader';
 import { changeNewCardVisibility } from '../../actions/ui_actions';
 import CardItem from './CardItem';
 import SearchListItems from "../search/SearchListItems";
+import {Link} from "react-router-dom";
 
 
 class DeckShow extends React.Component {
@@ -47,13 +48,13 @@ class DeckShow extends React.Component {
                         <div>CARDS
                         </div>
                     </div>
-                    <div className="study-button">
+                    <Link to={`/practice/${this.props.deck ? this.props.deck.id : ""}`} className="study-button">
                         <div className="inner-study-button">
                         </div>
                         <div className="study-button-text">
                             Study {Object.keys(this.props.cards).length} cards
                         </div>
-                    </div>
+                    </Link>
                     <div className="deck-links">
                         <a href="#">
                             {/*<span className="material-icons">*/}
