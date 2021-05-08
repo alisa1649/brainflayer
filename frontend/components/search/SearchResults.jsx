@@ -35,7 +35,7 @@ class SearchResults extends React.Component {
                     </div>
                     <div className='results-panel'>
                         <div className="results-header">
-                            <div className="header-text">Learn "subject"</div>
+                            <div className="header-text">Learn About "{this.state.searchTerm}" </div>
                             <div className="header-blurb">Study Redux using smart web & mobile flashcards created
                                 by top students, teachers, and professors. Prep for a quiz or learn for fun!
                             </div>
