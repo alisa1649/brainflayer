@@ -70,9 +70,9 @@ class NavBar extends React.Component {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="action upgrade">
+                                <a target='_blank' href='http://www.alisacheadle.com/' className="action upgrade">
                                     Upgrade To Pro
-                            </div>
+                                </a>
                             </div>
                             : <div className="actions">
                                 <div className="action login" onClick={this.props.openLoginModal}>

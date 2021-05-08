@@ -112,9 +112,9 @@ class DeckNav extends React.Component {
                                 <span className="material-icons find-icon">
                                     search
                                 </span>
-                                <span className="deck-action-text">
+                                <Link to="/subjects" className="deck-action-text">
                                     Find Flashcards
-                                </span>
+                                </Link>
 
                             </div>
                         </div>
