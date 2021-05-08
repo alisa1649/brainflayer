@@ -32,8 +32,11 @@ class DashboardHeader extends React.Component {
                     <div className="header-title">
                         {this.props.deck ? this.props.deck.title : ""}
                     </div>
-                    <div className="creator-name">
+                    <div className="deck-header-data creator-name">
                         <span className="darker-text">Creator:</span> {this.props.deck ? this.props.deck.author.email.slice(0, this.props.deck.author.email.indexOf('@')) : ""}
+                    </div>
+                    <div className="deck-header-data">
+                        <span className="darker-text">Tags:</span> {this.props.deck ? this.props.deck.tags : ""}
                     </div>
                     <div className="header-actions">
                         <div className="deck-action-buttons">

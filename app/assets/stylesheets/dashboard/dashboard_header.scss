@@ -26,13 +26,16 @@
             font-size: 36px;
             text-transform: capitalize;
         }
-        .creator-name {
+        .deck-header-data {
             font-size: 14px;
-            margin-top: 20px;
+            line-height: 20px;
             text-transform: capitalize;
             .darker-text {
                 color: rgba(38, 63, 87, 0.8);
             }
+        }
+        .creator-name {
+            margin-top: 20px;
         }
         .header-actions {
             display: flex;
