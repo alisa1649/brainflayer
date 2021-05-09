@@ -6,6 +6,7 @@ import {changeNewCardVisibility} from "../../actions/ui_actions";
 import {getActiveDeck} from "../../actions/active_deck_actions";
 import NavBar from "../navbar/navbar";
 import DeckNav from "../dashboard/DeckNav";
+import {Link} from "react-router-dom";
 
 class DeckPractice extends React.Component {
     constructor(props) {
@@ -22,48 +23,62 @@ class DeckPractice extends React.Component {
     }
 
     render() {
-        let cardText = ""
+        let cardFront = this.props.cards.length ? this.props.cards[this.state.currentCard].title : "";
+        let cardBack = this.props.cards.length ? this.props.cards[this.state.currentCard].body : "";
         if (this.props.cards.length) {
-            console.log(JSON.stringify(this.props.cards))
-            if (this.state.isRevealed) {
-                cardText = this.props.cards[this.state.currentCard].body
-            }
-            else {
-                cardText = this.props.cards[this.state.currentCard].title
-            }
+            return (
+                <div className="practice-container" >
+                    <DeckNav />
+                    <div className="practice-area">
+                        <div className="practice-header">
+                            <div className="practice-header-text">
+                                <span className="label">Deck:&nbsp;</span>
+                                <span className="deck name">{this.props.deck ? this.props.deck.title : ""}</span>
+                                <span className="card label">Card:&nbsp;</span>
+                                <span className="card name">{this.state.currentCard + 1}/{this.props.cards.length}</span>
+                                <Link to="/dashboard" className="return-to-dash">Back to dashboard</Link>
+                            </div>
+                        </div>
+                        <div className="practice-card-container">
+                            <div className={`practice-card front ${this.state.isRevealed ? "" : "active"}`}>
+                                <div className="card-header">Q</div>
+                                <div className={`card-text-container`}>
+                                    <div className="card-text">{cardFront}</div>
+                                </div>
+                            </div>
+                            <div className={`practice-card back ${this.state.isRevealed ? "active" : ""}`}>
+                                <div className="card-header">A</div>
+                                <div className={`card-text-container`}>
+                                    <div className="card-text">{cardBack}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="practice-footer">
+                            {
+                                !this.state.isRevealed
+                                    ? <div onClick={() => { this.setState(() => ({isRevealed: true})) }} className="reveal-button">Reveal Answer</div>
+                                    : <div onClick={() => { this.setState((s) => ({isRevealed: false, currentCard: (s.currentCard + 1) % this.props.cards.length}))}} className="reveal-button next">Next</div>
+                            }
+                        </div>
+                    </div>
+                </div >
+            )
         }
-        return (
-            <div className="practice-container" >
-                <DeckNav />
-                <div className="practice-area">
-                    <div className="practice-header">
-                        <div className="practice-header-text">
-                            <span className="label">Deck:&nbsp;</span>
-                            <span className="deck name">{this.props.deck ? this.props.deck.title : ""}</span>
-                            <span className="card label">Card:&nbsp;</span>
-                            <span className="card name">{this.state.currentCard + 1}/{this.props.cards.length}</span>
-                        </div>
-                    </div>
-                    <div className="practice-card-container">
-                        <div className="practice-card">
-                            <div className="card-header">
-                                {this.state.isRevealed ? "A" : "Q"}
-                            </div>
-                            <div className="card-text-container">
-                                <div className="card-text">{cardText}</div>
+        else {
+            return (
+                <div className="practice-container" >
+                    <DeckNav />
+                    <div className="practice-area">
+                        <div className="practice-header">
+                            <div className="practice-header-text">
+                                <span className="card name">There are no cards in this deck!</span>
+                                <Link to="/dashboard" className="return-to-dash">Back to dashboard</Link>
                             </div>
                         </div>
-                    </div>
-                    <div className="practice-footer">
-                        {
-                            !this.state.isRevealed
-                                ? <div onClick={() => { this.setState(() => ({isRevealed: true})) }} className="reveal-button">Reveal Answer</div>
-                                : <div onClick={() => { this.setState((s) => ({isRevealed: false, currentCard: (s.currentCard + 1) % this.props.cards.length}))}} className="reveal-button">Next</div>
-                        }
                     </div>
                 </div>
-            </div >
-        )
+            )
+        }
     };
 };
 

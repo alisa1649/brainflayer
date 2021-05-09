@@ -49,18 +49,13 @@ class DeckNav extends React.Component {
         const numDecks = Object.keys(this.props.decks).length
         const content = (
             <div className="deck-nav">
-                {/* <a href="#" onClick={(e) => {
-                    e.stopPropagation();
-                    this.props.logout();
-                }}>Log Out</a> */}
-
                 <div className="deck-nav-header">
                     <Link to="/landing" className="dashboard-logo"></Link>
-                    <div className="profile-container">
+                    <Link to="/dashboard" className="profile-container">
                         <img className="user-account-image" src="https://brainscape-prod.s3.amazonaws.com/images/avatar_generic_square.png"></img>
                         <div className="user-email">{this.props.email}</div>
                         <div className="user-stats">{`${numDecks} Decks Created`} </div>
-                    </div>
+                    </Link>
                     <div className="settings-button" onClick={this.toggleDropdown}>
                         <span className="ion-ios-gear"></span>
                         <div className={"settings-dropdown" + (this.state.isSettingsVisible ? "" : " hidden")}>

@@ -10,10 +10,37 @@
     width: calc(100% - 340px);
     height: 100%;
     .practice-header {
-      height: 100px;
+      height: 70px;
       width: 100%;
+      z-index: 7;
       .practice-header-text {
         font-size: 14px;
+        .return-to-dash {
+          float: right;
+          color: #28a5dc;
+          font-size: 13px;
+          height: 30px;
+          margin-right: 2px;
+          padding: 0 24px;
+          border-radius: 36px;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          margin: 0 18px;
+          align-items: center;
+          transition: all .3s;
+          &:hover {
+            background-color: rgba(0,0,0,.1);
+          }
+          &:before {
+            content: "\F2BF";
+            font-family: Ionicons;
+            font-size: 14px;
+            font-style: normal;
+            line-height: inherit;
+            margin: 0 6px 0 0;
+          }
+        }
         .label {
           color: #888;
         }
@@ -30,17 +57,37 @@
     .practice-card-container {
       display: flex;
       width: 100%;
-      height: calc(100% - 100px - 150px - 60px);
+      height: calc(100% - 70px - 150px - 60px);
       justify-content: flex-start;
+      position: relative;
       .practice-card {
+        position: absolute;
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 100%;
         background-color: #fff;
         box-shadow: 0 2px 4px #63636340;
-        border-bottom: 6px solid #ff8a47;
+        border-bottom: 6px solid #00a8d7;
         justify-content: space-between;
+        opacity: 0;
+        &.front {
+          left: -120px;
+        }
+        &.back {
+          top: -80px;
+          border-bottom: 6px solid #ff8a47;
+        }
+        transition: opacity .3s ease 0s, top .3s ease 0s, left 3s ease 0s;
+        z-index: 1;
+
+        &.active {
+          transition: opacity .3s ease 0s, top .3s ease 0s, left .7s ease 0s;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          z-index: 6;
+        }
         .card-header {
           color: #bbb;
           display: flex;
@@ -80,12 +127,15 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        background-color: #ff8a47;
+        background-color: #00a8d7;
         color: #fff;
         width: 100%;
         height: 80px;
         font-size: 24px;
         font-weight: 300;
+        &.next {
+          background-color: #ff8a47;
+        }
       }
     }
   }
