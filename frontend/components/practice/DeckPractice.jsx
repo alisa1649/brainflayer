@@ -37,19 +37,29 @@ class DeckPractice extends React.Component {
                 <DeckNav />
                 <div className="practice-area">
                     <div className="practice-header">
+                        <div className="practice-header-text">
+                            <span className="label">Deck:&nbsp;</span>
+                            <span className="deck name">{this.props.deck ? this.props.deck.title : ""}</span>
+                            <span className="card label">Card:&nbsp;</span>
+                            <span className="card name">{this.state.currentCard + 1}/{this.props.cards.length}</span>
+                        </div>
                     </div>
                     <div className="practice-card-container">
                         <div className="practice-card">
-                            <div className="card-text">{cardText}</div>
+                            <div className="card-header">
+                                {this.state.isRevealed ? "A" : "Q"}
+                            </div>
+                            <div className="card-text-container">
+                                <div className="card-text">{cardText}</div>
+                            </div>
                         </div>
                     </div>
                     <div className="practice-footer">
                         {
                             !this.state.isRevealed
                                 ? <div onClick={() => { this.setState(() => ({isRevealed: true})) }} className="reveal-button">Reveal Answer</div>
-                                : <div onClick={() => { this.setState((s) => ({isRevealed: false, currentCard: (s.currentCard + 1) % this.props.cards.length})) }} className="reveal-button">Next</div>
+                                : <div onClick={() => { this.setState((s) => ({isRevealed: false, currentCard: (s.currentCard + 1) % this.props.cards.length}))}} className="reveal-button">Next</div>
                         }
-
                     </div>
                 </div>
             </div >
