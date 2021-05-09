@@ -5,10 +5,16 @@ import {connect} from "react-redux";
 import {changeNewCardVisibility} from "../../actions/ui_actions";
 import {getActiveDeck} from "../../actions/active_deck_actions";
 import NavBar from "../navbar/navbar";
+import DeckNav from "../dashboard/DeckNav";
 
 class DeckPractice extends React.Component {
     constructor(props) {
         super(props);
+        this.render = this.render.bind(this);
+        this.state = {
+            currentCard: 0,
+            isRevealed: false
+        }
     }
 
     componentDidMount() {
@@ -16,21 +22,35 @@ class DeckPractice extends React.Component {
     }
 
     render() {
+        let cardText = ""
+        if (this.props.cards.length) {
+            console.log(JSON.stringify(this.props.cards))
+            if (this.state.isRevealed) {
+                cardText = this.props.cards[this.state.currentCard].body
+            }
+            else {
+                cardText = this.props.cards[this.state.currentCard].title
+            }
+        }
         return (
-            <div className="display-container" style={{width: "100%"}}>
-                <NavBar />
-                <DashboardHeader deck={this.props.deck} />
-                <div className="deck-show">
-                    <div className="deck-cards-navbar">
+            <div className="practice-container" >
+                <DeckNav />
+                <div className="practice-area">
+                    <div className="practice-header">
                     </div>
-                    {/* <div className="cards-title">Cards</div> */}
-                    <ul className="deck-list">
+                    <div className="practice-card-container">
+                        <div className="practice-card">
+                            <div className="card-text">{cardText}</div>
+                        </div>
+                    </div>
+                    <div className="practice-footer">
                         {
-                            this.props.cards.map((card, i) => (
-                                <CardItem card={card} key={i}/>
-                            ))
+                            !this.state.isRevealed
+                                ? <div onClick={() => { this.setState(() => ({isRevealed: true})) }} className="reveal-button">Reveal Answer</div>
+                                : <div onClick={() => { this.setState((s) => ({isRevealed: false, currentCard: (s.currentCard + 1) % this.props.cards.length})) }} className="reveal-button">Next</div>
                         }
-                    </ul>
+
+                    </div>
                 </div>
             </div >
         )
@@ -46,7 +66,7 @@ const mapStateToProps = (state) => {
                 card => {
                     console.log("CARD::::" + JSON.stringify(card));
                     return Object.values(card)[0];
-                })
+                }).filter(c => c !== null)
             : []
     }
 };
