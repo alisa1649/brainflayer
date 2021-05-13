@@ -10,6 +10,7 @@ import EmptyDecksPage from "./EmptyDecksPage";
 import {changeDeleteDeckVisibility} from "../../actions/ui_actions";
 import {deleteDeck} from "../../actions/deck_actions";
 import {connect} from "react-redux";
+import EditDeckForm from "./EditDeckForm";
 
 const Dashboard = (props) => {
     return (
@@ -22,6 +23,7 @@ const Dashboard = (props) => {
                     : <EmptyDecksPage />
             }
             <NewDeckForm />
+            <EditDeckForm />
             <NewCardForm />
         </div>
     )

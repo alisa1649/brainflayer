@@ -6,7 +6,7 @@ import {Link, Redirect} from 'react-router-dom';
 import { useEffect } from 'react';
 import { render } from 'react-dom';
 import DeckNav from './DeckNav';
-import {changeDeleteDeckVisibility} from "../../actions/ui_actions";
+import {changeDeleteDeckVisibility, changeEditDeckVisibility, changeNewDeckVisibility} from "../../actions/ui_actions";
 import DeleteDeckModal from "./DeleteDeckModal";
 
 class DashboardHeader extends React.Component {
@@ -60,7 +60,7 @@ class DashboardHeader extends React.Component {
                                     <li className="icon edit-deck">
                                         <a href="#" onClick={(e) => {
                                             e.stopPropagation();
-                                            // this.props.openEditDeckModal();
+                                            this.props.openEditDeckModal();
                                         }}>Edit Deck Name</a>
                                     </li>
                                     <li className="icon delete-deck">
@@ -82,7 +82,6 @@ class DashboardHeader extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        visibility: state.ui.deleteDeckVisibility
     }
 }
 
@@ -92,7 +91,8 @@ const mapDispatchToProps = dispatch => {
         removeDeck: (deck) => {
             return dispatch(deleteDeck(deck.id))
         },
-
+        openNewDeckModal: () => dispatch(changeNewDeckVisibility(true)),
+        openEditDeckModal: () => dispatch(changeEditDeckVisibility(true))
     };
 };
 

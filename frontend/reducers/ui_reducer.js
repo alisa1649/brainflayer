@@ -3,7 +3,7 @@ import {
     CHANGE_SIGNUP_VISIBILITY,
     CHANGE_NEW_CARD_VISIBILITY,
     CHANGE_NEW_DECK_VISIBILITY,
-    CHANGE_DELETE_DECK_VISIBILITY
+    CHANGE_DELETE_DECK_VISIBILITY, CHANGE_EDIT_DECK_VISIBILITY
 } from '../actions/ui_actions';
 
 const uiReducer = (state = {}, action) => {
@@ -17,8 +17,9 @@ const uiReducer = (state = {}, action) => {
             return Object.assign({}, state, { newCardVisibility: action.visibility })
         case CHANGE_NEW_DECK_VISIBILITY:
             return Object.assign({}, state, { newDeckVisibility: action.visibility })
+        case CHANGE_EDIT_DECK_VISIBILITY:
+            return Object.assign({}, state, { editDeckVisibility: action.visibility })
         case CHANGE_DELETE_DECK_VISIBILITY:
-            console.log({deleteDeckVisibility: action.visibility} )
             return Object.assign({}, state, { deleteDeckVisibility: action.visibility })
         default:
             return state;
