@@ -70,7 +70,7 @@ class DeckNav extends React.Component {
                         <div className="classes">MY DECKS({this.props.decks.length})</div>
                         <div className="util-buttons">
                             <span className="plus-button" onClick={this.props.openNewDeckModal}></span>
-                            <span className="search-icon"></span>
+                            <Link to="/subjects" className="search-icon"></Link>
                         </div>
                     </div>
                     <div className="decks">

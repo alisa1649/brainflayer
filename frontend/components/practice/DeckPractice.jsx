@@ -2,7 +2,7 @@ import React from "react";
 import DashboardHeader from "../dashboard/DashboardHeader";
 import CardItem from "../dashboard/CardItem";
 import {connect} from "react-redux";
-import {changeNewCardVisibility} from "../../actions/ui_actions";
+import {changeNewCardVisibility, changeNewDeckVisibility} from "../../actions/ui_actions";
 import {getActiveDeck} from "../../actions/active_deck_actions";
 import NavBar from "../navbar/navbar";
 import DeckNav from "../dashboard/DeckNav";

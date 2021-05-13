@@ -42,11 +42,11 @@ class DashboardHeader extends React.Component {
                     </div>
                     <div className="header-actions">
                         <div className="deck-action-buttons">
-                            <div className="study-button">
+                            <Link to={`/practice/${this.props.deck ? this.props.deck.id : ""}`} className="study-button">
                                 <div className="study-icon-container">
                                     <i className="study-icon"></i>
                                 </div>
-                            </div>
+                            </Link>
                             <div className="ellipses-button" onClick={(e) => {
                                 e.stopPropagation();
                                 return this.setState({ isDropdownVisible: !this.state.isDropdownVisible });
