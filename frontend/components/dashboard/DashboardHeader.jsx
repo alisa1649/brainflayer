@@ -22,6 +22,9 @@ class DashboardHeader extends React.Component {
     }
 
     render() {
+        if (!this.props.deck) {
+            return null
+        }
         const contents = (
             <div className="dash-header">
                 <div className="header-icon-container">
@@ -33,7 +36,7 @@ class DashboardHeader extends React.Component {
                         {this.props.deck ? this.props.deck.title : ""}
                     </div>
                     <div className="deck-header-data creator-name">
-                        <span className="darker-text">Creator:</span> {this.props.deck ? this.props.deck.author.email.slice(0, this.props.deck.author.email.indexOf('@')) : ""}
+                        <span className="darker-text">Creator: </span><Link to={`/subjects/${this.props.deck.author.email}`}>{this.props.deck ? this.props.deck.author.email.slice(0, this.props.deck.author.email.indexOf('@')) : ""}</Link>
                     </div>
                     <div className="deck-header-data">
                         <span className="darker-text">Tags:</span> {this.props.deck ? this.props.deck.tags.split(',').map((w) => {
@@ -57,17 +60,17 @@ class DashboardHeader extends React.Component {
                                     </div>
                                 </div>
                                 <ul className={this.state.isDropdownVisible ? "menu-open" : "menu-open hidden"}>
-                                    <li className="icon edit-deck">
-                                        <a href="#" onClick={(e) => {
-                                            e.stopPropagation();
-                                            this.props.openEditDeckModal();
-                                        }}>Edit Deck Name</a>
+                                    <li onClick={(e) => {
+                                        e.stopPropagation();
+                                        this.props.openEditDeckModal();
+                                    }} className="icon edit-deck">
+                                        <a href="#" >Edit Deck Name</a>
                                     </li>
-                                    <li className="icon delete-deck">
-                                        <a href="#" onClick={(e) => {
-                                            e.stopPropagation();
-                                            this.props.openDeleteDeckModal();
-                                        }}>Delete This Deck</a>
+                                    <li onClick={(e) => {
+                                        e.stopPropagation();
+                                        this.props.openDeleteDeckModal();
+                                    }} className="icon delete-deck">
+                                        <a href="#" >Delete This Deck</a>
                                     </li>
                                 </ul>
                             </div>
