@@ -18,8 +18,8 @@ class SearchResults extends React.Component {
                     </div>
                     <div className='results-panel'>
                         <div className="results-header">
-                            <div className="header-text">Learn About "{this.props.match.params.search_term}" </div>
-                            <div className="header-blurb">Study Redux using smart web & mobile flashcards created
+                            <div className="header-text">{this.props.match.params.search_term} Flashcards</div>
+                            <div className="header-blurb">Study X using smart web & mobile flashcards created
                                 by top students, teachers, and professors. Prep for a quiz or learn for fun!
                             </div>
                         </div>
