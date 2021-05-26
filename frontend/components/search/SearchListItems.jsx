@@ -33,11 +33,14 @@ class SearchListItems extends React.Component {
 
     render() {
         return (
-            <ul className="deck-links">
-                {Object.values(this.state.decks).map(deck => <li key={deck.id} ><Link to={`/practice/${deck.id}`} onClick={() => this.props.setActiveDeck(deck)} className="deck-link">{deck.title}</Link>
-                    <div className="link-icon">
+            <ul className="search-links">
+                {Object.values(this.state.decks).map(deck => <li key={deck.id} >
+                    <Link to={`/practice/${deck.id}`} onClick={() => this.props.setActiveDeck(deck)} className="subject-bar">{deck.title}</Link>
+                    <div className="subject-icon">
                         <img alt="React/Redux" className="subject-icon" src="https://www.brainscape.com/assets/app_icons/ugs-df12edeffeac52b066888004169a388e7565d586243f095eb999ff34b9331a7d.png" />
                     </div>
+                    <div className="main-data"></div>
+                    <div className="result-action"></div>
                 </li>)}
             </ul>
         )
