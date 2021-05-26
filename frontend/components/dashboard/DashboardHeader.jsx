@@ -36,7 +36,7 @@ class DashboardHeader extends React.Component {
                         {this.props.deck ? this.props.deck.title : ""}
                     </div>
                     <div className="deck-header-data creator-name">
-                        <span className="darker-text">Creator: </span><Link to={`/subjects/${this.props.deck.author.email}`}>{this.props.deck ? this.props.deck.author.email.slice(0, this.props.deck.author.email.indexOf('@')) : ""}</Link>
+                        <span className="darker-text">Creator: </span><Link to={`/subjects/${this.props.deck.author.email}`}>{this.props.deck ? this.props.deck.author.email : ""}</Link>
                     </div>
                     <div className="deck-header-data">
                         <span className="darker-text">Tags:</span> {this.props.deck ? this.props.deck.tags.split(',').map((w) => {
