@@ -23,6 +23,10 @@ class SearchListItems extends React.Component {
     }
 
     componentDidMount() {
+        this.componentDidUpdate()
+    }
+
+    componentDidUpdate() {
         const searchTerm = this.props.terms;
         if (this.state.searchTerm !== searchTerm) {
             this.setState({
@@ -35,24 +39,25 @@ class SearchListItems extends React.Component {
     render() {
         return (
             <ul className="search-links">
-                {Object.values(this.state.decks).map(deck => <li key={deck.id} >
-                    <Link to={`/practice/${deck.id}`} onClick={() => this.props.setActiveDeck(deck)} className="subject-bar"></Link>
-                    <div className="subject-icon">
-                        <img alt="React/Redux" className="subject-icon" src="https://www.brainscape.com/assets/app_icons/ugs-df12edeffeac52b066888004169a388e7565d586243f095eb999ff34b9331a7d.png" />
-                    </div>
-                    <div className="main-data">
-                        <div className="result-flashcard-header">
-                            {deck.title}
+                {Object.values(this.state.decks).map(deck => <li key={deck.id}>
+                    <Link to={`/practice/${deck.id}`} onClick={() => this.props.setActiveDeck(deck)} className="subject-bar">
+                        <div className="subject-icon">
+                            <img alt="React/Redux" className="subject-icon" src="https://www.brainscape.com/assets/app_icons/ugs-df12edeffeac52b066888004169a388e7565d586243f095eb999ff34b9331a7d.png" />
                         </div>
-                        <div className="result-flashcard-info">
-                                {/*<span className="result-flashcard-author">Deck Maker: </span><Link to={`/subjects/${deck.author.email}`}>{deck ? deck.author.email.slice(0, deck.author.email.indexOf('@')) : ""} className="author-link"></Link>*/}
+                        <div className="main-data">
+                            <div className="result-flashcard-header">
+                                {deck.title}
+                            </div>
+                            <div className="result-flashcard-info">
+                              <div className="result-flashcard-author">Deck Maker: <Link className="author-link" to={`/subjects/${deck.author.email}`}>{deck.author.email}</Link></div>
+                            </div>
+                            <div className="result-flashcard-tags">
+                                Deck Tags: {deck.tags}
+                            </div>
                         </div>
-                        <div className="result-flashcard-tags">
-                            Deck Tags:
-                        </div>
-                    </div>
-                    <Link to={`/practice/${deck.id}`} className="result-action">
-                        action
+                        <Link to={`/practice/${deck.id}`} className="result-action">
+                            action
+                        </Link>
                     </Link>
                 </li>)}
             </ul>
