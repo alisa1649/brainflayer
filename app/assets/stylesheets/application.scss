@@ -320,6 +320,23 @@ a {
     &.login-modal-container {
         width: 340px;
         height: 400px;
+        .btn-demo-user {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            height: 48px;
+            border-radius: 33px;
+            display: block;
+            width: 100%;
+            max-width: 185px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            background-color: #ff8a47;
+            &:hover {
+                background-color: #ffaa7a;
+            }
+        }
     }
 
     &.signup-modal-container {
@@ -453,7 +470,6 @@ a {
         &:focus {
             border-bottom: 3px solid #3faee0;
         }
-
         &::placeholder {
             vertical-align: bottom;
             color: #aaa;
@@ -468,7 +484,6 @@ a {
         width: 100%;
     }
 }
-
 .form-submit {
     font-size: 14px;
     font-weight: 700;
@@ -485,14 +500,12 @@ a {
     &:hover {
         background-color: #ffaa7a;
     }
-
     &.disabled {
         background-color: #cecece;
         cursor: not-allowed;
         
     }
 }
-
 .carousel {
     position: relative;
     overflow: hidden;

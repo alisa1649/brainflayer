@@ -64,6 +64,15 @@ class LoginForm extends React.Component {
                     <div className="links">
                         <a href="#" onClick={this.props.switchModal}>Create an account?</a>
                     </div>
+                    <button className='btn-demo-user' onClick= {(e) => {
+                        e.preventDefault();
+                        dispatch(login({
+                            email: "demouser@demo.com",
+                            password: "demouser@demo.com"
+                        }))
+                    }} >
+                        Login as Demo User
+                    </button>
                 </form>
             </Modal>
         );
