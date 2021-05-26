@@ -44,7 +44,10 @@
   }
 }
 .search-links {
+  height: calc(100vh - 72px);
+  overflow: auto;
   li {
+    color: #8c8c8c;
     background-color: #eaeaea;
     position: relative;
     display: flex;
@@ -78,11 +81,66 @@
       cursor: pointer;
     }
     .main-data {
+      display: flex;
+      flex-direction: column;
+      width: calc(100% - 156px);
+      //flex: 1;
+      //align-self: flex-start;
+      height: 120px;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 3px 0;
+      .result-flashcard-header {
+        text-transform: capitalize;
+        display: block;
+        font-family: Proxima Nova,sans-serif;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 110%;
+        margin: 0 0 12px;
+        color: #29a5dc;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .result-flashcard-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: -10px;
+        .result-flashcard-author {
+          display: block;
+          font-family: Proxima Nova,sans-serif;
+          font-size: 13px;
+          font-weight: 400;
+          text-transform: uppercase;
+          margin: 0 14px 0 0;
+          color: #7f7f7f;
+          line-height: 125%;
+          .author-link {
+            background-color: transparent;
+            color: #3faee0;
+          }
+        }
+      }
+      .result-flashcard-tags {
+        align-self: flex-start;
+        color: #7f7f7f;
+        font-size: 14px;
 
+      }
     }
-
     .result-action {
-
+      display: block;
+      background-image: url(https://www.brainscape.com/assets/blue-chevron.png);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      text-indent: -10000px;
+      width: 18px;
+      margin-left: auto;
+      font-size: 14px;
+      text-decoration-color: rgb(63, 174, 224);
     }
   }
 }
