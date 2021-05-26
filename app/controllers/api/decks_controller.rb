@@ -47,7 +47,7 @@ class Api::DecksController < ApplicationController
   end
 
   def deck_params
-    params.require(:deck).permit(:title, :objective, :tag_id, :tags)
+    params.require(:deck).permit(:title, :objective, :tag_id, :tags, :author)
   end
 
 end

@@ -18,6 +18,7 @@ class SearchListItems extends React.Component {
     searchDecks(search_term) {
         APIUtil.searchDecks(search_term).then(decks => {
             this.setState({decks: decks})
+            console.log(`DECKS: ${JSON.stringify(decks)}`)
         })
     }
 
@@ -35,12 +36,24 @@ class SearchListItems extends React.Component {
         return (
             <ul className="search-links">
                 {Object.values(this.state.decks).map(deck => <li key={deck.id} >
-                    <Link to={`/practice/${deck.id}`} onClick={() => this.props.setActiveDeck(deck)} className="subject-bar">{deck.title}</Link>
+                    <Link to={`/practice/${deck.id}`} onClick={() => this.props.setActiveDeck(deck)} className="subject-bar"></Link>
                     <div className="subject-icon">
                         <img alt="React/Redux" className="subject-icon" src="https://www.brainscape.com/assets/app_icons/ugs-df12edeffeac52b066888004169a388e7565d586243f095eb999ff34b9331a7d.png" />
                     </div>
-                    <div className="main-data"></div>
-                    <div className="result-action"></div>
+                    <div className="main-data">
+                        <div className="result-flashcard-header">
+                            {deck.title}
+                        </div>
+                        <div className="result-flashcard-info">
+                                {/*<span className="result-flashcard-author">Deck Maker: </span><Link to={`/subjects/${deck.author.email}`}>{deck ? deck.author.email.slice(0, deck.author.email.indexOf('@')) : ""} className="author-link"></Link>*/}
+                        </div>
+                        <div className="result-flashcard-tags">
+                            Deck Tags:
+                        </div>
+                    </div>
+                    <Link to={`/practice/${deck.id}`} className="result-action">
+                        action
+                    </Link>
                 </li>)}
             </ul>
         )
