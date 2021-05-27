@@ -260,5 +260,42 @@
                 }
             }
         }
+        .deck-nav-footer-container {
+            margin-top: 80px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            color: hsla(0,0%,100%,.4);
+            font-size: 20px;
+            padding: 24px 18px;
+            .deck-nav-footer {
+                display: flex;
+                height: 100%;
+                width: 100%;
+                justify-content: space-between;
+                .github-link:before {
+                    content: "\f09b";
+                    font-family: 'Font Awesome 5 Brands';
+                }
+                .linkedin-link:before {
+                    content: "\f0e1";
+                    font-family: 'Font Awesome 5 Brands';
+                }
+                .portfolio-link {
+                    background-image: url(https://i.ibb.co/B4B7VRK/New-Project-1.png);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    height: 27px;
+                    width: 27px;
+                    margin-top: -3px;
+                    background-position: center;
+                    opacity: .55;
+                }
+                .resume-link:before {
+                    content: "\f019";
+                    font-family: 'FontAwesome';
+                }
+            }
+        }
     }
 }
