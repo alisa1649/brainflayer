@@ -89,10 +89,8 @@ class SignupForm extends React.Component {
                         <input className={`form-submit ${this.state.password.length < 6 || this.state.email.length < 6 ? "disabled" : ""}`} type="submit" value="Register" />
                         <button className='btn-demo-user' onClick= {(e) => {
                             e.preventDefault();
-                            dispatch(login({
-                                email: "demouser@demo.com",
-                                password: "demouser@demo.com"
-                            }))
+                            this.props.processDemo({email: "demouser@demo.com",
+                                password: "demouser@demo.com"});
                         }} >
                             Login as Demo User
                         </button>
@@ -118,6 +116,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         processForm: (user) => dispatch(signup(user)),
+        processDemo: (user) => dispatch(login(user)),
         closeModal: () => dispatch(changeSignupVisibility(false)),
         switchModal: () => {
             dispatch(changeLoginVisibility(true));

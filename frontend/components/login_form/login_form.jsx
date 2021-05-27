@@ -66,10 +66,8 @@ class LoginForm extends React.Component {
                     </div>
                     <button className='btn-demo-user' onClick= {(e) => {
                         e.preventDefault();
-                        dispatch(login({
-                            email: "demouser@demo.com",
-                            password: "demouser@demo.com"
-                        }))
+                        this.props.processForm({email: "demouser@demo.com",
+                            password: "demouser@demo.com"});
                     }} >
                         Login as Demo User
                     </button>
