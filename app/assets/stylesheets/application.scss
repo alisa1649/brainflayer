@@ -71,23 +71,23 @@ a {
             color: #fff;
         }
     }
-    .watch-button {
-        display: flex;
-        align-items: center;
-        font-weight: 900;
-        font-size: 13px;
-    }
-    .watch-button:before {
-        content: "\F362";
-        font-family: Ionicons;
-        font-size: 24px;
-        font-style: normal;
-        line-height: inherit;
-        color: #fff;
-        font-size: 66px;
-        margin-right: 16px;
-        transition: color .3s ease
-    } 
+    //.watch-button {
+    //    display: flex;
+    //    align-items: center;
+    //    font-weight: 900;
+    //    font-size: 13px;
+    //}
+    //.watch-button:before {
+    //    content: "\F362";
+    //    font-family: Ionicons;
+    //    font-size: 24px;
+    //    font-style: normal;
+    //    line-height: inherit;
+    //    color: #fff;
+    //    font-size: 66px;
+    //    margin-right: 16px;
+    //    transition: color .3s ease
+    //}
 }
 .square-button {
     width: 250px;
@@ -306,6 +306,22 @@ a {
     0% {opacity:0; margin-bottom: 150px;}
     100% {opacity:1; margin-bottom: 0;}
 }
+.btn-demo-user {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    height: 48px;
+    border-radius: 33px;
+    display: block;
+    width: 95%;
+    max-width: 160px;
+    margin-left: 15px;
+    text-align: center;
+    background-color: #ff8a47;
+    &:hover {
+        background-color: #ffaa7a;
+    }
+}
 .modal-form-container {
     background: #fff;
     border-radius: 24px;
@@ -320,23 +336,6 @@ a {
     &.login-modal-container {
         width: 340px;
         height: 400px;
-        .btn-demo-user {
-            color: white;
-            font-size: 14px;
-            font-weight: 700;
-            height: 48px;
-            border-radius: 33px;
-            display: block;
-            width: 100%;
-            max-width: 185px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            background-color: #ff8a47;
-            &:hover {
-                background-color: #ffaa7a;
-            }
-        }
     }
 
     &.signup-modal-container {
@@ -389,13 +388,13 @@ a {
             }
         }
         .modal-signup-form {
-            padding-left: 140px;
+            padding-left: 100px;
             position: relative;
         }
         .registration-controls {
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-between;
         }
         .signup-link {
             justify-content: left;
@@ -463,7 +462,7 @@ a {
         color: #197096;
         font-size: 16px;
         padding: 0;
-        width: 100%;
+        width: 95%;
         height: 36px;
         margin-bottom: 18px;
         font-weight: 600;
@@ -490,10 +489,8 @@ a {
     height: 48px;
     border-radius: 33px;
     display: block;
-    width: 100%;
-    max-width: 185px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 95%;
+    max-width: 160px;
     text-align: center;
     color: #fff;
     background-color: #ff8a47;
@@ -582,33 +579,32 @@ a {
         }
     }
 }
-
 .checkbox-container {
     display: flex;
+    margin-right: 2px;
     * {
         box-sizing: border-box;
     }
     .checkbox {
+        font-size: 14px;
+        text-decoration: none;
         background-size: contain; 
         background-image: url(https://www.brainscape.com/assets/icons/checkbox-unchecked.png);
-        width: 20px;
+        width: 18px;
         height: 20px;
         cursor: pointer;
+        margin-right: 5px;
         &.checked {
             background-image: url(https://www.brainscape.com/assets/icons/checkbox-checked.png);
         }
     }
     .checkbox-text {
-        margin-left: 8px;
         text-decoration: underline;
         color: #3faee0;
         cursor: pointer;
         font-size: 14px;
-
     }
 }
-
-
 .searchbar-container {
     background-color: #fff;
     z-index: 10;

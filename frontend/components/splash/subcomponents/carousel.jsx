@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 class Carousel extends React.Component {
     constructor(props) {
         super(props);
@@ -18,9 +19,9 @@ class Carousel extends React.Component {
                     <div className="hero">Rise to<br />your challenge.</div>
                     <div className="hero-sub">Flashcards for <span className="bold">serious learners.</span></div>
                     <div className="button-row">
-                        <div className="square-button blue">Find Flashcards</div>
+                        <Link to="/subjects" className="square-button blue">Find Flashcards</Link>
                         <div className="square-button">Make Flashcards</div>
-                        <div className="watch-button">Watch Video</div>
+                        {/*<div className="watch-button">Watch Video</div>*/}
                     </div>
                 </div>
                 {
