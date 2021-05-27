@@ -29,7 +29,6 @@ class SignupForm extends React.Component {
         this.state.errors = [];
         if (this.state.password !== this.state.password2) {
             this.setState((state) => state.errors.push("Passwords must match"))
-            console.log(JSON.stringify(this.state))
             return
         }
         this.props.processForm(user);

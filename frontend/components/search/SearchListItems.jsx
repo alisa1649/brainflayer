@@ -18,7 +18,6 @@ class SearchListItems extends React.Component {
     searchDecks(search_term) {
         APIUtil.searchDecks(search_term).then(decks => {
             this.setState({decks: decks})
-            console.log(`DECKS: ${JSON.stringify(decks)}`)
         })
     }
 

@@ -43,7 +43,6 @@ const mapStateToProps = (state) => {
         cards: state.activeDeck.deck
             ? state.activeDeck.deck.cards.map(
                 card => {
-                    console.log("CARD::::" + JSON.stringify(card));
                     return Object.values(card)[0];
                 })
             : []

@@ -130,7 +130,6 @@ class DeckNav extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("SSSSSS: " + state.activeDeck ? state.activeDeck.deck : {});
     return {
         deck: state.activeDeck ? state.activeDeck.deck : {},
         loggedIn: Boolean(state.session.id),

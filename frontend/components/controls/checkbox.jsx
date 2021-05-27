@@ -10,7 +10,7 @@ class Checkbox extends React.Component {
     render() {
         return (
             <div className="checkbox-container">
-                <div className={`checkbox ${this.state.checked ? "checked" : ""}`} onClick={() => { console.log(this.state); this.setState({ checked: !this.state.checked }) }}></div>
+                <div className={`checkbox ${this.state.checked ? "checked" : ""}`} onClick={() => {this.setState({ checked: !this.state.checked }) }}></div>
                 <div className="checkbox-text">{this.props.text}</div>
             </div>
         )

@@ -48,7 +48,6 @@ class EmptyDecksPage extends React.Component {
     }
 }
 const mapStateToProps = (state) => {
-    console.log("SSSSSS: " + state.activeDeck ? state.activeDeck.deck : {});
     return {
         deck: state.activeDeck ? state.activeDeck.deck : {},
         decks: state.decks ? Object.values(state.decks) : []

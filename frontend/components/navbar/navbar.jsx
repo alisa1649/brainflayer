@@ -41,12 +41,12 @@ class NavBar extends React.Component {
                                     Make Flashcards
                                   </div>
                         }
-                        <a href="https://github.com/alisa1649" className="option why-works">
+                        <a target='_blank' href="https://github.com/alisa1649" className="option why-works">
                             Why It Works
                         </a>
-                        <div className="option learn-more">
+                        <a target='_blank' href="https://alisacheadle.com" className="option learn-more">
                             More...
-                        </div>
+                        </a>
                     </div>
 
                     {
