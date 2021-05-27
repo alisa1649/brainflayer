@@ -37,14 +37,12 @@ class NewCardForm extends React.Component {
                     <input
                         type="text"
                         placeholder="Question"
-                        value={this.state.title}
                         onChange={this.update('title')}
                         className="modal-input"
                     />
                     <input
                         type="text"
                         placeholder="Answer"
-                        value={this.state.body}
                         onChange={this.update('body')}
                         className="modal-input"
                     />
