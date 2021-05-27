@@ -176,7 +176,7 @@ class Subjects extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        // deck: state.activeDeck ? state.activeDeck.deck : {},
+        deck: state.activeDeck ? state.activeDeck.deck : {},
         loggedIn: Boolean(state.session.id),
         decks: state.decks ? Object.values(state.decks) : [],
         email: Object.values(state.users)[0].email

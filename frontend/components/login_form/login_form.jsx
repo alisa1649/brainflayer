@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
                     />
                     <input
                         type="password"
-                        placeholder="Password must be at least 6 characters"
+                        placeholder="Password"
                         value={this.state.password}
                         onChange={this.update('password')}
                         className="modal-input"

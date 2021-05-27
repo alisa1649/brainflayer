@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import {login, signup} from '../../actions/session_actions';
 import { changeSignupVisibility, changeLoginVisibility } from '../../actions/ui_actions';
 import Modal from '../modal/modal';
 import Checkbox from "../controls/checkbox";
@@ -74,7 +74,7 @@ class SignupForm extends React.Component {
                     <input
                         type="password"
                         id="password"
-                        placeholder="Password"
+                        placeholder="Password must be at least 6 characters"
                         onChange={this.update('password')}
                         className="modal-input"
                     />
@@ -88,6 +88,15 @@ class SignupForm extends React.Component {
                     <div className="registration-controls">
                         <Checkbox text="Accept Terms" />
                         <input className={`form-submit ${this.state.password.length < 6 || this.state.email.length < 6 ? "disabled" : ""}`} type="submit" value="Register" />
+                        <button className='btn-demo-user' onClick= {(e) => {
+                            e.preventDefault();
+                            dispatch(login({
+                                email: "demouser@demo.com",
+                                password: "demouser@demo.com"
+                            }))
+                        }} >
+                            Login as Demo User
+                        </button>
                     </div>
                     <div className="errors">{this.renderErrors()}</div>
                     <div className="links">
