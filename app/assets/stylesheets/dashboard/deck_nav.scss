@@ -3,19 +3,15 @@
     background-image: url(https://i.imgur.com/i1U3e2r.png);
     height: 30px;
     width: 30px;
-    // align-self: flex-start;
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
 }
-
-
 .deck-nav {
     display: block;
     background-color: #324054;
     color: hsla(0,0%,100%,.6);
     height: 100vh;
-    // justify-content: space-between;
     max-height: 100vh;
     min-height: 100vh;
     width: 340px;
@@ -181,9 +177,6 @@
                     }
                     .deck-delete {
                         visibility: visible;
-                    // &.delete-deck-flag {
-                        
-                    // }
                     }
                 }
                 &.active {
@@ -261,7 +254,7 @@
             }
         }
         .deck-nav-footer-container {
-            margin-top: 80px;
+            margin-top: 40px;
             height: 100%;
             width: 100%;
             display: flex;
