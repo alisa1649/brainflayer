@@ -35,14 +35,12 @@ class NewDeckForm extends React.Component {
                     <input
                         type="text"
                         placeholder="Deck Name (e.g. Stonks, Interwebs)"
-                        value={this.state.title}
                         onChange={this.update('title')}
                         className="modal-input"
                     />
                     <input
                         type="text"
                         placeholder="Tags (e.g. investing, technology)"
-                        value={this.state.tags}
                         onChange={this.update('tags')}
                         className="modal-input"
                     />
