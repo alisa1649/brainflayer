@@ -24,7 +24,10 @@ class EditDeckForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const deck = Object.assign({}, this.state);
+        // let Deck = Object.assign({}, this.state);
+        // console.log(Deck)
+        const deck = this.props.deck
+        console.log(deck)
         this.props.processForm(deck);
         this.props.closeModal();
     }
@@ -62,12 +65,12 @@ class EditDeckForm extends React.Component {
             </Modal>
         );
         return this.props.visible ? contents : null;
-        // return contents;
     }
 }
 
 const mapStateToProps = (state) => {
     return {
+        deck: state.activeDeck ? state.activeDeck.deck : null,
         deckId: state.activeDeck.deck ? state.activeDeck.deck.id : null,
         visible: state.ui.editDeckVisibility,
         title: state.activeDeck.deck ? state.activeDeck.deck.title : "",

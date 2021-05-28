@@ -4,6 +4,7 @@ import { getActiveDeck } from './active_deck_actions';
 export const RECEIVE_DECKS = 'RECEIVE_DECKS';
 export const RECEIVE_DECK = 'RECEIVE_DECK';
 export const RECEIVE_REMOVE_DECK = 'RECEIVE_REMOVE_DECK';
+export const RECEIVE_EDITED_DECK = 'RECEIVE_EDITED_DECK';
 
 export const receiveDecks = (decks) => ({
     type: RECEIVE_DECKS,
@@ -18,6 +19,11 @@ export const receiveDeck = (deck) => ({
 export const receiveRemoveDeck = (deckId) => ({
     type: RECEIVE_REMOVE_DECK,
     deckId
+});
+
+export const receiveEditedDeck = (deck) => ({
+    type: RECEIVE_EDITED_DECK,
+    deck: deck
 });
 
 export const searchDecks = (search_term) => dispatch => (
@@ -43,5 +49,10 @@ export const deleteDeck = (deckId) => dispatch => (
         const result = dispatch(receiveRemoveDeck(deck.id))
         dispatch(getDecks())
         return result;
+    })
+);
+export const editDeck = (deck) => dispatch => (
+    APIUtil.editDeck(deck).then(deck => {
+        return dispatch(receiveEditedDeck(deck.deck))
     })
 );

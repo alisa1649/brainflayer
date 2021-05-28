@@ -1,7 +1,7 @@
 import {
     RECEIVE_DECKS,
     RECEIVE_DECK,
-    RECEIVE_REMOVE_DECK
+    RECEIVE_REMOVE_DECK, RECEIVE_EDITED_DECK
 } from '../actions/deck_actions';
 
 const decksReducer = (state = {}, action) => {
@@ -10,6 +10,8 @@ const decksReducer = (state = {}, action) => {
         case RECEIVE_DECKS:
             return action.decks;
         case RECEIVE_DECK:
+            return Object.assign({}, state, { [action.deck.id]: action.deck })
+        case RECEIVE_EDITED_DECK:
             return Object.assign({}, state, { [action.deck.id]: action.deck })
         case RECEIVE_REMOVE_DECK:
             const result = Object.assign({}, state)
