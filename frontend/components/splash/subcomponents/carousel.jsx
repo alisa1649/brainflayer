@@ -1,5 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import {changeLoginVisibility, changeSignupVisibility} from "../../../actions/ui_actions";
+import {logout} from "../../../actions/session_actions";
+import {connect} from "react-redux";
 class Carousel extends React.Component {
     constructor(props) {
         super(props);
@@ -20,8 +23,15 @@ class Carousel extends React.Component {
                     <div className="hero-sub">Flashcards for <span className="bold">serious learners.</span></div>
                     <div className="button-row">
                         <Link to="/subjects" className="square-button blue">Find Flashcards</Link>
-                        <div className="square-button">Make Flashcards</div>
-                        {/*<div className="watch-button">Watch Video</div>*/}
+                        {
+                        this.props.loggedIn
+                            ? <Link to="/dashboard" className="square-button">
+                                Make Flashcards
+                            </Link>
+                            : <div className="square-button" onClick={() => { this.props.openSignupModal() }}>
+                                Make Flashcards
+                            </div>
+                        }
                     </div>
                 </div>
                 {
@@ -34,6 +44,18 @@ class Carousel extends React.Component {
             </div>
         )
     }
-
 }
-export default Carousel;
+
+const mapStateToProps = (state) => {
+    return {
+        loggedIn: Boolean(state.session.id)
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        openSignupModal: () => dispatch(changeSignupVisibility(true))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Carousel);
