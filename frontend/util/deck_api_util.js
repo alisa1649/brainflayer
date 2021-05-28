@@ -51,7 +51,7 @@ export const removeDeck = deckId => {
 export const editDeck = deck => {
     return $.ajax({
         method: 'PATCH',
-        url: `/api/decks/${deckId}`,
+        url: `/api/decks/${deck.id}`,
         data: { deck }
     })
 };

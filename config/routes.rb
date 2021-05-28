@@ -9,6 +9,6 @@ Rails.application.routes.draw do
       resources :cards, only: [:create, :show]
     end
     resources :cards, only: [:destroy]
-    resources :tags, only: [:index]
+    resources :tags, only: [:index, :edit, :update]
   end
 end
