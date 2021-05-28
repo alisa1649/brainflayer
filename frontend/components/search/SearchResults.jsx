@@ -17,6 +17,14 @@ class SearchResults extends React.Component {
                 <SearchBar />
                 <div className='results-wrapper'>
                     <div className='tag-panel'>
+                        <div className="deck-nav-footer-container">
+                            <div className="deck-nav-footer">
+                                <a target='_blank' href="https://github.com/alisa1649" className="github-link"> </a>
+                                <a target='_blank' href="https://alisacheadle.com" className="portfolio-link"> </a>
+                                <a target='_blank' href="https://www.linkedin.com/in/alisa-cheadle-04a7811a7/" className="linkedin-link"> </a>
+                                <a target='_blank' href="http://www.alisacheadle.com/images/gallery/Alisa_Cheadle_Resume.pdf" className="resume-link"> </a>
+                            </div>
+                        </div>
                     </div>
                     <div className='results-panel'>
                         <div className="results-header">
