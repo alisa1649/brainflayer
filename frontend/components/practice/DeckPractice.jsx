@@ -97,6 +97,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        openNewDeckModal: () => dispatch(changeNewDeckVisibility(true)),
         getActiveDeck: (deckId) => dispatch(getActiveDeck(deckId)),
         openNewCardModal: () => dispatch(changeNewCardVisibility(true)),
         setActiveDeck: (deckId) => {
