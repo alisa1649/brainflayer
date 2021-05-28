@@ -15,6 +15,11 @@ class DeckShow extends React.Component {
             activeTab: 1
         }
     }
+componentDidMount() {
+    if (Object.values(this.props.decks).length > 0) {
+        this.props.getActiveDeck(Object.values(this.props.decks)[0].id)
+    }
+}
 
     render() {
         return (
@@ -93,6 +98,7 @@ class DeckShow extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
+        decks: state.decks,
         deck: state.activeDeck ? state.activeDeck.deck : {},
         cards: state.activeDeck.deck
             ? state.activeDeck.deck.cards.map(

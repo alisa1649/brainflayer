@@ -27,15 +27,16 @@ class DeckPractice extends React.Component {
         let cardBack = this.props.cards.length ? this.props.cards[this.state.currentCard].body : "";
         if (this.props.cards.length) {
             return (
-                <div className="practice-container" >
-                    <DeckNav />
+                <div className="practice-container">
+                    <DeckNav/>
                     <div className="practice-area">
                         <div className="practice-header">
                             <div className="practice-header-text">
                                 <span className="label">Deck:&nbsp;</span>
                                 <span className="deck name">{this.props.deck ? this.props.deck.title : ""}</span>
                                 <span className="card label">Card:&nbsp;</span>
-                                <span className="card name">{this.state.currentCard + 1}/{this.props.cards.length}</span>
+                                <span
+                                    className="card name">{this.state.currentCard + 1}/{this.props.cards.length}</span>
                                 <Link to="/dashboard" className="return-to-dash">Back to dashboard</Link>
                             </div>
                         </div>
@@ -56,18 +57,24 @@ class DeckPractice extends React.Component {
                         <div className="practice-footer">
                             {
                                 !this.state.isRevealed
-                                    ? <div onClick={() => { this.setState(() => ({isRevealed: true})) }} className="reveal-button">Reveal Answer</div>
-                                    : <div onClick={() => { this.setState((s) => ({isRevealed: false, currentCard: (s.currentCard + 1) % this.props.cards.length}))}} className="reveal-button next">Next</div>
+                                    ? <div onClick={() => {
+                                        this.setState(() => ({isRevealed: true}))
+                                    }} className="reveal-button">Reveal Answer</div>
+                                    : <div onClick={() => {
+                                        this.setState((s) => ({
+                                            isRevealed: false,
+                                            currentCard: (s.currentCard + 1) % this.props.cards.length
+                                        }))
+                                    }} className="reveal-button next">Next</div>
                             }
                         </div>
                     </div>
-                </div >
+                </div>
             )
-        }
-        else {
+        } else {
             return (
-                <div className="practice-container" >
-                    <DeckNav />
+                <div className="practice-container">
+                    <DeckNav/>
                     <div className="practice-area">
                         <div className="practice-header">
                             <div className="practice-header-text">
@@ -80,8 +87,7 @@ class DeckPractice extends React.Component {
             )
         }
     };
-};
-
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -98,7 +104,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         openNewDeckModal: () => dispatch(changeNewDeckVisibility(true)),
-        getActiveDeck: (deckId) => dispatch(getActiveDeck(deckId)),
         openNewCardModal: () => dispatch(changeNewCardVisibility(true)),
         setActiveDeck: (deckId) => {
             dispatch(getActiveDeck(deckId))

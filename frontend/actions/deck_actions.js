@@ -28,9 +28,6 @@ export const searchDecks = (search_term) => dispatch => (
 
 export const getDecks = () => dispatch => (
     APIUtil.fetchDecks().then(decks => {
-        if (Object.values(decks).length > 0) {
-            dispatch(getActiveDeck(Object.values(decks)[0].id));
-        }
         return dispatch(receiveDecks(decks))
     })
 );

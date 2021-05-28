@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // make state available for debugging
-    // window.getState = store.getState;
+    window.getState = store.getState;
     // window.dispatch = store.dispatch;
     // window.ajax = $.ajax;
 });
