@@ -93,8 +93,7 @@ componentDidMount() {
             </ul>
         )
     }
-};
-
+}
 
 const mapStateToProps = (state) => {
     return {

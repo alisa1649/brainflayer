@@ -22,9 +22,6 @@ const Dashboard = (props) => {
                     ? <DeckShow />
                     : <EmptyDecksPage />
             }
-            <NewDeckForm />
-            <EditDeckForm />
-            <NewCardForm />
         </div>
     )
 }
