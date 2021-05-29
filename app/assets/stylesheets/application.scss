@@ -161,6 +161,72 @@ a {
                 background-color: #f8f8f8;
                 height: 500px;
                 box-shadow: 0 6px 12px #0003;
+                animation: .2s ease-out forwards;
+                .dropdown-content {
+                    padding: 24px 4%;
+                    position: relative;
+                    display: block;
+                    box-sizing: border-box;
+                    .dropdown-close {
+                        cursor: pointer;
+                        height: 18px;
+                        position: absolute;
+                        right: 24px;
+                        width: 18px;
+                        top: 25px;
+                        color: #3faee0;
+                        &:before {
+                            content: "\F404";
+                            font-family: Ionicons;
+                            font-size: 36px;
+                            position: absolute;
+                            left: 2px;
+                        }
+                    }
+                    .dropdown-title {
+                        margin-bottom: 12px;
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 38px;
+                        .dropdown-heading {
+                            font-weight: 600;
+                            font-family: "Mont Bold";
+                            font-size: 30px !important;
+                            color: #197096;
+                            line-height: 1.1;
+                        }
+                    }
+                    .dropdown-subtitle {
+                        color: #ff8a47;
+                        font-size: 15px !important;
+                        text-align: center;
+                        font-weight: 400;
+                    }
+                    .dropdown-subjects {
+                        padding-left: 0;
+                        display: grid;
+                        grid-template-columns: repeat(4,1fr);
+                        grid-column-gap: 54px;
+                        grid-row-gap: 36px;
+                        margin: 18px auto 0!important;
+                        padding-top: 42px!important;
+                        width: 90%;
+                        .subject-item {
+                            color: #3faee0;
+                            margin-bottom: 0;
+                            .dropdown-item-link {
+                                align-items: center;
+                                display: flex;
+                                font-size: 19px!important;
+                                font-weight: 600;
+                                line-height: 140%!important;
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                }
             }
             &.dropdown:hover {
                  .dropdown-container {
@@ -599,7 +665,6 @@ a {
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
-
     .searchbar {
         display: flex;
         position: relative;
