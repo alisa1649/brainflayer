@@ -115,8 +115,14 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        processForm: (user) => dispatch(signup(user)),
-        processDemo: (user) => dispatch(login(user)),
+        processForm: (user) => {
+            dispatch(signup(user))
+            dispatch(changeSignupVisibility(false))
+        },
+        processDemo: (user) => {
+            dispatch(login(user))
+            dispatch(changeSignupVisibility(false))
+        },
         closeModal: () => dispatch(changeSignupVisibility(false)),
         switchModal: () => {
             dispatch(changeLoginVisibility(true));
