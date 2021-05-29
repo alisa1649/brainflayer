@@ -142,7 +142,6 @@ a {
             margin-right: 8px;
             border-top: 5px solid transparent;
             border-bottom: 5px solid transparent;
-
             &:before {
                 content: " ";
                 opacity: 0;
@@ -272,7 +271,6 @@ a {
     }
 
 }
-
 .modal-overlay {
     position: fixed;
     display: flex;
