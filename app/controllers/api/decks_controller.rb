@@ -21,9 +21,9 @@ class Api::DecksController < ApplicationController
     @deck = Deck.find(params[:id])
 
     if @deck.update(deck_params)
-      render :show, status: :updated
+      render :show
       else
-        render json: @deck.errors.full_messages, status: :unprocessable_entity
+        render json: @deck.errors.full_messages
     end
   end
 
@@ -55,7 +55,7 @@ class Api::DecksController < ApplicationController
   end
 
   def deck_params
-    params.require(:deck).permit(:title, :objective, :tag_id, :tags, :author)
+    params.require(:deck).permit(:title, :objective, :tag_id, :tags, :id, :icon_url)
   end
 
 end
