@@ -13,7 +13,6 @@ class SearchbarDropdown extends React.Component {
 
     componentDidMount() {
         fetchAllDecks().then(decks => {
-            // console.log(decks)
             this.setState({decks: decks})
         })
     }

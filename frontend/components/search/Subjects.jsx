@@ -1,20 +1,26 @@
 import React from 'react';
-import {getDecks} from "../../actions/deck_actions";
+import {editDeck, getDecks} from "../../actions/deck_actions";
 import {connect} from "react-redux";
 import {getActiveDeck} from "../../actions/active_deck_actions";
 import {logout} from "../../actions/session_actions";
 import NavBar from "../navbar/navbar";
 import SearchBar from "./SearchBar";
+import {fetchAllDecks} from "../../util/deck_api_util";
+import {changeEditDeckVisibility} from "../../actions/ui_actions";
+import {Link} from "react-router-dom";
 
 class Subjects extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            decks: {}
         }
     }
 
     componentDidMount() {
-        this.props.getDecks();
+        fetchAllDecks().then(decks => {
+            this.setState({decks: decks})
+        })
     }
 
     render() {
@@ -35,18 +41,23 @@ class Subjects extends React.Component {
                     </div>
                     <div className="page-main">
                         <ul className="subject-list">
-                            <li className="tag-category">About Alisa</li>
-                            <li className="tag-subject">
-                                <a className="subject-link" href="#">Alisa's link</a>
-                            </li>
-                            <li className="tag-category">Silicon Valley Trivia</li>
-                            <li className="tag-subject">
-                                <a className="subject-link" href="#">Trivia Link</a>
-                            </li>
-                            <li className="tag-category">Programming</li>
-                            <li className="tag-subject">
-                                <a className="subject-link" href="#">Programming Link</a>
-                            </li>
+                            {Object.values(this.state.decks).map(deck => <li key={deck.id} className="tag-subject">
+                                <Link to={`/practice/${deck.id}`} className="subject-link">
+                                    {deck.title}
+                                </Link>
+                            </li>)}
+                            {/*<li className="tag-category">About Alisa</li>*/}
+                            {/*<li className="tag-subject">*/}
+                            {/*    <a className="subject-link" href="#">Alisa's link</a>*/}
+                            {/*</li>*/}
+                            {/*<li className="tag-category">Silicon Valley Trivia</li>*/}
+                            {/*<li className="tag-subject">*/}
+                            {/*    <a className="subject-link" href="#">Trivia Link</a>*/}
+                            {/*</li>*/}
+                            {/*<li className="tag-category">Programming</li>*/}
+                            {/*<li className="tag-subject">*/}
+                            {/*    <a className="subject-link" href="#">Programming Link</a>*/}
+                            {/*</li>*/}
                         </ul>
                         <h4 className="main-page-subheading">About Flashcards on BrainFlayer</h4>
                         <div className="about-box">
@@ -176,25 +187,17 @@ class Subjects extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        deck: state.activeDeck ? state.activeDeck.deck : {},
-        loggedIn: Boolean(state.session.id),
-        decks: state.decks ? Object.values(state.decks) : [],
-        email: Object.values(state.users)[0].email
-    }
+        title: state.activeDeck.deck ? state.activeDeck.deck.title : "",
+        tags: state.activeDeck.deck ? state.activeDeck.deck.tags : ""
+    };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         getDeck: (deckId) => {
             return dispatch(getActiveDeck(deckId))
-        },
-        getDecks: () => {
-            return dispatch(getDecks())
-        },
-        logout: () => {
-            return dispatch(logout())
         }
-    }
-}
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Subjects);
