@@ -12,18 +12,13 @@ class Api::DecksController < ApplicationController
     end
   end
 
-  def edit
-    @deck = Deck.find(params[:id])
-    #render what here?
-  end
-
   def update
     @deck = Deck.find(params[:id])
 
     if @deck.update(deck_params)
       render :show
       else
-        render json: @deck.errors.full_messages
+      render json: @deck.errors.full_messages
     end
   end
 

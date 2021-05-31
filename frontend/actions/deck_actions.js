@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/deck_api_util';
-import { getActiveDeck } from './active_deck_actions';
+import {getActiveDeck, receiveActiveDeck} from './active_deck_actions';
 
 export const RECEIVE_DECKS = 'RECEIVE_DECKS';
 export const RECEIVE_DECK = 'RECEIVE_DECK';
@@ -53,6 +53,7 @@ export const deleteDeck = (deckId) => dispatch => (
 );
 export const editDeck = (deck) => dispatch => (
     APIUtil.editDeck(deck).then(deck => {
+        dispatch(receiveActiveDeck(deck))
         return dispatch(receiveEditedDeck(deck.deck))
     })
 );

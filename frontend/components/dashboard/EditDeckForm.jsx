@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux'
 import {changeEditDeckVisibility} from '../../actions/ui_actions';
 import Modal from '../modal/modal';
-import {editDeck} from "../../util/deck_api_util";
 import {getActiveDeck} from "../../actions/active_deck_actions";
+import {editDeck} from "../../actions/deck_actions";
 
 class EditDeckForm extends React.Component {
     constructor(props) {
@@ -24,9 +24,11 @@ class EditDeckForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // let Deck = Object.assign({}, this.state);
-        // console.log(Deck)
-        const deck = this.props.deck
+        const deck = {
+            id: this.props.deck.id,
+            title: this.state.title,
+            tags: this.state.tags
+        }
         console.log(deck)
         this.props.processForm(deck);
         this.props.closeModal();
