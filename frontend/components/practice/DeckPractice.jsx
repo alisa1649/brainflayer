@@ -2,11 +2,11 @@ import React from "react";
 import DashboardHeader from "../dashboard/DashboardHeader";
 import CardItem from "../dashboard/CardItem";
 import {connect} from "react-redux";
-import {changeNewCardVisibility, changeNewDeckVisibility} from "../../actions/ui_actions";
+import {changeLoginVisibility, changeNewCardVisibility, changeNewDeckVisibility} from "../../actions/ui_actions";
 import {getActiveDeck} from "../../actions/active_deck_actions";
 import NavBar from "../navbar/navbar";
 import DeckNav from "../dashboard/DeckNav";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 class DeckPractice extends React.Component {
     constructor(props) {
@@ -25,7 +25,11 @@ class DeckPractice extends React.Component {
     render() {
         let cardFront = this.props.cards.length ? this.props.cards[this.state.currentCard].title : "";
         let cardBack = this.props.cards.length ? this.props.cards[this.state.currentCard].body : "";
-        if (this.props.cards.length) {
+        if (!this.props.loggedIn) {
+            this.props.openLoginModal();
+            return <Redirect to="/landing" />
+        }
+        else if (this.props.cards.length) {
             return (
                 <div className="practice-container">
                     <DeckNav/>
@@ -91,6 +95,7 @@ class DeckPractice extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
+        loggedIn: Boolean(state.session.id),
         deck: state.activeDeck ? state.activeDeck.deck : {},
         cards: state.activeDeck.deck
             ? state.activeDeck.deck.cards.map(
@@ -104,6 +109,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         openNewDeckModal: () => dispatch(changeNewDeckVisibility(true)),
+        openLoginModal: () => dispatch(changeLoginVisibility(true)),
         openNewCardModal: () => dispatch(changeNewCardVisibility(true)),
         setActiveDeck: (deckId) => {
             dispatch(getActiveDeck(deckId))

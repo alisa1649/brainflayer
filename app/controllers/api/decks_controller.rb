@@ -1,5 +1,5 @@
 class Api::DecksController < ApplicationController
-  before_action :require_logged_in, only: [:create, :study, :delete, :index, :edit]
+  before_action :require_logged_in, only: [:create, :delete, :edit]
 
   def create
     @deck = Deck.new(deck_params)
@@ -28,7 +28,7 @@ class Api::DecksController < ApplicationController
   end
 
   def index
-    @decks = current_user.decks
+    @decks = current_user ? current_user.decks : []
     render :index
   end
 
