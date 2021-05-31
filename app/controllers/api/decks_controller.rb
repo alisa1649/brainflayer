@@ -32,6 +32,11 @@ class Api::DecksController < ApplicationController
     render :index
   end
 
+  def get_all
+    @decks = Deck.all
+    render :index
+  end
+
   def show
     @deck = Deck.includes(:cards, :author).find(params[:id])
     render :show

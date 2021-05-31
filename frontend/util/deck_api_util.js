@@ -12,6 +12,13 @@ export const fetchDecks = () => (
     })
 );
 
+export const fetchAllDecks = () => (
+    $.ajax({
+        method: 'GET',
+        url: '/api/decks/all'
+    })
+);
+
 export const fetchDeck = (deckId) => {
     return $.ajax({
         method: 'GET',

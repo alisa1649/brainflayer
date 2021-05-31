@@ -1,10 +1,21 @@
 import React from 'react';
 import SearchBar from "../search/SearchBar";
 import {Link} from "react-router-dom";
+import {fetchAllDecks} from "../../util/deck_api_util";
 
 class SearchbarDropdown extends React.Component {
     constructor(props) {
-        super(props)
+       super(props);
+       this.state = {
+           decks: {}
+       }
+    }
+
+    componentDidMount() {
+        fetchAllDecks().then(decks => {
+            // console.log(decks)
+            this.setState({decks: decks})
+        })
     }
 
     render() {
@@ -23,10 +34,12 @@ class SearchbarDropdown extends React.Component {
                         Browse over 1 million classes created by Alisa!
                     </div>
                     <ul className="dropdown-subjects">
-                        <li className="subject-item">
-                            <Link to="/landing" className="dropdown-item-link"></Link>
-                        </li>
-
+                        {console.log(this.state.decks)}
+                        {Object.values(this.state.decks).map(deck => <li key={deck.id} className="subject-item">
+                            <Link to={`/practice/${deck.id}`} className="dropdown-item-link">
+                                {deck.title}
+                            </Link>
+                        </li>)}
                     </ul>
                 </div>
             </div>
