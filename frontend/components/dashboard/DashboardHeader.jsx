@@ -63,12 +63,14 @@ class DashboardHeader extends React.Component {
                                     <li onClick={(e) => {
                                         e.stopPropagation();
                                         this.props.openEditDeckModal();
+                                        this.setState({ isDropdownVisible: !this.state.isDropdownVisible });
                                     }} className="icon edit-deck">
                                         <a href="#" >Edit Deck Name</a>
                                     </li>
                                     <li onClick={(e) => {
                                         e.stopPropagation();
                                         this.props.openDeleteDeckModal();
+                                        this.setState({ isDropdownVisible: !this.state.isDropdownVisible });
                                     }} className="icon delete-deck">
                                         <a href="#" >Delete This Deck</a>
                                     </li>
