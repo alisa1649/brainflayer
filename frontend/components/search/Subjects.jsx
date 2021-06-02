@@ -50,16 +50,8 @@ class Subjects extends React.Component {
                             {/*<li className="tag-subject">*/}
                             {/*    <a className="subject-link" href="#">Alisa's link</a>*/}
                             {/*</li>*/}
-                            {/*<li className="tag-category">Silicon Valley Trivia</li>*/}
-                            {/*<li className="tag-subject">*/}
-                            {/*    <a className="subject-link" href="#">Trivia Link</a>*/}
-                            {/*</li>*/}
-                            {/*<li className="tag-category">Programming</li>*/}
-                            {/*<li className="tag-subject">*/}
-                            {/*    <a className="subject-link" href="#">Programming Link</a>*/}
-                            {/*</li>*/}
                         </ul>
-                        <h4 className="main-page-subheading">About Flashcards on BrainFlayer</h4>
+                        <a target='_blank' href="https://alisacheadle.com" className="main-page-subheading">About Flashcards on BrainFlayer</a>
                         <div className="about-box">
                             <div className="about-heading">Introducing the Knowledge Genome</div>
                             <p className="description-text">The Knowledge Genome Project is the initiative to catalog
@@ -182,7 +174,6 @@ class Subjects extends React.Component {
 
         )
     }
-
 }
 
 const mapStateToProps = (state) => {

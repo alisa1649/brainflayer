@@ -1,38 +1,17 @@
 
-.dropdown-container {
-  position: absolute;
-  width: 100vw;
-  top: 80px;
-  left: 0;
-  z-index: 12;
-  display: none;
-  background-color: #f8f8f8;
-  height: 500px;
-  box-shadow: 0 6px 12px #0003;
-}
 .main-page {
   background-color: #f2f2f2;
   display: flex;
   font-family: "Open Sans", sans-serif;
   flex-direction: column;
   .option {
-    color: black;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #fff;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin-right: 8px;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
     &.dropdown:hover {
       .dropdown-container {
         display: block;
       }
     }
   }
+
   .page-content {
     margin-left: 45px;
     margin-top: 34px;
@@ -57,12 +36,11 @@
           font-family: "Proxima Nova", sans-serif;
           font-size: 36px;
           font-weight: 700;
-          line-height: 39.6px;
           text-align: left;
           line-height: 1.1;
             .heading-description {
               color: rgb(51, 51, 51);
-              font-family: "Helvetica";
+              font-family: "Helvetica", "sans-serif";
               display: block;
               margin: 4px 0 0 24px;
               padding-left: 24px;
@@ -195,7 +173,7 @@
                       font-size: 14px;
                       font-weight: 100;
                       line-height: 2.5;
-                      font-font: Open Sans, sans-serif;
+                      font-family: Open Sans, sans-serif;
                       &.icon {
                         font-size: 14px;
                         background-image: url(https://www.brainscape.com/assets/green-circle-check-bullet.png);
