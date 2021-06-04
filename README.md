@@ -3,7 +3,7 @@
 # Brainflayer
 
 ## About
-Brainflayer is a clone of the site http://brainscape.com. Users can log in and create decks of cards to study. Users can create, update, delete and add/remove tags to their decks, and can create and delete cards from each deck. Users can search all decks across the site, and decks that include the search term as the title or one of it's tag will be returned. Each deck has a unique study page, where the front of the card is rendered first, and the back of the card can be reveled with the click of a button.
+[Brainflayer](https://brainflayer.herokuapp.com/#/) is a full stack clone of the site [Brainscape](http://brainscape.com). Users can log in and create decks of cards to study. Users can create, update, delete and add/remove tags to their decks, and can create and delete cards from each deck. Users can search all decks across the site, and decks that include the search term as the title or one of it's tag will be returned. Each deck has a unique study page, where the front of the card is rendered first, and the back of the card can be reveled with the click of a button.
 
 # Technologies
 Brainflayer was created with Ruby on Rails, Javascript, React/Redux, JSX, SCSS and HTML. The database used was PostgreSQL. 
