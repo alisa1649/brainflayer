@@ -36,3 +36,7 @@ The CSS was written to smoothly transition each "previous" tagged image out of v
 
 ![Screen Shot 2021-06-04 at 3 44 37 PM](https://user-images.githubusercontent.com/74744805/120854973-d8799d80-c54b-11eb-81c1-121130fbe757.png)
 
+## Resources
+
+* All icons used for Brainflayer are from fontawesome.com
+* Inspiration and images used are from Brainscape.com  
