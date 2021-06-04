@@ -5,7 +5,7 @@
 ## About
 [Brainflayer](https://brainflayer.herokuapp.com/#/) is a full stack clone of the site [Brainscape](http://brainscape.com). Users can log in and create decks of cards to study. Users can create, update, delete and add/remove tags to their decks, and can create and delete cards from each deck. Users can search all decks across the site, and decks that include the search term as the title or one of it's tag will be returned. Each deck has a unique study page, where the front of the card is rendered first, and the back of the card can be reveled with the click of a button.
 
-# Technologies
+## Technologies
 Brainflayer was created with Ruby on Rails, Javascript, React/Redux, JSX, SCSS and HTML. The database used was PostgreSQL. 
 
 # Primary Features
@@ -22,7 +22,7 @@ When a search term is entered, all decks with this word as the title or as a tag
 ## User Authentication
 Users can create a new account, log in and log out of the Brainflayer app. Password encryption using the rails gem bcrypt is used for secure authentication. Only logged in users are able to create new decks of cards, and users can only edit and delete the decks they have created. 
 
-## Carousel
+## Image Carousel
 One challenge I overcame when styling Brainflayer's landing page was implementing a custom carousel of 6 images to match the carousel on the original site. I did this by storing an active photo item pointing to an integer 0 - 5 in state and incrementing this number every three seconds. 
 
 
