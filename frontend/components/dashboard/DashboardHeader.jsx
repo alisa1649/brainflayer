@@ -1,13 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
 import {deleteDeck} from '../../actions/deck_actions';
-import {Link, Redirect} from 'react-router-dom';
-import { useEffect } from 'react';
-import { render } from 'react-dom';
-import DeckNav from './DeckNav';
+import {Link} from 'react-router-dom';
 import {changeDeleteDeckVisibility, changeEditDeckVisibility, changeNewDeckVisibility} from "../../actions/ui_actions";
-import DeleteDeckModal from "./DeleteDeckModal";
+
 
 class DashboardHeader extends React.Component {
     constructor(props) {

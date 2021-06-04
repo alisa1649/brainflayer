@@ -616,13 +616,11 @@ a {
             position: absolute;
             width: 100%;
             min-width: 100%;
-            // display: none;
             &.previous {
                 left: -100%;
                 transition: left 1.5s ease;
             }
             &.active {
-            //     display: block;
                 left: 0;
                 transition: left 1.5s ease;
             }
