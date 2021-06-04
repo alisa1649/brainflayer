@@ -167,7 +167,7 @@
                   font-size: 14px;
                   box-sizing: border-box;
                   display: block;
-                    .footer-item {
+                    li {
                       display: list-item;
                       color: hsla(0, 0%, 100%, .369);
                       font-size: 14px;
@@ -184,12 +184,32 @@
                       }
                     }
                 }
+                .tooltip {
+                  position: relative;
+                  display: inline-block;
+
+                }
+                .tooltip .hovertext {
+                  visibility: hidden;
+                  width: 120px;
+                  bottom: 50%;
+                  left: 105%;
+                  color: rgba(255, 255, 255, 0.369);
+                  text-align: center;
+                  padding: 5px 0;
+                  border-radius: 6px;
+                  position: absolute;
+                  z-index: 1;
+                }
+                .tooltip:hover .hovertext {
+                  visibility: visible;
+                }
               }
           }
       }
     .footer-info-text {
       color: #fff;
-      font-size: 11px;
+      font-size: 12px;
       line-height: 1.552;
       text-align: center;
       width: 700px;

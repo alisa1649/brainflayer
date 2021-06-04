@@ -119,7 +119,8 @@ class Subjects extends React.Component {
                                 <h6 className="footer-item-heading">
                                     Key Links
                                 </h6>
-                                <ul className="footer-items-list">
+                                <ul className="tooltip footer-items-list">
+                                    <span className="hovertext">Links here just for styling!</span>
                                     <li className="footer-item">Pricing</li>
                                     <li className="footer-item">Corporate Training</li>
                                     <li className="footer-item">Teachers & Schools</li>
@@ -132,7 +133,8 @@ class Subjects extends React.Component {
                                 <h6 className="footer-item-heading">
                                     Subjects
                                 </h6>
-                                <ul className="footer-items-list">
+                                <ul className="tooltip footer-items-list">
+                                    <span className="hovertext">Links here just for styling!</span>
                                     <li className="footer-item">Medical & Nursing</li>
                                     <li className="footer-item">Law Education</li>
                                     <li className="footer-item">Foreign Languages</li>
@@ -144,7 +146,8 @@ class Subjects extends React.Component {
                                 <h6 className="footer-item-heading">
                                     Company
                                 </h6>
-                                <ul className="footer-items-list">
+                                <ul className="tooltip footer-items-list">
+                                    <span className="hovertext">Links here just for styling!</span>
                                     <li className="footer-item">About Us</li>
                                     <li className="footer-item">Earn Money!</li>
                                     <li className="footer-item">Academy</li>
@@ -153,21 +156,21 @@ class Subjects extends React.Component {
                             </li>
                             <li className="column">
                                 <h6 className="footer-item-heading">
-                                    Find Us
+                                    Find Me!
                                 </h6>
                                 <ul className="footer-items-list">
-                                    <li className="footer-item">Apple app store icon here</li>
-                                    <li className="footer-item">Google app store icon here</li>
-                                    <li className="footer-item">find us on facebook</li>
-                                    <li className="footer-item">brainscape twitter</li>
+                                    <li><a target='_blank' href="https://github.com/alisa1649" className="github-link"> </a></li>
+                                    <li><a target='_blank' href="https://alisacheadle.com" className="portfolio-link"> </a></li>
+                                    <li><a target='_blank' href="https://www.linkedin.com/in/alisa-cheadle-04a7811a7/" className="linkedin-link"> </a></li>
+                                    <li><a target='_blank' href="http://www.alisacheadle.com/images/gallery/Alisa_Cheadle_Resume.pdf" className="resume-link"> </a></li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                     <div className="footer-info-text">
-                        Brainscape is a web and mobile study platform that helps you learn things faster. Our mission
-                        is to create a smarter world by simplifying and accelerating the learning process.
-                        © 2021 Bold Learning Solutions.
+                        Brainflayer is a web study platform that helps you learn about Alisa and why she would be an asset to your organization!
+                        {/*Our mission is to create a smarter world by simplifying and accelerating the learning process.*/}
+                        {/*© 2021 Bold Learning Solutions.*/}
                     </div>
                 </div>
             </div>
