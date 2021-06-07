@@ -39,6 +39,7 @@
         height: 100%;
     }
     .deck-item {
+        overflow: hidden;
         cursor: pointer;
         text-transform: capitalize;
         text-size-adjust: 100%;
@@ -63,6 +64,7 @@
             color: #666;
             font-weight: 400;
             font-size: 18px;
+            overflow: hidden;
         }
         &:hover {
             background-color: #eef7ff;
@@ -110,8 +112,6 @@
                     width: 22px;
                     left: 10px;
                     position: absolute;
-                    display: flex;
-                    align-items: center;
                     &::before {
                         color: #28a5dc;
                         content: "\F488";
@@ -190,7 +190,7 @@
             display: flex;
             background-color: rgb(255, 138, 71);
             height: 30px;
-            width: 90px;
+            min-width: 90px;
             cursor: pointer;
             border-radius: 36px;
             margin-left: auto;
@@ -198,7 +198,6 @@
             justify-content: center;
             transition: all .3s;
             line-height: 1.4;
-            transition: all .3s;
             margin-right: 25px;
             &:hover {
                 background-color: #ffaa7a;
@@ -208,7 +207,6 @@
                 font-weight: 400;
                 text-align: right;
                 color: rgb(255, 255, 255);
-                font-weight: 400;
 
             }
         }
@@ -243,10 +241,6 @@
         margin: 40px;
     }
 }
-
-
-
-
 
 .deck-cards-navbar {
     background-color: green;
