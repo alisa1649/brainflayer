@@ -50,7 +50,9 @@ class DeckNav extends React.Component {
         const content = (
             <div className="deck-nav">
                 <div className="deck-nav-header">
-                    <Link to="/landing" className="dashboard-logo"></Link>
+                    <Link to="/landing" className="dashboard-logo-container">
+                        <img className="dashboard-logo" src="https://i.imgur.com/i1U3e2r.png"></img>
+                    </Link>
                     <Link to="/dashboard" className="profile-container">
                         <img className="user-account-image" src="https://brainscape-prod.s3.amazonaws.com/images/avatar_generic_square.png"></img>
                         <div className="user-email">{this.props.email}</div>
