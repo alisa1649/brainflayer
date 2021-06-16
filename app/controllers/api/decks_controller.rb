@@ -48,8 +48,11 @@ class Api::DecksController < ApplicationController
   end
 
   def destroy
-    # TODO: add constraints so current user can only modify their own decks + cards
     @deck = Deck.find(params[:id])
+    if @deck.author_id != current_user.id
+      render json: ["Can't delete another user's deck"], status: 401
+      return
+    end
     @deck.destroy!
     render json: @deck
   end
