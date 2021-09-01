@@ -105,3 +105,10 @@ The CSS was written to smoothly transition each "previous" tagged image out of v
 
 * All icons used for Brainflayer are from fontawesome.com
 * Inspiration and images used are from Brainscape.com  
+
+
+## How to Run Locally for Development
+1. Run `npm run start` to have webpack watch for automatically build changes.
+1. In a separate terminal, run `npm run serve` to make the bundle available to Rails.
+1. In a separate terminal, run `rails s` to start the Rails server.
+1. Visit the link given by Rails in a browser.
