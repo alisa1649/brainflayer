@@ -38,12 +38,11 @@ class Api::DecksController < ApplicationController
   end
 
   def search
-    query = params[:query]
     @decks = Deck.joins(:author).where("
-      UPPER(title) LIKE UPPER('%#{query}%')
-      OR UPPER(CONCAT(tags, ',')) LIKE UPPER('%#{query},%')
-      OR UPPER(users.email) LIKE UPPER('%#{query}%')
-    ")
+      UPPER(title) LIKE UPPER(:query)
+      OR UPPER(CONCAT(tags, ',')) LIKE UPPER(:query)
+      OR UPPER(users.email) LIKE UPPER(:query)
+    ", {:query => "%#{params[:query]}%"})
     render :index
   end
 
